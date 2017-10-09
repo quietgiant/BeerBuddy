@@ -28,7 +28,7 @@
     <div class="container-fluid">
 
       <div class="container-fluid">
-        <h1 class="my-4">Post a deal</h1>
+        <h1>Post a deal</h1>
 
         <form>
           <label>Name:</label>

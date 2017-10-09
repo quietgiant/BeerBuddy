@@ -1,0 +1,38 @@
+html, body 
+{
+  height: 100%;
+}
+
+.navbar-toggle#header
+{
+  float: right;
+  margin-right: 10px;
+}
+
+.navbar-toggle#sidebar
+{
+  float: left;
+  margin-left: 10px;
+}
+
+@media (min-width: 0) 
+{
+  .navbar-toggle#sidebar
+  {
+    display: block; /* force toggle to show */
+  }
+}
+
+@media (min-width: 992px) 
+{
+  body 
+  {
+    padding-right: 0;
+  }
+  .navbar 
+  {
+    left: auto;
+    background: none;
+    border: none;
+  }
+}

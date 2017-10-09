@@ -26,22 +26,22 @@
     <div class="container-fluid">
 
       <!-- login form -->
-      <div class="container-fluid" style="width:500px; margin-left:auto; margin-right:auto;">
-        <form class=" form-signin">
+      <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
+        <form class=" form-signin" id="loginForm">
           <h2 class="form-signin-heading ">Sign in</h2>
           <div class="form-group">
             <label class="control-label " for="email" class="sr-only ">Email address</label>
-            <input type="email" id="email" class="form-control " placeholder="Email address " required autofocus>
+            <input type="email" id="email" class="form-control " placeholder="Email address" required autofocus>
           </div>
           <div class="form-group ">
             <label class="control-label " for="pass" class="sr-only ">Password</label>
-            <input type="password" id= "pass" class="form-control " placeholder="Password " required>
+            <input type="password" id= "pass" class="form-control " placeholder="Password" required>
           </div>
           <div class="form-group">
             <button class="btn btn-md btn-primary btn-block" style="width:67%; margin-left:auto; margin-right:auto;" type="submit"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign in</button>
           </div>
           <div class="form-group">
-              <button class="btn btn-md btn-primary btn-danger btn-block" style="width:67%; margin-left:auto; margin-right:auto; "><span class="glyphicon glyphicon-trash"></span>&nbsp;Clear</button>
+              <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset"><span class="glyphicon glyphicon-trash"></span>&nbsp;Clear</button>
           </div>
           <div class="form-group text-center ">
             <p>Forgot your password? <a href="/src/help/recoverPassword.php ">Click here</a></p>
@@ -59,6 +59,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- bootstrap core js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- clear form script -->
+    <script>
+		$('#clearButton').click(function(){
+        	$('#loginForm')[0].reset();
+ 		});
+	</script>
 
   </body>
 

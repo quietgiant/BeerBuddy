@@ -1,9 +1,9 @@
 <?php
 // beerbuddy footer
 $footer = "
+<hr>
 <footer class=\"footer\">
   <div class=\"container text-center\">
-    <hr>
     <div class=\"col-lg-12\">
       <ul class=\"nav nav-pills nav-justified\">
         <li class=\"nav-item\">&copy; 2017 BeerBuddy</a></li>
