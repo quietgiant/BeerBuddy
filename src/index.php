@@ -20,7 +20,68 @@
 	<link href="../res/styles/navigation_header.css" rel="stylesheet">
 	<link href="../res/styles/sidebar.css" rel="stylesheet">
 	<!-- google maps api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8 -->
+	<style type="text/css">
+        	  #map {
+          width:40%;
+          height:300px;
+          margin-left: 80px;
+        }
+	</style>
+	<script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+      var map;
+      var infowindow;
+
+      function initMap() {
+       var pyrmont = {lat: 0, lng: 0};
+       if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+           pyrmont = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+          });
+
+        } 
+        console.log(pyrmont);
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: pyrmont,
+          zoom: 15
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 10000,
+          keyword: 'liquorStore'
+        }, callback);
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+    </script>
 </head>
 
 <body>
@@ -38,39 +99,9 @@
 			</div>
 
 			<!-- begin map -->
-	        <div id="map"></div>
-	        <script type="text/javascript">
-	        	function initMap() {
-	        		var location = {lat: 41.079, lng: -85.139};
-	        		var map = new google.maps.Map(document.getElementById("map"), {
-	        			zoom: 13,
-	        			center: location
-	        		});
-
-			        infoWindow = new google.maps.InfoWindow;
-			        // try to obtain geolocation of user
-			        if (navigator.geolocation) {
-			          navigator.geolocation.getCurrentPosition(function(position) {
-			            var position = {
-			              lat: position.coords.latitude,
-			              lng: position.coords.longitude
-			            };
-
-			            infoWindow.setPosition(position);
-			            infoWindow.setContent('Location found.');
-			            infoWindow.open(map);
-			            map.setCenter(position);
-			          }, function() {
-			            handleLocationError(true, infoWindow, map.getCenter());
-			          });
-			        } else {
-			          handleLocationError(false, infoWindow, map.getCenter());
-			        }
-
-
-	        	}
-	        </script>
-			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&callback=initMap" type="text/javascript"></script>
+			<div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_jpR5OsONNoj9ZB-YzRuK9d4TEKwLUx4&libraries=places&callback=initMap" async defer ></script>
 			<!-- end map -->
 			
 			<div class="navmenu navmenu-default offcanvas">
