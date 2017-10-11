@@ -17,5 +17,5 @@ function openAgeModal(){
 
 function over21(){
 	// add code to cooking this response.
-	$('#memberModal').modal('hide');
+	$('#ageModal').modal('hide');
 }
