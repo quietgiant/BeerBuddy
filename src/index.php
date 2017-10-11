@@ -159,7 +159,21 @@
         <!-- /.row -->
 
 	</div>
-
+<div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="memberModalLabel">You must be 21 to view this site</h4>
+      </div>
+      <div class="modal-body">
+        <h3>Are you 21?</h3>
+<button type="button" class="btn btn-default" onclick="over21()">I am 21</button>
+<button type="button" class="btn btn-default">I am under 21</button>
+      </div>
+    </div>
+  </div>
+</div>
 	<!-- footer -->
 	<?php $page='index'; include('footer.php'); ?>
 
@@ -169,7 +183,15 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- jasny bootstrap js -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+<script type="text/javascript" src="../res/scripts/modalResponse.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	    	//loads the modal on page load
+	    $('#memberModal').modal('show');
+		
+	});
 
+</script>
 </body>
 
 </html>
