@@ -15,7 +15,7 @@ $nav = "
     <div id=\"navbar\" class=\"navbar-collapse collapse\">
       <ul class=\"nav navbar-nav\">
         <li class=\"".($class = ($page == 'index') ? 'active' : '')."\"><a href=\"/src/index.php\">Explore Deals</a></li>
-        <li class=\"".($class = ($page == 'post') ? 'active' : '')."\"><a href=\"/src/post.php\">Post Deal</a></li>
+        <li class=\"".($class = ($page == 'post') ? 'active' : '')."\"><a href=\"/src/post.php\">Post A Price</a></li>
         <li class=\"dropdown ".($class = ($page == 'help') ? 'active' : '')."\">
           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Help<span class=\"caret\"></span></a>
           <ul class=\"dropdown-menu\">

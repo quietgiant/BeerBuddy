@@ -26,7 +26,7 @@
 
     <div class="container-fluid">
 
-    	<h1 style="text-align: center; font-size: 3em">Post a deal&nbsp;<span class="glyphicon glyphicon-glass"></span></h1>
+    	<h1 style="text-align: center; font-size: 3em">Post a Price&nbsp;<span class="glyphicon glyphicon-glass"></span></h1>
 
     	<!-- split page into two sides, left and right -->
 		<div class="modal-body row">
@@ -55,7 +55,7 @@
 					        <div class="form-group ">
 					            <label for="price" class="control-label">Price:</label>
 					            <div class="input-group">
-					            	<input type="text" maxlength="6" class="form-control" id="price" placeholder="Price you paid for your drink">
+					            	<input type="text" maxlength="6" class="form-control" id="price" placeholder="Price you paid for your bottle">
 					          	</div>
 					        </div>
 
@@ -80,12 +80,18 @@
 				        	<label for="inputUPC" class="control-label">UPC:</label>
 				            <div class="input-group">
 				            	<span class="input-group-addon"><span class=" glyphicon glyphicon-barcode"></span></span>
-	                			<input type="text" class="form-control" id="inputUPC" placeholder="Enter the barcode on your drink bottle">
+	                			<input type="text" class="form-control" id="inputUPC" placeholder="Enter the barcode on your bottle">
 				          	</div>
-				          	<br/>
-				            <div class="form-group text-center">
+				          	<div class="form-group text-center">
 	        					<p><a href="#">What is a UPC code?</a></p>
 	        				</div>
+				          	<label for="inputUPC" class="control-label">Price:</label>
+				            <div class="input-group">
+				            	<span class="input-group-addon"><span class=" glyphicon glyphicon-usd"></span></span>
+	                			<input type="text" class="form-control" id="inputPrice" placeholder="Enter the price of your bottle">
+
+				          	</div>
+				          	<br/>
 				        </form>
 	      			</fieldset>
       			</div>
