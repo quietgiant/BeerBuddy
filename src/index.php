@@ -107,8 +107,9 @@
 
 	<!-- page contents -->
 	<div class="container-fluid">
+		<h2 style="text-align: center; margin-top: -5px; text-decoration: underline">Deals near you</h2>
 	    
-	    <div class="row" style="margin-top:-10px;">
+	    <div class="row" style="margin-top:-5px;">
 
 			<div id="search"></div>
 

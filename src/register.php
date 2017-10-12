@@ -74,10 +74,10 @@
 
           <!-- password entry 2 -->
           <div class="form-group">
-            <label for="inputPasswordConfirm" class="control-label">Password (one more time)</label>
+            <label for="inputPasswordConfirm" class="control-label">Password</label>
             <div class="input-group">
               <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
-              <input type="password" data-minlength="6" class="form-control" id="inputPasswordConfirm" placeholder="Password" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" required>
+              <input type="password" data-minlength="6" class="form-control" id="inputPasswordConfirm" placeholder="Password (one more time)" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" required>
             </div>
             <div class="help-block with-errors"></div>
           </div>
