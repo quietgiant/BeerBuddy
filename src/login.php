@@ -44,10 +44,10 @@
             </div>
           </div>
           <div class="form-group">
-            <button class="btn btn-md btn-primary btn-block" style="width:67%; margin-left:auto; margin-right:auto;" type="submit"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign in</button>
+            <button class="btn btn-md btn-primary btn-block" style="width:67%; margin-left:auto; margin-right:auto;" type="submit">Sign in&nbsp;<span class="glyphicon glyphicon-log-in"></span></button>
           </div>
           <div class="form-group">
-              <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset"><span class="glyphicon glyphicon-trash"></span>&nbsp;Clear</button>
+              <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
           </div>
           <div class="form-group text-center ">
             <p>Forgot your password? <a href="/src/help/recoverPassword.php ">Click here</a></p>

@@ -29,7 +29,7 @@
 
       <!-- register form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
-        <form data-toggle="validator" role="form">
+        <form data-toggle="validator" role="form" id="registerForm">
           <h2 class="form-signin-heading">Create new account</h2>
 
           <!-- email address -->
@@ -82,14 +82,14 @@
             <div class="help-block with-errors"></div>
           </div>
           
-          <!-- submit button -->
+          <!-- submit form button -->
           <div class="form-group">
-            <button class="btn btn-md btn-primary btn-block" id="submitButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit"><span class="glyphicon glyphicon-new-window"></span>&nbsp;Sign up</button>
+            <button class="btn btn-md btn-primary btn-block" id="submitButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit">Sign up&nbsp;<span class="glyphicon glyphicon-new-window"></span></button>
           </div>
 
-          <!-- clear button -->
+          <!-- clear form button -->
           <div class="form-group">
-              <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset"><span class="glyphicon glyphicon-trash"></span>&nbsp;Clear</button>
+              <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
           </div>
           <div class="form-group text-center ">
             <p>Already have an account? <a href="/src/login.php">Click here</a></p>

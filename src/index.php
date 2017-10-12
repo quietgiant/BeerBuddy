@@ -16,8 +16,7 @@
 	<!-- custom styles -->
 	<link href="../res/styles/index.css" rel="stylesheet">
 	<link href="../res/styles/navigation_header.css" rel="stylesheet">
-	<!-- api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
-	<script type="text/javascript" src="js/map.js"></script>
+	<!-- google api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
 	<script type="text/javascript">
 
 		var map; // google map canvas 

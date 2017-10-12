@@ -31,7 +31,7 @@
   					<label class="control-label">How can we make BeerBuddy better for you?</label>
   					<textarea class="form-control" rows="10" id="comment"></textarea>
   				</div>
-  				<button class="btn btn-lg btn-primary btn-block " style="width:250px; margin-left:auto; margin-right:auto;" type="submit "><span class="glyphicon glyphicon-send"></span>&nbsp;Submit</button>
+  				<button class="btn btn-lg btn-primary btn-block " style="width:250px; margin-left:auto; margin-right:auto;" type="submit ">Submit&nbsp;<span class="glyphicon glyphicon-send"></span></button>
   			</form>
   		</div>
       
