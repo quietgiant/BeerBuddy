@@ -1,14 +1,13 @@
 /* index page styles */
 
-body 
-{
-  margin: 0px;
-  padding: 0px;
+body {
+	margin: 0px;
+	padding: 0px;
 }
 
-#map
-{
-	float: right;
-	height: 500px;
-	width: 95%;
+#map {
+	width: 90%;
+	height: 450px;
+	margin-left: auto;
+	margin-right: auto;
 }

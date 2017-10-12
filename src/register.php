@@ -29,36 +29,65 @@
 
       <!-- register form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
-        <form class="form-signin" id="registerForm">
+        <form data-toggle="validator" role="form">
           <h2 class="form-signin-heading">Create new account</h2>
+
+          <!-- email address -->
           <div class="form-group">
-            <label class="control-label" for="email" class="sr-only ">Email address</label>
-            <input type="email" id="email " class="form-control " placeholder="Email address " required autofocus>
+              <label for="inputEmail" class="control-label">Email address</label>
+              <div class="input-group">
+                <span class="input-group-addon"><span class=" glyphicon glyphicon-envelope"></span></span>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Your email address" data-error="Check that address!" required>
+              </div>
+              <div class="help-block with-errors"></div>
           </div>
+
+          <!-- display name -->
+          <div class="form-group has-feedback">
+              <label for="inputName" class="control-label">Display name (used for posts)</label>
+              <div class="input-group">
+                <span class="input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
+                <input type="text" pattern="^[_A-z0-9 ]{1,}$" maxlength="20" class="form-control" id="inputName" placeholder="Your display name" required>
+              </div>
+              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+              <div class="help-block with-errors"></div>
+            </div>
+
+            <!-- datepicker for user's birthday -->
+            <div class="form-group">
+              <label class="control-label" for="dob">Birthday</label>
+			        <div class="input-group date" id="dob" data-provide="datepicker">
+                <span class="input-group-addon"><span class=" glyphicon glyphicon-th"></span></span>
+                <input type="text" class="form-control" placeholder="Your birthday">
+              </div>
+            </div>
+
+          <!-- password entry 1 -->
           <div class="form-group">
-            <label class="control-label" for="displayName " class="sr-only ">Display name (used for posts)</label>
-            <input type="text" id="displayName " class="form-control " placeholder="Your display name" required>
+            <label for="inputPassword" class="control-label">Password</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+            </div>
+            <div class="help-block with-errors"></div>
           </div>
+
+          <!-- password entry 2 -->
           <div class="form-group">
-            <label class="control-label " for="dob" class="sr-only ">Birthday</label>
-			<div class="input-group date" id="dob" data-provide="datepicker">
-			    <input type="text" class="form-control" placeholder="Your birthday">
-			    <div class="input-group-addon">
-			        <span class="glyphicon glyphicon-th"></span>
-			    </div>
-			</div>
+            <label for="inputPasswordConfirm" class="control-label">Password (one more time)</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <input type="password" data-minlength="6" class="form-control" id="inputPasswordConfirm" placeholder="Password" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" required>
+            </div>
+            <div class="help-block with-errors"></div>
           </div>
-          <div class="form-group ">
-            <label class="control-label " for="pass" class="sr-only ">Password</label>
-            <input type="password" id="pass " class="form-control " placeholder="Password " required>
-          </div>
-          <div class="form-group">
-            <label class="control-label " for="confirmPass" class="sr-only ">Confirm password</label>
-            <input type="password" id="confirmPass" class="form-control " placeholder="Password (one more time)" required>
-          </div>
+          
+          <!-- submit button -->
           <div class="form-group">
             <button class="btn btn-md btn-primary btn-block" id="submitButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit"><span class="glyphicon glyphicon-new-window"></span>&nbsp;Sign up</button>
           </div>
+
+          <!-- clear button -->
           <div class="form-group">
               <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset"><span class="glyphicon glyphicon-trash"></span>&nbsp;Clear</button>
           </div>
@@ -73,26 +102,27 @@
     <!-- footer -->
     <?php $page='register'; include('footer.php'); ?>
 
-
     <!-- jQuery core js -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- bootstrap core js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- datepicker for bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
-	<!-- date picker for birthday options -->
-	<script>
-		$('#dob').datepicker({
-			autoclose: true
-		});
-	</script>
-	<!-- clear form script -->
+    <!-- date picker for birthday options -->
     <script>
-		$('#clearButton').click(function(){
-            $('#registerForm')[0].reset();
- 		});
-	</script>
+    	$('#dob').datepicker({
+    		autoclose: true
+    	});
+    </script>
+    <!-- clear form script -->
+      <script>
+    	$('#clearButton').click(function(){
+              $('#registerForm')[0].reset();
+    		});
+    </script>
+    <!-- validator js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
 
-  </body>
+</body>
 
 </html>

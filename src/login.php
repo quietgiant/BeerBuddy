@@ -30,12 +30,18 @@
         <form class=" form-signin" id="loginForm">
           <h2 class="form-signin-heading ">Sign in</h2>
           <div class="form-group">
-            <label class="control-label " for="email" class="sr-only ">Email address</label>
-            <input type="email" id="email" class="form-control " placeholder="Email address" required autofocus>
+            <label class="control-label " for="email">Email address</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
+              <input type="email" id="email" class="form-control " placeholder="Email address" required autofocus>
+            </div>
           </div>
           <div class="form-group ">
-            <label class="control-label " for="pass" class="sr-only ">Password</label>
-            <input type="password" id= "pass" class="form-control " placeholder="Password" required>
+            <label class="control-label " for="pass">Password</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <input type="password" id= "pass" class="form-control" placeholder="Password" required>
+            </div>
           </div>
           <div class="form-group">
             <button class="btn btn-md btn-primary btn-block" style="width:67%; margin-left:auto; margin-right:auto;" type="submit"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Sign in</button>
