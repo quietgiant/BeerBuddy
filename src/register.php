@@ -30,7 +30,7 @@
       <!-- register form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
         <form data-toggle="validator" role="form" id="registerForm">
-          <h2 class="form-signin-heading">Create new account</h2>
+          <h2 class="form-heading">Create new account</h2>
 
           <!-- email address -->
           <div class="form-group">
@@ -115,10 +115,10 @@
     	});
     </script>
     <!-- clear form script -->
-      <script>
+    <script>
     	$('#clearButton').click(function(){
-              $('#registerForm')[0].reset();
-    		});
+        $('#registerForm')[0].reset();
+    	});
     </script>
     <!-- validator js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>

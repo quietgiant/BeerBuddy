@@ -1,16 +1,12 @@
-/* post deal page styles */
+/* search page styles */
 
 .formBox {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	padding-left: 30px;
-	padding-right: 30px;
 	border: 1px solid black;
 	border-radius: 20px;
 }
 
-.middleBox {
+.form-heading {
 	text-align: center;
-	margin-top: 50%;
-	margin-bottom: 50%;
 }

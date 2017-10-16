@@ -116,6 +116,8 @@
 			<!-- begin map -->
 			<div id="map"></div>
 			<!-- end map -->
+
+			<a href="view_deals.php">view deals (will be on sidebar)</a>
 			
 	    </div>
 

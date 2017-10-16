@@ -28,7 +28,7 @@
       <!-- login form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
         <form class=" form-signin" id="loginForm">
-          <h2 class="form-signin-heading ">Sign in</h2>
+          <h2 class="form-heading">Sign in</h2>
           <div class="form-group">
             <label class="control-label " for="email">Email address</label>
             <div class="input-group">
@@ -67,9 +67,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- clear form script -->
     <script>
-		$('#clearButton').click(function(){
-        	$('#loginForm')[0].reset();
- 		});
+  		$('#clearButton').click(function(){
+          	$('#loginForm')[0].reset();
+   		});
 	</script>
 
   </body>
