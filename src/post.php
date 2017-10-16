@@ -63,7 +63,7 @@ $(document).ready(function(){
 				        	<label for="inputName" class="control-label">Bottle Name:</label>
 				            <div class="input-group">
 				            	<span class="input-group-addon"><span class=" glyphicon glyphicon-text"></span></span>
-	                			<input type="text" class="form-control" id="inputName" placeholder="Enter the barcode on your bottle">
+	                			<input type="text" class="form-control" id="inputName" placeholder="Enter the name on your bottle">
 				          	</div><br/><br/>
 				          	<label for="inputNamePrice" class="control-label">Price:</label>
 				            <div class="input-group">

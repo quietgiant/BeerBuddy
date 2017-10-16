@@ -26,12 +26,13 @@
 		function initMap() {
 			// init map in fort wayne
 			var fw = { lat: 41.0793, lng: -85.1394 }
+			var def_zoom = 13
 			map = new google.maps.Map(document.getElementById('map'), {
           		center: fw,
-          		zoom: 15,
+          		zoom: def_zoom,
           		streetViewControl: false,
           		mapTypeControl: false,
-          		minZoom: 10
+          		minZoom: 8
           		//noClear = true // do not clear the map div elements
         	});
 
@@ -48,7 +49,7 @@
 					var request = {location: userLocation, radius: 16000, types: ['liquor_store']};
 
 					map.setCenter(userLocation);
-		            map.setZoom(15);
+		            map.setZoom(def_zoom);
 
 		            // filter for liquor stores
 					resultsWindow = new google.maps.InfoWindow();
@@ -127,29 +128,25 @@
             <div class="col-lg-12">
                 <h3 class="page-header">Featured deals today</h3>
             </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive featured-deal" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive featured-deal" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive featured-deal" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive featured-deal" src="http://placehold.it/500x300" alt="">
-                </a>
+            
+            <div class="container" style="margin-left: auto; margin-right: auto;">
+	            <div class="col-sm-4">
+	                <a href="https://www.belmontbev.com/about-belmont/our-newspaper-ads/">
+	                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAM6AAAAJDhmN2YzOWQ5LWMyODAtNGUzMi04MzEyLTFhNDUwMTBlMTg4MA.png" class="img-responsive feature-deal" alt="Belmont Beverages">
+	                </a>
+	            </div>
+	            
+	            <div class="col-sm-4">
+	                <a href="http://www.capncork.com/specials/">
+	                    <img src="http://www.capncork.com/wp-content/uploads/2014/05/2.jpg" class="img-responsive feature-deal" alt="Cap 'n' Cork">
+	                </a>
+	            </div>
+	
+	            <div class="col-sm-4">
+	                <a href="http://www.svliquors.com/sales-ad.html">
+	                    <img src="https://pbs.twimg.com/profile_images/839125470780149760/765_PWFQ.jpg" class="img-responsive feature-deal" alt="S&V Liquors">
+	                </a>
+	            </div>
             </div>
 
         </div>
