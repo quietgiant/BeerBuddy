@@ -69,28 +69,26 @@
 		function callback(results, status) {
 	        if (status === google.maps.places.PlacesServiceStatus.OK) {
 	          for (var i = 0; i < results.length; i++) {
-	            createMarker(results[i]);
+	            createMarker(results[i], results[i].name, results[i].vicinity);
 	          }
 	        }
 	      }
-
-	    function createMarker(place) {
+	    function createMarker(place, storeName, storeAddress) {
 	var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
     });
-
     var request = { reference: place.reference };
     service.getDetails(request, function(place, status) {
       google.maps.event.addListener(marker, 'click', function() {
-        resultsWindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-          'Place ID: ' + place.place_id + '<br>' +
-          '<a href="https://www.google.com/maps/place/'+ place.formatted_address + '">View Directions</a>'
+        resultsWindow.setContent('<div><strong>' + storeName + '</strong><br>' +
+          '<a href="https://www.google.com/maps/place/'+ storeAddress + '" target="_blank">View Directions</a>'
           + '</div>');
         resultsWindow.open(map, this);
       });
     });
+
 	      }
 
 
