@@ -119,6 +119,9 @@ var placeLoc = place.geometry.location;
 .sideBar div {
 	margin-bottom: 10px
 }
+.sideBar {
+	margin-top: 10%
+}
 .formBox {
     padding-top: 20px;
     padding-bottom: 20px;
