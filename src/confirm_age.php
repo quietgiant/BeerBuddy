@@ -107,78 +107,13 @@ var placeLoc = place.geometry.location;
 
 </head>
 
-<body onload="checkCookie();">
+<body onload="//openAgeModal();">
 
 	<!-- top navigation bar -->
 	<?php $page='index'; include('navigation_header.php'); ?>
 
 	<!-- page contents -->
-	<div class="container-fluid">
-	<style type="text/css">
-		
-.sideBar div {
-	margin-bottom: 10px
-}
-.formBox {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border: 1px solid black;
-}
-	</style>	
-	    <div class="col-md-10 col-xs-12">
-        	<h2 style="text-align: center; text-decoration: underline">Deals near you</h2>
-        </div>
-	    <div class="row" >
-
-			<div id="search"></div>
-            <div class="col-md-10 col-xs-12">
-    			<!-- begin map -->
-    			<div id="map"></div>
-    			<!-- end map -->
-            </div>
-            <div class="col-md-2 col-xs-12 sideBar">
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-default" onclick="location.href ='search.php'">Search</button>
-                </div>
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-default" onclick="location.href ='view_deals.php'">View Deals</button>
-                </div>
-            </div>
-		
-			
-	    </div>
-
-		<!-- featured deals?/new deals? row -->
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h3 class="page-header">Featured deals today</h3>
-            </div>
-            
-            <div class="container" style="margin-left: auto; margin-right: auto;">
-	            <div class="col-sm-4">
-	                <a href="https://www.belmontbev.com/about-belmont/our-newspaper-ads/" target="_blank">
-	                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAM6AAAAJDhmN2YzOWQ5LWMyODAtNGUzMi04MzEyLTFhNDUwMTBlMTg4MA.png" class="img-responsive feature-deal" alt="Belmont Beverages">
-	                </a>
-	            </div>
-	            
-	            <div class="col-sm-4">
-	                <a href="http://www.capncork.com/specials/" target="_blank">
-	                    <img src="http://www.capncork.com/wp-content/uploads/2014/05/2.jpg" class="img-responsive feature-deal" alt="Cap 'n' Cork">
-	                </a>
-	            </div>
-	
-	            <div class="col-sm-4">
-	                <a href="http://www.svliquors.com/sales-ad.html" target="_blank">
-	                    <img src="https://pbs.twimg.com/profile_images/839125470780149760/765_PWFQ.jpg" class="img-responsive feature-deal" alt="S&V Liquors">
-	                </a>
-	            </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
+	<div class="container-fluid">	
 
 	</div>
 
