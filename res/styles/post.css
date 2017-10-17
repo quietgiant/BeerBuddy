@@ -10,7 +10,7 @@
 }
 
 .middleBox {
-	text-align: center;
-	margin-top: 50%;
-	margin-bottom: 50%;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
 }

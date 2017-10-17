@@ -75,7 +75,7 @@
 	      }
 
 	    function createMarker(place) {
-var placeLoc = place.geometry.location;
+	var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
@@ -107,46 +107,32 @@ var placeLoc = place.geometry.location;
 
 </head>
 
-<body onload="checkCookie();">
+<body onload="//checkCookie();">
 
 	<!-- top navigation bar -->
 	<?php $page='index'; include('navigation_header.php'); ?>
 
 	<!-- page contents -->
 	<div class="container-fluid">
-	<style type="text/css">
-		
-.sideBar div {
-	margin-bottom: 10px
-}
-.sideBar {
-	margin-top: 10%
-}
-.formBox {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border: 1px solid black;
-}
-	</style>	
-	    <div class="col-md-10 col-xs-12">
-        	<h2 style="text-align: center; text-decoration: underline">Deals near you</h2>
-        </div>
-	    <div class="row" >
 
-			<div id="search"></div>
-            <div class="col-md-10 col-xs-12">
+        <h2 id="header">Deals near you</h2>
+        
+	    <div class="row" id="canvas">
+
+            <div class="col-md-10 col-xs-12" id="mapContainer">
     			<!-- begin map -->
     			<div id="map"></div>
     			<!-- end map -->
             </div>
-            <div class="col-md-2 col-xs-12 sideBar">
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-primary" onclick="location.href ='search.php'">Search</button>
-                </div>
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-primary" onclick="location.href ='view_deals.php'">View Deals</button>
+            
+            <div class="sideBar bg-info col-md-2 col-xs-12">
+            	<div class="sideBarButtons">
+	                <div class="col-md-12">
+	                    <button type="button" class="btn btn-primary btn-block" onclick="location.href ='search.php'">Search Deals</button>
+	                </div>
+	                <div class="col-md-12">
+	                    <button type="button" class="btn btn-primary btn-block" onclick="location.href ='view_deals.php'">View Deals</button>
+	                </div>
                 </div>
             </div>
 		
@@ -160,7 +146,7 @@ var placeLoc = place.geometry.location;
                 <h3 class="page-header">Featured deals today</h3>
             </div>
             
-            <div class="container" style="margin-left: auto; margin-right: auto;">
+            <div class="container features">
 	            <div class="col-sm-4">
 	                <a href="https://www.belmontbev.com/about-belmont/our-newspaper-ads/" target="_blank">
 	                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAM6AAAAJDhmN2YzOWQ5LWMyODAtNGUzMi04MzEyLTFhNDUwMTBlMTg4MA.png" class="img-responsive feature-deal" alt="Belmont Beverages">

@@ -28,20 +28,16 @@
     <?php $page='post'; include('navigation_header.php'); ?>
 
     <!-- page contents -->
+    <div class="container-fluid" style="margin-bottom: 20px;">
 
-    <div class="container-fluid">
+      <h1 style="text-align: center; font-size: 3em">Post a deal&nbsp;<span class="glyphicon glyphicon-map-marker"></span></h1>
 
-    <h1 style="text-align: center; font-size: 3em">Post a deal&nbsp;<span class="glyphicon glyphicon-map-marker"></span></h1>
-
-    	<!-- split page into two sides, left and right -->
-		<div class="modal-body row">
-
-			<!-- enter drink information form -->
-			<div class="col-md-5">
-		     <div class="container-fluid formBox">
-    			<fieldset>
-        			<legend>Enter bottle name and price</legend>
-			        <form data-toggle="validator" role="form" id="manualForm">
+  
+  			<!-- enter drink information form -->
+  		  <div class="container-fluid formBox col-xs-12 col-md-5">
+      		<fieldset>
+        		<legend>Enter bottle name and price</legend>
+  			    <form data-toggle="validator" role="form" id="manualForm">
 			          
                 <!-- liquor type field -->
                 <div class="form-group">
@@ -86,31 +82,29 @@
 			            	<span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
                 		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="Price of your bottle">
 			          	</div>
-			          <div>
-			          
+			          </div>
+
 			          <!-- location field -->
 			          <div class="form-group">
                   <label for="inputLocation" class="control-label">Purchase location:</label>
                   <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
-                    <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="What store did you buy it at?">
+                    <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="Where did you get it?">
                   </div>
                 </div>
                 
 			        </form>
       			</fieldset>
     			</div>
-    		</div>
 
-		<div class="col-md-2">
+		<div class="col-xs-12 col-md-2">
 			<div class="container-fluid middleBox">
 				<h2>or</h2>
 			</div>
 		</div>
 
 		<!-- enter drink upc form -->
-			<div class="col-md-5">
-				<div class="container-fluid formBox">
+				<div class="container-fluid formBox col-xs-12 col-md-5">
     			<fieldset>
         			<legend>Enter drink UPC and price</legend>
         			
@@ -120,7 +114,7 @@
 			          <div class="form-group">
 				        	<label for="inputUPC" class="control-label">UPC:</label>
 				          <div class="input-group">
-				            <span class="input-group-addon"><span class=" glyphicon glyphicon-barcode"></span></span>
+				            <span class="input-group-addon"><span class="glyphicon glyphicon-barcode"></span></span>
 	                	<input type="text" class="form-control" id="inputUPC" name="inputUPC" placeholder="Barcode on your bottle">
 				          </div>
 			          </div>
@@ -134,7 +128,7 @@
         				<div class="form-group">
 				          <label for="inputPriceUPC" class="control-label">Price:</label>
 				          <div class="input-group">
-				            <span class="input-group-addon"><span class=" glyphicon glyphicon-usd"></span></span>
+				            <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
 	                	<input type="text" class="form-control" id="inputPriceUPC" name="inputPriceUPC" placeholder="Price of your bottle">
 				          </div>
 			          </div>
@@ -144,19 +138,18 @@
                   <label for="inputLocationUPC" class="control-label">Purchase location:</label>
                   <div class="input-group">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
-                    <input type="text" class="form-control" id="inputLocationUPC" name="inputLocationUPC" placeholder="What store did you buy it at?">
+                    <input type="text" class="form-control" id="inputLocationUPC" name="inputLocationUPC" placeholder="Where did you get it?">
                   </div>
                 </div>
                 
 			        </form>
       			</fieldset>
     			</div>
-			</div>
 
 		</div>
 		
 
-		<!-- submit form button -->
+		  <!-- submit form button -->
         <div class="form-group">
         	<button class="btn btn-md btn-primary btn-block" id="submitButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit">Submit post&nbsp;<span class="glyphicon glyphicon-send"></span></button>
         </div>
