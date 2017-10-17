@@ -20,19 +20,17 @@ function openAgeModal(){
 function over21(){
   var d = new Date();
     d.setTime(d.getTime() + (30*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-  document.cookie = "age=over21;" + expires + ";path=/";
+  document.cookie = "age=over21;" + ";path=/";
 	// add code to cooking this response.
 	$('#ageModal').modal('hide');
 }
 function under21(){
   var d = new Date();
     d.setTime(d.getTime() + (30*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-  document.cookie = "age=under21;" + expires + ";path=/";
+  document.cookie = "age=under21;" + ";path=/";
 	// add code to cooking this response.
 	$('#ageModal').modal('hide');
-	window.location = "under_age.php";
+	window.location = "exit.php";
 }
 
 function checkCookie() {
@@ -41,7 +39,7 @@ function checkCookie() {
 	    // do nothing
 	    break;
 	  case 'under21':
-	    window.location = "under_age.php"
+	    window.location = "exit.php"
 	    break;
 	  default:
 	    openAgeModal()

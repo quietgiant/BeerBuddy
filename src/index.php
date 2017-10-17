@@ -107,7 +107,7 @@
 
 </head>
 
-<body onload="//checkCookie();">
+<body onload="checkCookie();">
 
 	<!-- top navigation bar -->
 	<?php $page='index'; include('navigation_header.php'); ?>
@@ -128,10 +128,10 @@
             <div class="sideBar bg-info col-md-2 col-xs-12">
             	<div class="sideBarButtons">
 	                <div class="col-md-12">
-	                    <button type="button" class="btn btn-primary btn-block" onclick="location.href ='search.php'">Search Deals</button>
+	                    <button type="button" class="btn btn-primary btn-block" onclick="location.href ='search.php'">Search deals</button>
 	                </div>
 	                <div class="col-md-12">
-	                    <button type="button" class="btn btn-primary btn-block" onclick="location.href ='view_deals.php'">View Deals</button>
+	                    <button type="button" class="btn btn-primary btn-block" onclick="location.href ='view_deals.php'">View deals</button>
 	                </div>
                 </div>
             </div>
