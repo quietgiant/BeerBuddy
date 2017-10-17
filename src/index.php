@@ -137,19 +137,19 @@ var placeLoc = place.geometry.location;
             
             <div class="container" style="margin-left: auto; margin-right: auto;">
 	            <div class="col-sm-4">
-	                <a href="https://www.belmontbev.com/about-belmont/our-newspaper-ads/">
+	                <a href="https://www.belmontbev.com/about-belmont/our-newspaper-ads/" target="_blank">
 	                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAM6AAAAJDhmN2YzOWQ5LWMyODAtNGUzMi04MzEyLTFhNDUwMTBlMTg4MA.png" class="img-responsive feature-deal" alt="Belmont Beverages">
 	                </a>
 	            </div>
 	            
 	            <div class="col-sm-4">
-	                <a href="http://www.capncork.com/specials/">
+	                <a href="http://www.capncork.com/specials/" target="_blank">
 	                    <img src="http://www.capncork.com/wp-content/uploads/2014/05/2.jpg" class="img-responsive feature-deal" alt="Cap 'n' Cork">
 	                </a>
 	            </div>
 	
 	            <div class="col-sm-4">
-	                <a href="http://www.svliquors.com/sales-ad.html">
+	                <a href="http://www.svliquors.com/sales-ad.html" target="_blank">
 	                    <img src="https://pbs.twimg.com/profile_images/839125470780149760/765_PWFQ.jpg" class="img-responsive feature-deal" alt="S&V Liquors">
 	                </a>
 	            </div>

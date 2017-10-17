@@ -58,20 +58,20 @@
 
                   <!-- brewery/brand field -->
                   <div class="form-group">
-                      <label for="brand" class="control-label">Brand/brewery</label>
-                      <input type="text" class="form-control" id="brand" name="brand" placeholder="Brand or brewery">
+                      <label for="brand" class="control-label">Brand/brewery:</label>
+                      <input type="text" class="form-control" id="brandBeer" name="brandBeer" placeholder="Brand or brewery">
                   </div>
 
                   <!-- name field -->
                   <div class="form-group">
-                      <label for="name" class="control-label">Name of drink</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Name of drink">
+                      <label for="name" class="control-label">Name of drink:</label>
+                      <input type="text" class="form-control" id="nameBeer" name="nameBeer" placeholder="Name of drink">
                   </div>
 
                   <!-- price range slider -->
                   <div class="form-group">
-                    <label for="priceRangeBeer" class="control-label">Maximum price: $<span id="priceRangeBeerValue">&nbsp;-</span><br>
-                    <input id="priceRangeBeer" type="text" data-slider-min="0" data-slider-max="30" data-slider-step="1" data-slider-value="0"/>
+                    <label id="pv" for="priceRangeBeer" class="control-label">Maximum price: $<span id="priceRangeBeerValue">&nbsp;-</span><br>
+                    <input id="priceRangeBeer" type="text" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="0"/>
                   </div>
 
                   <!-- submit form button -->
@@ -81,7 +81,7 @@
 
                   <!-- clear form button -->
                   <div class="form-group">
-                      <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
+                      <button class="btn btn-md btn-primary btn-danger btn-block" id="clearBeerButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
                   </div>
 
                 </form>
@@ -99,8 +99,8 @@
 
                   <!-- liquor type field -->
                   <div class="form-group">
-                    <label for="type" class="control-label">Type of liquor</label>
-                    <select class="combobox form-control">
+                    <label for="type" class="control-label">Type of liquor:</label>
+                    <select class="combobox form-control" id="typeBooze" name="typeBooze">
                       <option></option>
                       <option value="all">ALL</option>
                       <option value="brandy">Brandy</option>
@@ -116,20 +116,20 @@
 
                   <!-- brand field -->
                   <div class="form-group">
-                      <label for="brand" class="control-label">Brand</label>
-                      <input type="text" class="form-control" id="brand" name="brand" placeholder="Brand of liquor">
+                      <label for="brand" class="control-label">Brand:</label>
+                      <input type="text" class="form-control" id="brandBooze" name="brandBooze" placeholder="Brand of liquor">
                   </div>
 
                   <!-- name field -->
                   <div class="form-group">
-                      <label for="name" class="control-label">Name of drink</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Name of liquor">
+                      <label for="name" class="control-label">Name of drink:</label>
+                      <input type="text" class="form-control" id="nameBooze" name="nameBooze" placeholder="Name of liquor">
                   </div>
 
                   <!-- price range slider -->
                   <div class="form-group">
                     <label for="priceRangeBooze" class="control-label">Maximum price: $<span id="priceRangeBoozeValue">&nbsp;-</span><br>
-                    <input id="priceRangeBooze" type="text" data-slider-min="0" data-slider-max="30" data-slider-step="1" data-slider-value="0"/>
+                    <input id="priceRangeBooze" type="text" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="0"/>
                   </div>
 
                   <!-- submit form button -->
@@ -139,7 +139,7 @@
 
                   <!-- clear form button -->
                   <div class="form-group">
-                      <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
+                      <button class="btn btn-md btn-primary btn-danger btn-block" id="clearBoozeButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
                   </div>
 
                 </form>
@@ -169,8 +169,13 @@
     <script type="text/javascript" src="js/search.js"></script>
     <!-- clear form script -->
     <script>
-      $('#clearButton').click(function(){
-        $('#')[0].reset();
+      $('#clearBeerButton').click(function(){
+        $('#priceRangeBeer').slider('setValue', 0);
+        $('#priceRangeBeerValue').text(' -');
+      });
+      $('#clearBoozeButton').click(function(){
+        $('#priceRangeBooze').slider('setValue', 0);
+        $('#priceRangeBoozeValue').text(' -');
       });
     </script>
     <!-- init combo-box script -->

@@ -31,94 +31,127 @@
 
     <div class="container-fluid">
 
-    	<h1 style="text-align: center; font-size: 3em">Post a Price&nbsp;<span class="glyphicon glyphicon-glass"></span></h1>
+    <h1 style="text-align: center; font-size: 3em">Post a deal&nbsp;<span class="glyphicon glyphicon-map-marker"></span></h1>
 
     	<!-- split page into two sides, left and right -->
 		<div class="modal-body row">
 
 			<!-- enter drink information form -->
-  			<div class="col-md-5">
-			        <div class="container-fluid formBox">
-	    			<fieldset>
-	        			<legend>Enter bottle name and price</legend>
-				        <form data-toggle="validator" role="form" id="upcForm">
-                  <!-- liquor type field -->
-                  <div class="form-group">
-                    <label for="type" class="control-label">Type of liquor:</label>
-                    <select class="combobox form-control">
-                      <option></option>
-                      <option value="all">ALL</option>
-                      <option value="brandy">Brandy</option>
-                      <option value="gin">Gin</option>
-                      <option value="liqueur">Liqueur</option>
-                      <option value="rum">Rum</option>
-                      <option value="tequila">Tequila</option>
-                      <option value="vodka">Vodka</option>
-                      <option value="whiskey">Whiskey</option>
-                      <option value="wine">Wine</option>
-                    </select>
+			<div class="col-md-5">
+		     <div class="container-fluid formBox">
+    			<fieldset>
+        			<legend>Enter bottle name and price</legend>
+			        <form data-toggle="validator" role="form" id="manualForm">
+			          
+                <!-- liquor type field -->
+                <div class="form-group">
+                  <label for="inputType" class="control-label">Type of liquor:</label>
+                  <select class="combobox form-control" id="inputType" name="inputType">
+                    <option></option>
+                    <option value="all">ALL</option>
+                    <option value="beer">Beer</option>
+                    <option value="brandy">Brandy</option>
+                    <option value="gin">Gin</option>
+                    <option value="liqueur">Liqueur</option>
+                    <option value="rum">Rum</option>
+                    <option value="tequila">Tequila</option>
+                    <option value="vodka">Vodka</option>
+                    <option value="whiskey">Whiskey</option>
+                    <option value="wine">Wine</option>
+                  </select>
+                </div>
+                
+                <!-- brand field -->
+                <div class="form-group">
+                  <label for="inputBrand" class="control-label">Brand:</label>
+                  <div class="input-group">
+			            	<span class="input-group-addon"><span class="glyphicon glyphicon-copyright-mark"></span></span>
+                    <input type="text" class="form-control" id="inputBrand" name="inputBrand" placeholder="Brand of liquor">
                   </div>
-                   <div class="form-group">
-                      <label for="inputNamebrand" class="control-label">Brand:</label>
-                      <input type="text" class="form-control" id="inputNamebrand" name="inputNamebrand" placeholder="Brand of liquor">
-                  </div>
+                </div>
 
-                  <!-- name field -->
-                  <div class="form-group">
-                      <label for="inputName" class="control-label">Name of drink:</label>
-                      <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name of liquor">
+                <!-- name field -->
+                <div class="form-group">
+                  <label for="inputName" class="control-label">Name of drink:</label>
+                  <div class="input-group">
+			            	<span class="input-group-addon"><span class="glyphicon glyphicon-glass"></span></span>
+                    <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name of liquor">
                   </div>
-				          	<label for="inputNamePrice" class="control-label">Price:</label>
-				            <div class="input-group">
-				            	<span class="input-group-addon"><span class=" glyphicon glyphicon-usd"></span></span>
-	                			<input type="text" class="form-control" id="inputNamePrice" placeholder="Enter the price of your bottle">
-				          	</div>
-				          	<br/>
-				          	<div class="form-group">
-                      <label for="inputNameAddress" class="control-label">Address:</label>
-                      <input type="text" class="form-control" id="inputNameAddress" name="inputNameAddress" placeholder="Address of store">
+                </div>
+                
+                <!-- price field -->
+                <div class="form-group">
+			          	<label for="inputPrice" class="control-label">Price:</label>
+			            <div class="input-group">
+			            	<span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="Price of your bottle">
+			          	</div>
+			          <div>
+			          
+			          <!-- location field -->
+			          <div class="form-group">
+                  <label for="inputLocation" class="control-label">Purchase location:</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                    <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="What store did you buy it at?">
                   </div>
-				          	<br/>
-				        </form>
-	      			</fieldset>
-      			</div>
-      			</div>
+                </div>
+                
+			        </form>
+      			</fieldset>
+    			</div>
+    		</div>
 
-			<div class="col-md-2">
-				<div class="container-fluid middleBox">
-					<h2>or</h2>
-				</div>
+		<div class="col-md-2">
+			<div class="container-fluid middleBox">
+				<h2>or</h2>
 			</div>
+		</div>
 
-			<!-- enter drink upc form -->
-  			<div class="col-md-5">
-  				<div class="container-fluid formBox">
-	    			<fieldset>
-	        			<legend>Enter drink UPC and a price</legend>
-				        <form data-toggle="validator" role="form" id="upcForm">
+		<!-- enter drink upc form -->
+			<div class="col-md-5">
+				<div class="container-fluid formBox">
+    			<fieldset>
+        			<legend>Enter drink UPC and price</legend>
+        			
+			        <form data-toggle="validator" role="form" id="upcForm">
+			          
+			          <!-- UPC field -->
+			          <div class="form-group">
 				        	<label for="inputUPC" class="control-label">UPC:</label>
-				            <div class="input-group">
-				            	<span class="input-group-addon"><span class=" glyphicon glyphicon-barcode"></span></span>
-	                			<input type="text" class="form-control" id="inputUPC" placeholder="Enter the barcode on your bottle">
-				          	</div>
-				          	<div class="form-group text-center">
+				          <div class="input-group">
+				            <span class="input-group-addon"><span class=" glyphicon glyphicon-barcode"></span></span>
+	                	<input type="text" class="form-control" id="inputUPC" name="inputUPC" placeholder="Barcode on your bottle">
+				          </div>
+			          </div>
+			          <div class="form-group">
+				          <div class="form-group text-center">
 	        					<p><a href="#">What is a UPC code?</a></p>
 	        				</div>
-				          	<label for="inputUPCPrice" class="control-label">Price:</label>
-				            <div class="input-group">
-				            	<span class="input-group-addon"><span class=" glyphicon glyphicon-usd"></span></span>
-	                			<input type="text" class="form-control" id="inputUPCPrice" placeholder="Enter the price of your bottle">
-
-				          	</div>
-				          	<br/>
-				          	<div class="form-group">
-                      <label for="upcAddress" class="control-label">Address:</label>
-                      <input type="text" class="form-control" id="upcAddress" name="upcAddress" placeholder="Address of store">
+        				</div>
+        				
+        				<!-- price field -->
+        				<div class="form-group">
+				          <label for="inputPriceUPC" class="control-label">Price:</label>
+				          <div class="input-group">
+				            <span class="input-group-addon"><span class=" glyphicon glyphicon-usd"></span></span>
+	                	<input type="text" class="form-control" id="inputPriceUPC" name="inputPriceUPC" placeholder="Price of your bottle">
+				          </div>
+			          </div>
+			          
+			          <!-- location field -->
+		          	<div class="form-group">
+                  <label for="inputLocationUPC" class="control-label">Purchase location:</label>
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                    <input type="text" class="form-control" id="inputLocationUPC" name="inputLocationUPC" placeholder="What store did you buy it at?">
                   </div>
-				        </form>
-	      			</fieldset>
-      			</div>
-  			</div>
+                </div>
+                
+			        </form>
+      			</fieldset>
+    			</div>
+			</div>
 
 		</div>
 		
@@ -144,14 +177,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- validator js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
-    
-    <!-- clear form script -->
-    
-      <script>
-    	$('#clearButton').click(function(){
-              $('#manualForm')[0].reset();
-              $('upcForm')[0].reset();
-    		});
+    <!-- boostrap combo-box js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/js/bootstrap-combobox.min.js"></script>
+    <!-- post js -->
+    <script type="text/javascript" src="js/post.js"></script>
+    <!-- init combo-box script -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.combobox').combobox();
+      });
     </script>
 
   </body>

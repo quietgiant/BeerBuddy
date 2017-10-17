@@ -11,6 +11,8 @@ $nav = "
         <span class=\"icon-bar\"></span>
       </button>
       <a class=\"navbar-brand\" href=\"/src/index.php\">BeerBuddy</a>
+      <img class=\"navbar-brand\" src=\"/res/img/icon.png\" href=\"/src/index.php\" alt=\"BeerBuddy\">
+            
     </div>
     <div id=\"navbar\" class=\"navbar-collapse collapse\">
       <ul class=\"nav navbar-nav\">
