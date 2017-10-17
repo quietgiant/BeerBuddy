@@ -140,10 +140,10 @@ var placeLoc = place.geometry.location;
             </div>
             <div class="col-md-2 col-xs-12 sideBar">
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-default" onclick="location.href ='search.php'">Search</button>
+                    <button type="button" class="btn btn-primary" onclick="location.href ='search.php'">Search</button>
                 </div>
                 <div class="col-md-12">
-                    <button type="button" class="btn btn-default" onclick="location.href ='view_deals.php'">View Deals</button>
+                    <button type="button" class="btn btn-primary" onclick="location.href ='view_deals.php'">View Deals</button>
                 </div>
             </div>
 		
