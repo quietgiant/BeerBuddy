@@ -14,30 +14,12 @@
     <!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/post.css" rel="stylesheet">
-<script type="text/javascript">
-$(document).ready(function(){
-    // Defining the local dataset
-    var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
-    
-    // Constructing the suggestion engine
-    var cars = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.whitespace,
-        queryTokenizer: Bloodhound.tokenizers.whitespace,
-        local: cars
-    });
-    
-    // Initializing the typeahead
-    $('.typeahead').typeahead({
-        hint: true,
-        highlight: true, /* Enable substring highlighting */
-        minLength: 1 /* Specify minimum characters required for showing result */
-    },
-    {
-        name: 'cars',
-        source: cars
-    });
-});  
-</script>
+    <!-- AnimateCSS css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <!-- boostrap slider css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
+    <!-- boostrap combo-box css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/css/bootstrap-combobox.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -60,17 +42,42 @@ $(document).ready(function(){
 	    			<fieldset>
 	        			<legend>Enter bottle name and price</legend>
 				        <form data-toggle="validator" role="form" id="upcForm">
-				        	<label for="inputName" class="control-label">Bottle Name:</label>
-				            <div class="input-group">
-				            	<span class="input-group-addon"><span class=" glyphicon glyphicon-text"></span></span>
-	                			<input type="text" class="form-control" id="inputName" placeholder="Enter the name on your bottle">
-				          	</div><br/><br/>
+                  <!-- liquor type field -->
+                  <div class="form-group">
+                    <label for="type" class="control-label">Type of liquor:</label>
+                    <select class="combobox form-control">
+                      <option></option>
+                      <option value="all">ALL</option>
+                      <option value="brandy">Brandy</option>
+                      <option value="gin">Gin</option>
+                      <option value="liqueur">Liqueur</option>
+                      <option value="rum">Rum</option>
+                      <option value="tequila">Tequila</option>
+                      <option value="vodka">Vodka</option>
+                      <option value="whiskey">Whiskey</option>
+                      <option value="wine">Wine</option>
+                    </select>
+                  </div>
+                   <div class="form-group">
+                      <label for="inputNamebrand" class="control-label">Brand:</label>
+                      <input type="text" class="form-control" id="inputNamebrand" name="inputNamebrand" placeholder="Brand of liquor">
+                  </div>
+
+                  <!-- name field -->
+                  <div class="form-group">
+                      <label for="inputName" class="control-label">Name of drink:</label>
+                      <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name of liquor">
+                  </div>
 				          	<label for="inputNamePrice" class="control-label">Price:</label>
 				            <div class="input-group">
 				            	<span class="input-group-addon"><span class=" glyphicon glyphicon-usd"></span></span>
 	                			<input type="text" class="form-control" id="inputNamePrice" placeholder="Enter the price of your bottle">
-
 				          	</div>
+				          	<br/>
+				          	<div class="form-group">
+                      <label for="inputNameAddress" class="control-label">Address:</label>
+                      <input type="text" class="form-control" id="inputNameAddress" name="inputNameAddress" placeholder="Address of store">
+                  </div>
 				          	<br/>
 				        </form>
 	      			</fieldset>
@@ -104,6 +111,10 @@ $(document).ready(function(){
 
 				          	</div>
 				          	<br/>
+				          	<div class="form-group">
+                      <label for="upcAddress" class="control-label">Address:</label>
+                      <input type="text" class="form-control" id="upcAddress" name="upcAddress" placeholder="Address of store">
+                  </div>
 				        </form>
 	      			</fieldset>
       			</div>
@@ -133,7 +144,9 @@ $(document).ready(function(){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- validator js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+    
     <!-- clear form script -->
+    
       <script>
     	$('#clearButton').click(function(){
               $('#manualForm')[0].reset();

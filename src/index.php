@@ -22,7 +22,7 @@
 		var map; // google map canvas 
 		var locationWindow // window for current location
 		var resultsWindow; // window for filtering results
-
+		var service;
 		function initMap() {
 			// init map in fort wayne
 			var fw = { lat: 41.0793, lng: -85.1394 }
@@ -53,7 +53,7 @@
 
 		            // filter for liquor stores
 					resultsWindow = new google.maps.InfoWindow();
-			        var service = new google.maps.places.PlacesService(map);
+			         service = new google.maps.places.PlacesService(map);
 			        service.nearbySearch(request, callback);
 	        	}, 
 	        	function() {
@@ -75,16 +75,22 @@
 	      }
 
 	    function createMarker(place) {
-	    	var placeLoc = place.geometry.location;
-	    	var marker = new google.maps.Marker({
-	        	map: map,
-	        	position: place.geometry.location
-	        });
+var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
 
-	        google.maps.event.addListener(marker, 'click', function() {
-	        	resultsWindow.setContent(place.name);
-	        	resultsWindow.open(map, this);
-	        });
+    var request = { reference: place.reference };
+    service.getDetails(request, function(place, status) {
+      google.maps.event.addListener(marker, 'click', function() {
+        resultsWindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+          'Place ID: ' + place.place_id + '<br>' +
+          '<a href="https://www.google.com/maps/place/'+ place.formatted_address + '">View Directions</a>'
+          + '</div>');
+        resultsWindow.open(map, this);
+      });
+    });
 	      }
 
 
