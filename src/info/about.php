@@ -27,8 +27,28 @@
       <!-- about us -->
       <div class="container-fluid">
         
-        <h1>About Us</h1>
-        <p>A modern web application that enables users to share beer and liquor prices after visiting local liquor providers.</p>
+        <h1 style= "text-align: center;">Meet Our Founders</h1>
+        <table style= "text-align: center;">
+    <tbody>
+              <tr>
+            <td><h4>Amrit Banwait</h4></td>
+            <td><h4>Kurtis Taylor</h4></td>
+            <td><h4>James Gould</h4></td>
+        </tr>
+        <tr>
+            <td><img style="border-radius: 20%;" src="/res/img/AmritBanwait.jpg" alt="Picture of Amrit Banwait" width="200x" height="50px" /></td>
+             <td><img style="border-radius: 20%;" src="/res/img/KurtisTaylor.jpg" alt="Picture of Kurtis Taylor" width="50px" height="50px" /></td>
+             <td><img style="border-radius: 20%;" src="/res/img/Jimmy.jpg" alt="Picture of James Gould" width="50px" height="50px" /></td>
+
+        </tr>
+        <tr>
+            <td><p> Information System major, Computer Science <br/>and Business minor. SDI IT intern.</p></td>
+            <td><p> Information System major, Computer Science <br/>and Business minor. SDI IT intern.</p></td>
+            <td><p> Information System major, Computer Science <br/>and Business minor. SDI IT intern.</p></td>            
+        </tr>
+    </tbody>
+</table>
+        
 
       </div>
 
