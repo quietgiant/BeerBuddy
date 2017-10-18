@@ -3,3 +3,9 @@
 h4 {
     text-align: center;
 }
+
+img {
+    border-radius: 15%;
+    margin-left: 10%;
+    margin-right: auto;
+}

@@ -34,24 +34,24 @@
           <div class="row">
             <div class="col-md-4">
               <h4>Amrit Banwait</h4>
-              <img style="border-radius: 15%;" src="/res/img/AmritBanwait.jpg" alt="Picture of Amrit Banwait" width="100%" height="420px"/>
+              <img src="/res/img/AmritBanwait.jpg" alt="Picture of Amrit Banwait" width="80%" height="420px"/>
             </div>
           
             <div class="col-md-4">
               <h4>Jimmy Gould</h4>
-              <img style="border-radius: 15%;" src="/res/img/JimmyGould.jpg" alt="Picture of Jimmy Gould" width="100%" height="420px"/>
+              <img src="/res/img/JimmyGould.jpg" alt="Picture of Jimmy Gould" width="80%" height="420px"/>
             </div>
 
             <div class="col-md-4">
               <h4>Kurtis Taylor</h4>
-              <img style="border-radius: 15%;" src="/res/img/KurtisTaylor.jpg" alt="Picture of Kurtis Taylor" width="100%" height="420px"/>
+              <img src="/res/img/KurtisTaylor.jpg" alt="Picture of Kurtis Taylor" width="80%" height="420px"/>
             </div>
           </div>
 
           <div class="row">
                 
             <div class="col-md-4">         
-            <h5>Currently pursuing b.s/m.s degress with a concentration in software development.<br><br>
+              <h5>Currently pursuing b.s/m.s degress with a concentration in software development.<br><br>
               My favorite thing about software programming is the ability to turn nothing in to something.</h5>
             </div>
 
@@ -66,10 +66,8 @@
               Fact: My favorite programming spot is the Foo Bar.</h5>
             </div>
             
-              </div>
           </div>
         </div>
-
       </div>
 
     </div>

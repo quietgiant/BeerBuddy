@@ -104,6 +104,7 @@
                       <option></option>
                       <option value="all">ALL</option>
                       <option value="brandy">Brandy</option>
+                      <option value="bourbon">Bourbon</option>
                       <option value="gin">Gin</option>
                       <option value="liqueur">Liqueur</option>
                       <option value="rum">Rum</option>
