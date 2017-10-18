@@ -12,7 +12,8 @@
     <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
     <!-- custom styles -->
-    <link href="../res/styles/navigation_header.css" rel="stylesheet">
+    <link href="../../res/styles/about.css" rel="stylesheet">
+
 
   </head>
 
@@ -27,28 +28,47 @@
       <!-- about us -->
       <div class="container-fluid">
         
-        <h1 style= "text-align: center;">Meet Our Founders</h1>
-        <table style= "text-align: center;">
-    <tbody>
-              <tr>
-            <td><h4>Amrit Banwait</h4></td>
-            <td><h4>Kurtis Taylor</h4></td>
-            <td><h4>James Gould</h4></td>
-        </tr>
-        <tr>
-            <td><img style="border-radius: 20%;" src="/res/img/AmritBanwait.jpg" alt="Picture of Amrit Banwait" width="200x" height="50px" /></td>
-             <td><img style="border-radius: 20%;" src="/res/img/KurtisTaylor.jpg" alt="Picture of Kurtis Taylor" width="50px" height="50px" /></td>
-             <td><img style="border-radius: 20%;" src="/res/img/Jimmy.jpg" alt="Picture of James Gould" width="50px" height="50px" /></td>
-
-        </tr>
-        <tr>
-            <td><p> Information System major, Computer Science <br/>and Business minor. SDI IT intern.</p></td>
-            <td><p> Information System major, Computer Science <br/>and Business minor. SDI IT intern.</p></td>
-            <td><p> Information System major, Computer Science <br/>and Business minor. SDI IT intern.</p></td>            
-        </tr>
-    </tbody>
-</table>
+        <h1 style="text-align: center;">Meet the developers</h1>
         
+        <div class="container" id="info">
+          <div class="row">
+            <div class="col-md-4">
+              <h4>Amrit Banwait</h4>
+              <img style="border-radius: 15%;" src="/res/img/AmritBanwait.jpg" alt="Picture of Amrit Banwait" width="100%" height="420px"/>
+            </div>
+          
+            <div class="col-md-4">
+              <h4>Jimmy Gould</h4>
+              <img style="border-radius: 15%;" src="/res/img/JimmyGould.jpg" alt="Picture of Jimmy Gould" width="100%" height="420px"/>
+            </div>
+
+            <div class="col-md-4">
+              <h4>Kurtis Taylor</h4>
+              <img style="border-radius: 15%;" src="/res/img/KurtisTaylor.jpg" alt="Picture of Kurtis Taylor" width="100%" height="420px"/>
+            </div>
+          </div>
+
+          <div class="row">
+                
+            <div class="col-md-4">         
+            <h5>Currently pursuing b.s/m.s degress with a concentration in software development.<br><br>
+              My favorite thing about software programming is the ability to turn nothing in to something.</h5>
+            </div>
+
+            <div class="col-md-4">
+              <h5>Information System major, Computer Science and Business minor. SDI IT intern.<br><br>
+              Interests: Guns, computers, cars, video games<br><br>
+              Fact: I’ve seen a volcano erupt</h5>
+            </div>
+            
+            <div class="col-md-4">
+              <h5>Mostly interested in networking, cryptography, bitcoin and the evolving crypto-economy, algorithm design, and artificial intelligence. In general, I am interested in cool stuff that computers can do.<br><br>
+              Fact: My favorite programming spot is the Foo Bar.</h5>
+            </div>
+            
+              </div>
+          </div>
+        </div>
 
       </div>
 
