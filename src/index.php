@@ -75,20 +75,20 @@
 	        }
 	      }
 	    function createMarker(place, storeName, storeAddress) {
-	var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location
-    });
-    var request = { reference: place.reference };
-    service.getDetails(request, function(place, status) {
-      google.maps.event.addListener(marker, 'click', function() {
-        resultsWindow.setContent('<div><strong>' + storeName + '</strong><br>' +
-          '<a href="https://www.google.com/maps/place/'+ storeAddress + '" target="_blank">View Directions</a>'
-          + '</div>');
-        resultsWindow.open(map, this);
-      });
-    });
+			var placeLoc = place.geometry.location;
+		    var marker = new google.maps.Marker({
+		      map: map,
+		      position: place.geometry.location
+		    });
+		    var request = { reference: place.reference };
+		    service.getDetails(request, function(place, status) {
+		      google.maps.event.addListener(marker, 'click', function() {
+		        resultsWindow.setContent('<div><strong>' + storeName + '</strong><br>' +
+		          '<a href="https://www.google.com/maps/place/'+ storeAddress + '" target="_blank">View Directions</a><br>'
+		          + '<button type="button">View deals here</button></div>');
+		        resultsWindow.open(map, this);
+		      });
+		    });
 
 	      }
 
