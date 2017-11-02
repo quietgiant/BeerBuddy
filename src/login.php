@@ -3,7 +3,7 @@
 
   <head>
 
-    <link rel="page icon" href="../res/img/beer.ico" />
+    <link rel="page icon" href="/res/img/beer.ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,7 +12,7 @@
     <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
     <!-- custom styles -->
-    <link href="../res/styles/navigation_header.css" rel="stylesheet">
+    <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
 
   </head>
@@ -20,7 +20,7 @@
   <body>
 
     <!-- top navigation bar -->
-    <?php $page='login'; include('navigation_header.php'); ?>
+    <?php $page='login'; include('navigation_header_user.php'); ?>
 
     <!-- page contents-->
     <div class="container-fluid">

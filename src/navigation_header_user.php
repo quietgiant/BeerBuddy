@@ -33,8 +33,7 @@ $nav = "
         </li>
       </ul>
       <ul class=\"nav navbar-nav navbar-right\">
-        <li class=\"".($class = ($page == 'login') ? 'active' : '')."\"><a href=\"/src/login.php\"><span class=\"glyphicon glyphicon-log-in\"></span>&nbsp;Sign In</a></li>
-        <li class=\"".($class = ($page == 'register') ? 'active' : '')."\"><a href=\"/src/register.php\"><span class=\"glyphicon glyphicon-new-window\"></span>&nbsp;Sign Up</a></li>
+        <li><a>Hello user!&nbsp;<span class=\"glyphicon glyphicon-ok\"></span></a></li>
       </ul>
     </div>
   </div>

@@ -1,9 +1,26 @@
+<?php
+  // if form was submitted, check for error    
+  if (isset($_POST["signup"])) {
+    
+    if (empty($_POST["name"]) ||
+    	empty($_POST["email"]) || 
+      empty($_POST["password1"]) ||
+      empty($_POST["password2"]) ||
+      empty($_POST["gender"]) || 
+      empty($_POST["year"]) ||
+      empty($_POST["agreement"])) {
+        $error = true;
+      }
+      
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
 
-    <link rel="page icon" href="../res/img/beer.ico" />
+    <link rel="page icon" href="/res/img/beer.ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -14,7 +31,7 @@
     <!-- datepicker css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" rel="stylesheet">
     <!-- custom styles -->
-    <link href="../res/styles/navigation_header.css" rel="stylesheet">
+    <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
 
   </head>
@@ -29,15 +46,19 @@
 
       <!-- register form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
-        <form data-toggle="validator" role="form" id="registerForm">
+        <form data-toggle="validator" action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" role="form" id="registerForm">
           <h2 class="form-heading">Create new account</h2>
 
           <!-- email address -->
           <div class="form-group">
-              <label for="inputEmail" class="control-label">Email address</label>
+              <label for="email" class="control-label">Email address</label>
               <div class="input-group">
                 <span class="input-group-addon"><span class=" glyphicon glyphicon-envelope"></span></span>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Your email address" data-error="Check that address!" required>
+                <?php if (isset($_POST["email"])): ?>
+                  <input type="email" class="form-control" id="email" value="<?= htmlspecialchars($_POST["email"]) ?>" data-error="Check that address!" required>
+                <?php else: ?>
+                  <input type="email" class="form-control" id="email" placeholder="Your email address" data-error="Check that address!" required>
+                <?php endif ?>                
               </div>
               <div class="help-block with-errors"></div>
           </div>

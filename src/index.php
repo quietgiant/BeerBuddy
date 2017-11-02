@@ -3,7 +3,7 @@
 
 <head>
 
-	<link rel="page icon" href="../res/img/beer.ico" />
+	<link rel="page icon" href="/res/img/beer.ico" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,10 +12,12 @@
 	<!-- bootstrap core css -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
 	<!-- font awesome css-->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- google lobster font -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	<!-- custom styles -->
-	<link href="../res/styles/index.css" rel="stylesheet">
-	<link href="../res/styles/navigation_header.css" rel="stylesheet">
+	<link href="/res/styles/index.css" rel="stylesheet">
+	<link href="/res/styles/navigation_header.css" rel="stylesheet">
 	<!-- google api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
 	<script type="text/javascript">
 
@@ -114,7 +116,7 @@
 	<!-- page contents -->
 	<div class="container-fluid">
 
-        <h2 id="header">Deals near you</h2>
+        <h2 id="title-bar">Deals near you</h2>
         
 	    <div class="row" id="canvas">
 
