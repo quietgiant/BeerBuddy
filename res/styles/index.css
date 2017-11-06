@@ -58,6 +58,11 @@ body {
 	margin-bottom: 10%;
 }
 
+#feature-title {
+	font-family: 'Lobster', cursive;
+	font-size: 36px;
+}
+
 .features {
 	margin-left: auto; 
 	margin-right: auto;

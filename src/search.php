@@ -11,8 +11,8 @@
 
     <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-    <!-- AnimateCSS css -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+    <!-- animate css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <!-- boostrap slider css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- boostrap combo-box css -->
@@ -34,7 +34,7 @@
       <!-- search functions -->
       <div class="container-fluid">
 
-        <h2 style="text-align: center">What sounds good to drink tonight?</h2>
+        <h2 class="animated lightSpeedIn" style="text-align: center">What sounds good to drink tonight?</h2>
           
         <div class="container formBox">
 
@@ -48,7 +48,7 @@
           <div class="tab-content">
 
             <!-- beer pane -->
-            <div class="tab-pane active" id="beer">
+            <div class="tab-pane active animated flipInY" id="beer">
               <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
 
                 <!-- beer search form -->
@@ -89,7 +89,7 @@
             </div>
 
             <!-- booze pane -->
-            <div class="tab-pane" id="booze">
+            <div class="tab-pane animated flipInY" id="booze">
               <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
 
                 <!-- booze search form -->
@@ -168,6 +168,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
     <!-- search js -->
     <script type="text/javascript" src="js/search.js"></script>
+    
     <!-- clear form script -->
     <script>
       $('#clearBeerButton').click(function(){
@@ -179,13 +180,14 @@
         $('#priceRangeBoozeValue').text(' -');
       });
     </script>
+    
     <!-- init combo-box script -->
     <script type="text/javascript">
       $(document).ready(function(){
         $('.combobox').combobox();
       });
     </script>
-
+    
   </body>
 
 </html>

@@ -11,6 +11,8 @@
 
 	<!-- bootstrap core css -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
+	<!-- animate css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 	<!-- font awesome css-->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<!-- google lobster font -->
@@ -116,9 +118,9 @@
 	<!-- page contents -->
 	<div class="container-fluid">
 
-        <h2 id="title-bar">Deals near you</h2>
+        <h2 class="animated fadeInLeft" id="title-bar">Deals near you</h2>
         
-	    <div class="row" id="canvas">
+	    <div class="row animated fadeInRight" id="canvas">
 
             <div class="col-md-10 col-xs-12" id="mapContainer">
     			<!-- begin map -->
@@ -144,10 +146,10 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header">Featured deals today</h3>
+                <h3 class="page-header animated fadeInRight" id="feature-title">Featured deals today</h3>
             </div>
             
-            <div class="container features">
+            <div class="container features animated fadeInLeft">
 	            <div class="col-sm-4">
 	                <a href="https://www.belmontbev.com/about-belmont/our-newspaper-ads/" target="_blank">
 	                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAM6AAAAJDhmN2YzOWQ5LWMyODAtNGUzMi04MzEyLTFhNDUwMTBlMTg4MA.png" class="img-responsive feature-deal" alt="Belmont Beverages">

@@ -11,15 +11,16 @@
 
     <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-    <!-- custom styles -->
-    <link href="../res/styles/navigation_header.css" rel="stylesheet">
-    <link href="../res/styles/post.css" rel="stylesheet">
-    <!-- AnimateCSS css -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+	  <!-- animate css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <!-- boostrap slider css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- boostrap combo-box css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/css/bootstrap-combobox.min.css" rel="stylesheet">
+    <!-- custom styles -->
+    <link href="../res/styles/navigation_header.css" rel="stylesheet">
+    <link href="../res/styles/post.css" rel="stylesheet">
+    
   </head>
 
   <body>
@@ -30,11 +31,11 @@
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">
 
-      <h1 style="text-align: center; font-size: 3em">Post a deal&nbsp;<span class="glyphicon glyphicon-map-marker"></span></h1>
+      <h1 class="animated jello" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span class="glyphicon glyphicon-map-marker"></span></h1>
 
   
   			<!-- enter drink information form -->
-  		  <div class="container-fluid formBox col-xs-12 col-md-5">
+  		  <div class="container-fluid formBox col-xs-12 col-md-5 animated bounceInLeft">
       		<fieldset>
         		<legend>Enter bottle name and price</legend>
   			    <form data-toggle="validator" role="form" id="manualForm">
@@ -104,7 +105,7 @@
 		</div>
 
 		<!-- enter drink upc form -->
-				<div class="container-fluid formBox col-xs-12 col-md-5">
+				<div class="container-fluid formBox col-xs-12 col-md-5 animated bounceInRight">
     			<fieldset>
         			<legend>Enter drink UPC and price</legend>
         			
@@ -174,12 +175,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/js/bootstrap-combobox.min.js"></script>
     <!-- post js -->
     <script type="text/javascript" src="js/post.js"></script>
+    
     <!-- init combo-box script -->
     <script type="text/javascript">
       $(document).ready(function(){
         $('.combobox').combobox();
       });
     </script>
+    
+        
+    <!-- google establishments (liquor stores) autocomplete js -->
+    <script type="text/javascript">
+    function initMap() {
+        var input = document.getElementById('inputLocation');
+        var options = {
+          types: ['establishment']
+        };
+
+        var autocomplete = new google.maps.places.Autocomplete(input, options);
+        autocomplete.setOptions({strictBounds: true})
+
+      }
+      
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+    
+    <!-- google maps js api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
 
   </body>
 
