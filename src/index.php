@@ -110,17 +110,18 @@
 	     
 		function createInfoWindowContent(storeName, storeAddress) {
 			var content = 
-				'<table border="1" style="width: 100%">' +
+				'<table border="0" style="width: 100%">' +
 					'<tr>' +
-						'<td>Store:</td>' +
-						'<td>' + storeName + '</td>' +
+						'<td align="center">' + storeName + '</td>' +
 					'</tr>' +
 					'<tr>' +
-						'<td>Address:</td>' +
-						'<td>' + storeAddress + '<a href="https://www.google.com/maps/place/'+ storeAddress + '" target="_blank">&nbsp;(view directions)</a></td>' +
+						'<td align="center">' + storeAddress + '</td>'+
+					'</tr>' +
+					'<tr>'+
+					'<td align="center">'+'<a href="https://www.google.com/maps/place/'+ storeAddress + '" target="_blank">&nbsp;(view directions)</a></td>' +
 					'</tr>' +
 				'</table><br>' +
-				'<a href="/src/view_deals.php"><button type="button" class="btn btn-success center-block">View deals at ' + storeName + '</button></a>';
+				'<a href="/src/view_deals.php"><button type="button" class="btn btn-primary center-block" >View deals at ' + storeName + '</button></a>';
 				
 			return content;
 		}
