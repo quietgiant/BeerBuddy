@@ -29,16 +29,29 @@
 		var service;
 		function initMap() {
 			// init map in fort wayne
-			var fw = { lat: 41.0793, lng: -85.1394 }
-			var def_zoom = 13
+			var fw = { lat: 41.0793, lng: -85.1394 };
+			var def_zoom = 13;
 			map = new google.maps.Map(document.getElementById('map'), {
           		center: fw,
-          		zoom: def_zoom,
+          		zoom: 5,
           		streetViewControl: false,
           		mapTypeControl: false,
-          		minZoom: 8
+          		fullscreenControl: false,
+          		zoomControl: true,
+          		minZoom: 3
           		//noClear = true // do not clear the map div elements
         	});
+        	
+        	var input = document.getElementById("card-input");
+        	var options = {
+        		types: ['address', 'geocode']
+        	}
+        	
+        	map.controls[google.maps.ControlPosition.TOP_LEFT].push(document.getElementById("card"));
+
+    		var autocomplete = new google.maps.places.Autocomplete(input, options);
+    		autocomplete.setOptions({strictBounds: true})
+    		autocomplete.bindTo('bounds', map);
 
         	// try to determine the current position based on device location
 			var userLocation;
@@ -48,6 +61,7 @@
 		            	lat: position.coords.latitude,
 		            	lng: position.coords.longitude
 		            };
+        			
 		            locationWindow = new google.maps.InfoWindow({map: map, position: userLocation, content: 'You are here!'});
 
 					var request = {location: userLocation, radius: 16000, types: ['liquor_store']};
@@ -57,7 +71,7 @@
 
 		            // filter for liquor stores
 					resultsWindow = new google.maps.InfoWindow();
-			         service = new google.maps.places.PlacesService(map);
+			        service = new google.maps.places.PlacesService(map);
 			        service.nearbySearch(request, callback);
 	        	}, 
 	        	function() {
@@ -73,11 +87,11 @@
 		function callback(results, status) {
 	        if (status === google.maps.places.PlacesServiceStatus.OK) {
 	          for (var i = 0; i < results.length; i++) {
-	          	
-	            createMarker(results[i], results[i].name, results[i].vicinity);
+	        	createMarker(results[i], results[i].name, results[i].vicinity);
 	          }
 	        }
-	      }
+	    }
+	      
 	    function createMarker(place, storeName, storeAddress) {
 			var placeLoc = place.geometry.location;
 		    var marker = new google.maps.Marker({
@@ -87,15 +101,29 @@
 		    var request = { reference: place.reference };
 		    service.getDetails(request, function(place, status) {
 		      google.maps.event.addListener(marker, 'click', function() {
-		        resultsWindow.setContent('<div><strong>' + storeName + '</strong><br>' +
-		          '<a href="https://www.google.com/maps/place/'+ storeAddress + '" target="_blank">View Directions</a><br>'
-		          + '<button type="button">View deals here</button></div>');
+		        resultsWindow.setContent(createInfoWindowContent(storeName, storeAddress));
 		        resultsWindow.open(map, this);
 		      });
 		    });
 
-	      }
-
+	    }
+	     
+		function createInfoWindowContent(storeName, storeAddress) {
+			var content = 
+				'<table border="1" style="width: 100%">' +
+					'<tr>' +
+						'<td>Store:</td>' +
+						'<td>' + storeName + '</td>' +
+					'</tr>' +
+					'<tr>' +
+						'<td>Address:</td>' +
+						'<td>' + storeAddress + '<a href="https://www.google.com/maps/place/'+ storeAddress + '" target="_blank">&nbsp;(view directions)</a></td>' +
+					'</tr>' +
+				'</table><br>' +
+				'<a href="/src/view_deals.php"><button type="button" class="btn btn-success center-block">View deals at ' + storeName + '</button></a>';
+				
+			return content;
+		}
 
 		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	       	infoWindow.setPosition(pos);
@@ -123,6 +151,14 @@
 	    <div class="row animated fadeInRight" id="canvas">
 
             <div class="col-md-10 col-xs-12" id="mapContainer">
+    			<div id="card" class="card">
+			    	<div id="card-title">
+			        	<p>&nbsp;Search elsewhere</p>
+			        </div>
+			    	<div id="card-content">
+			     		<input type="text" id="card-input" placeholder="Enter a location">
+			     	</div>
+			    </div>
     			<!-- begin map -->
     			<div id="map"></div>
     			<!-- end map -->

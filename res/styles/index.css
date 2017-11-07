@@ -10,7 +10,7 @@ body {
 
 #title-bar {
 	font-family: 'Lobster', cursive;
-	text-align: center; 
+	text-align: center;
 	text-decoration: underline;
 	margin-top: 0px;
 	font-size: 48px;
@@ -35,7 +35,7 @@ body {
 
 .feature-deal {
 	width: 400px;
-	height: 300px; 
+	height: 300px;
 	border: 1px solid black;
 	margin-left: 2%;
 	margin-right: 2%;
@@ -64,17 +64,55 @@ body {
 }
 
 .features {
-	margin-left: auto; 
+	margin-left: auto;
 	margin-right: auto;
 }
 
+.card {
+	margin-top: 10px;
+	margin-left: 10px;
+	border: 2px solid black;
+	width: 350px;
+}
+
+#card-title {
+	background-color: #4582ec;
+}
+
+#card-title p {
+	font-family: 'Lobster', cursive;
+	font-size: 24px;
+	font-weight: normal;
+	color: white;
+	margin-bottom: 0px;
+}
+
+#card-content {
+	background-color: #fff;
+}
+
+#card-input {
+	background-color: #fff;
+	text-overflow: ellipsis;
+	font-size: 16px;
+	width: 336px;
+	height: 30px;
+	margin: 5px 5px 5px 5px;
+}
+
+#card-input:focus {
+	border-color: #4582ec;
+}
+
 /* for mobile */
+
 /* if width is less than 992px, decrease side bar height*/
+
 @media only screen and (max-width: 992px) {
-    .sideBar {
+	.sideBar {
 		height: 40%;
 	}
-	
+
 	.sideBar div {
 		margin-bottom: 5%;
 	}

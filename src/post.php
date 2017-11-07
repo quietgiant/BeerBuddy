@@ -37,7 +37,7 @@
   			<!-- enter drink information form -->
   		  <div class="container-fluid formBox col-xs-12 col-md-5 animated bounceInLeft">
       		<fieldset>
-        		<legend>Enter bottle name and price</legend>
+        		<legend>Enter drink information</legend>
   			    <form data-toggle="validator" role="form" id="manualForm">
 			          
                 <!-- liquor type field -->
@@ -63,7 +63,7 @@
                   <label for="inputBrand" class="control-label">Brand:</label>
                   <div class="input-group">
 			            	<span class="input-group-addon"><span class="glyphicon glyphicon-copyright-mark"></span></span>
-                    <input type="text" class="form-control" id="inputBrand" name="inputBrand" placeholder="Brand of liquor">
+                    <input type="text" class="form-control typeahead" id="inputBrand" name="inputBrand" placeholder="Brand of liquor">
                   </div>
                 </div>
 
@@ -173,6 +173,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
     <!-- boostrap combo-box js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/js/bootstrap-combobox.min.js"></script>
+    <!-- google maps js api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
     <!-- post js -->
     <script type="text/javascript" src="js/post.js"></script>
     
@@ -193,7 +195,7 @@
         };
 
         var autocomplete = new google.maps.places.Autocomplete(input, options);
-        autocomplete.setOptions({strictBounds: true})
+        autocomplete.setOptions({strictBounds: true});
 
       }
       
@@ -214,8 +216,18 @@
       }
     </script>
     
-    <!-- google maps js api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
+    <script>
+      $(document).ready(function(){
+          $("#search").typeahead({
+              name : 'sear',
+              remote: {
+                  url : 'connection.php?query=%QUERY'
+              }
+              
+          });
+      });
+      </script>
+    
 
   </body>
 
