@@ -33,7 +33,13 @@
     <!-- custom styles -->
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
+    <style>
+      .mytext{
+        color:gold;
+          background-color: #354C5C;
+      }
 
+    </style>
   </head>
 
   <body>
@@ -53,7 +59,7 @@
           <div class="form-group">
               <label for="email" class="control-label">Email address</label>
               <div class="input-group">
-                <span class="input-group-addon"><span class=" glyphicon glyphicon-envelope"></span></span>
+                <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-envelope"></span></span>
                 <?php if (isset($_POST["email"])): ?>
                   <input type="email" class="form-control" id="email" value="<?= htmlspecialchars($_POST["email"]) ?>" data-error="Check that address!" required>
                 <?php else: ?>
@@ -67,7 +73,7 @@
           <div class="form-group has-feedback">
               <label for="inputName" class="control-label">Display name (used for posts)</label>
               <div class="input-group">
-                <span class="input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
+                <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
                 <input type="text" pattern="^[_A-z0-9 ]{1,}$" maxlength="20" class="form-control" id="inputName" placeholder="Your display name" required>
               </div>
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -78,7 +84,7 @@
             <div class="form-group">
               <label class="control-label" for="dob">Birthday</label>
 			        <div class="input-group date" id="dob" data-provide="datepicker">
-                <span class="input-group-addon"><span class=" glyphicon glyphicon-th"></span></span>
+                <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-th"></span></span>
                 <input type="text" class="form-control" placeholder="Your birthday">
               </div>
             </div>
@@ -87,7 +93,7 @@
           <div class="form-group">
             <label for="inputPassword" class="control-label">Password</label>
             <div class="input-group">
-              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
               <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
             </div>
             <div class="help-block with-errors"></div>
@@ -97,7 +103,7 @@
           <div class="form-group">
             <label for="inputPasswordConfirm" class="control-label">Password</label>
             <div class="input-group">
-              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
               <input type="password" data-minlength="6" class="form-control" id="inputPasswordConfirm" placeholder="Password (one more time)" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" required>
             </div>
             <div class="help-block with-errors"></div>

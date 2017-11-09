@@ -14,6 +14,12 @@
     <!-- custom styles -->
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
+    <style>
+      .mytext{
+        color:gold;
+        background-color: #354C5C;
+      }
+    </style>
 
   </head>
 
@@ -32,14 +38,14 @@
           <div class="form-group">
             <label class="control-label " for="email">Email address</label>
             <div class="input-group">
-              <span class="input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
+              <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
               <input type="email" id="email" class="form-control " placeholder="Email address" required autofocus>
             </div>
           </div>
           <div class="form-group ">
             <label class="control-label " for="pass">Password</label>
             <div class="input-group">
-              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
               <input type="password" id= "pass" class="form-control" placeholder="Password" required>
             </div>
           </div>

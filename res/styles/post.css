@@ -8,7 +8,10 @@
 	border: 1px solid black;
 	border-radius: 20px;
 }
-
+  .mytext{
+    color:gold;
+      background-color: #354C5C;
+  }
 .middleBox {
 	display: flex;
   	align-items: center;

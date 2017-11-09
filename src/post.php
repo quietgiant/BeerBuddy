@@ -20,7 +20,17 @@
     <!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/post.css" rel="stylesheet">
-    
+    <!--css for dropdown color-->
+  <style>
+    .mytext{
+      color:gold;
+        background-color: #354C5C;
+    }
+    .input-group-addon.dropdown-toggle{
+      color:gold;
+      background-color: #354C5C;
+    }
+  </style>
   </head>
 
   <body>
@@ -31,7 +41,7 @@
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">
 
-      <h1 class="animated jello" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span class="glyphicon glyphicon-map-marker"></span></h1>
+      <h1 class="animated jello" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span style = "border-left-radius: 25px;color: gold; background-color: #354C5C;" class="glyphicon glyphicon-map-marker"></span></h1>
 
   
   			<!-- enter drink information form -->
@@ -42,7 +52,7 @@
 			          
                 <!-- liquor type field -->
                 <div class="form-group">
-                  <label for="inputType" class="control-label">Type of liquor:</label>
+                  <label for="inputType" class="control-label" >Type of liquor:</label>
                   <select class="combobox form-control" id="inputType" name="inputType">
                     <option></option>
                     <option value="all">ALL</option>
@@ -62,7 +72,7 @@
                 <div class="form-group">
                   <label for="inputBrand" class="control-label">Brand:</label>
                   <div class="input-group">
-			            	<span class="input-group-addon"><span class="glyphicon glyphicon-copyright-mark"></span></span>
+			            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-copyright-mark"></span></span>
                     <input type="text" class="form-control typeahead" id="inputBrand" name="inputBrand" placeholder="Brand of liquor">
                   </div>
                 </div>
@@ -71,7 +81,7 @@
                 <div class="form-group">
                   <label for="inputName" class="control-label">Name of drink:</label>
                   <div class="input-group">
-			            	<span class="input-group-addon"><span class="glyphicon glyphicon-glass"></span></span>
+			            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-glass"></span></span>
                     <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name of liquor">
                   </div>
                 </div>
@@ -80,7 +90,7 @@
                 <div class="form-group">
 			          	<label for="inputPrice" class="control-label">Price:</label>
 			            <div class="input-group">
-			            	<span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+			            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
                 		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="Price of your bottle">
 			          	</div>
 			          </div>
@@ -89,7 +99,7 @@
 			          <div class="form-group">
                   <label for="inputLocation" class="control-label">Purchase location:</label>
                   <div class="input-group">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                    <span class="mytext input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
                     <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="Where did you get it?">
                   </div>
                 </div>
@@ -115,7 +125,7 @@
 			          <div class="form-group">
 				        	<label for="inputUPC" class="control-label">UPC:</label>
 				          <div class="input-group">
-				            <span class="input-group-addon"><span class="glyphicon glyphicon-barcode"></span></span>
+				            <span class="mytext input-group-addon"><span class="glyphicon glyphicon-barcode"></span></span>
 	                	<input type="text" class="form-control" id="inputUPC" name="inputUPC" placeholder="Barcode on your bottle">
 				          </div>
 			          </div>
@@ -129,7 +139,7 @@
         				<div class="form-group">
 				          <label for="inputPriceUPC" class="control-label">Price:</label>
 				          <div class="input-group">
-				            <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+				            <span class="mytext input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
 	                	<input type="text" class="form-control" id="inputPriceUPC" name="inputPriceUPC" placeholder="Price of your bottle">
 				          </div>
 			          </div>
@@ -138,11 +148,10 @@
 		          	<div class="form-group">
                   <label for="inputLocationUPC" class="control-label">Purchase location:</label>
                   <div class="input-group">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                    <span class="mytext input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
                     <input type="text" class="form-control" id="inputLocationUPC" name="inputLocationUPC" placeholder="Where did you get it?">
                   </div>
                 </div>
-                
 			        </form>
       			</fieldset>
     			</div>
