@@ -42,20 +42,25 @@ body {
 }
 
 .sideBar {
+	background:#4582ec;
 	height: 100%;
 	border: 1px solid black;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	
+
 }
 
 .sideBarButtons {
 	margin-left: auto;
 	margin-right: auto;
+	
 }
 
 .sideBar div {
 	margin-bottom: 10%;
+	
 }
 
 #feature-title {
@@ -76,14 +81,17 @@ body {
 }
 
 #card-title {
-	background-color: #4582ec;
+	
+	color:#EFC849;
+    background-color: #354C5C;
 }
 
 #card-title p {
+	
 	font-family: 'Lobster', cursive;
 	font-size: 24px;
 	font-weight: normal;
-	color: white;
+
 	margin-bottom: 0px;
 }
 
@@ -104,6 +112,15 @@ body {
 	border-color: #4582ec;
 }
 
+.myColor{
+	color:#EFC849;
+	background-color: #354C5C;
+}
+
+#card-title p {
+	color:#EFC849;
+	background-color: #354C5C;
+}
 /* for mobile */
 
 /* if width is less than 992px, decrease side bar height*/

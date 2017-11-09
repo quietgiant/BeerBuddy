@@ -21,6 +21,7 @@
 	<link href="/res/styles/index.css" rel="stylesheet">
 	<link href="/res/styles/navigation_header.css" rel="stylesheet">
 	<!-- google api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
+
 	<script type="text/javascript">
 
 		var map; // google map canvas 
@@ -153,7 +154,7 @@
 
             <div class="col-md-10 col-xs-12" id="mapContainer">
     			<div id="card" class="card">
-			    	<div style = "background-color: #354C5C;"id="card-title">
+			    	<div id="card-title" >
 			        	<p>&nbsp;Search elsewhere</p>
 			        </div>
 			    	<div id="card-content">
@@ -168,10 +169,10 @@
             <div class="sideBar bg-info col-md-2 col-xs-12">
             	<div class="sideBarButtons">
 	                <div class="col-md-12">
-	                    <button type="button" class="btn btn-primary btn-block" onclick="location.href ='search.php'">Search deals</button>
+	                    <button type="button" class="myColor btn btn-primary btn-block" onclick="location.href ='search.php'">Search deals</button>
 	                </div>
 	                <div class="col-md-12">
-	                    <button type="button" class="btn btn-primary btn-block" onclick="location.href ='view_deals.php'">View deals</button>
+	                    <button type="button" class="myColor btn btn-primary btn-block" onclick="location.href ='view_deals.php'">View deals</button>
 	                </div>
                 </div>
             </div>
