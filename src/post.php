@@ -23,11 +23,11 @@
     <!--css for dropdown color-->
   <style>
     .mytext{
-      color:gold;
+      color:#EFC849;
         background-color: #354C5C;
     }
     .input-group-addon.dropdown-toggle{
-      color:gold;
+      color:#EFC849;
       background-color: #354C5C;
     }
   </style>
@@ -41,7 +41,7 @@
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">
 
-      <h1 class="animated jello" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span style = "border-left-radius: 25px;color: gold; background-color: #354C5C;" class="glyphicon glyphicon-map-marker"></span></h1>
+      <h1 class="animated jello" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span style = "border-left-radius: 25px;color: #EFC849; " class="glyphicon glyphicon-map-marker"></span></h1>
 
   
   			<!-- enter drink information form -->

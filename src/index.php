@@ -153,7 +153,7 @@
 
             <div class="col-md-10 col-xs-12" id="mapContainer">
     			<div id="card" class="card">
-			    	<div id="card-title">
+			    	<div style = "background-color: #354C5C;"id="card-title">
 			        	<p>&nbsp;Search elsewhere</p>
 			        </div>
 			    	<div id="card-content">
