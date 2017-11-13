@@ -21,16 +21,7 @@
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/post.css" rel="stylesheet">
     <!--css for dropdown color-->
-  <style>
-    .mytext{
-      color:#EFC849;
-        background-color: #354C5C;
-    }
-    .input-group-addon.dropdown-toggle{
-      color:#EFC849;
-      background-color: #354C5C;
-    }
-  </style>
+
   </head>
 
   <body>
@@ -41,7 +32,7 @@
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">
 
-      <h1 class="animated jello" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span style = "border-left-radius: 25px;color: #EFC849; " class="glyphicon glyphicon-map-marker"></span></h1>
+      <h1 class="animated jello" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span  class="glyphicon glyphicon-map-marker location"></span></h1>
 
   
   			<!-- enter drink information form -->
@@ -53,7 +44,7 @@
                 <!-- liquor type field -->
                 <div class="form-group">
                   <label for="inputType" class="control-label" >Type of liquor:</label>
-                  <select class="combobox form-control" id="inputType" name="inputType">
+                  <select class="combobox form-control " id="inputType" name="inputType">
                     <option></option>
                     <option value="all">ALL</option>
                     <option value="beer">Beer</option>

@@ -42,7 +42,7 @@ body {
 }
 
 .sideBar {
-	background:#4582ec;
+	background:#EFC849;
 	height: 100%;
 	border: 1px solid black;
 	display: flex;
@@ -60,6 +60,7 @@ body {
 
 .sideBar div {
 	margin-bottom: 10%;
+
 	
 }
 
@@ -83,7 +84,7 @@ body {
 #card-title {
 	
 	color:#EFC849;
-    background-color: #354C5C;
+    background-color: #4582ec;
 }
 
 #card-title p {
@@ -113,13 +114,13 @@ body {
 }
 
 .myColor{
-	color:#EFC849;
-	background-color: #354C5C;
+	color:#FFD600;
+	background-color: #4582ec;
 }
 
 #card-title p {
-	color:#EFC849;
-	background-color: #354C5C;
+	color:#FFD600;
+	background-color: #4582ec;
 }
 /* for mobile */
 

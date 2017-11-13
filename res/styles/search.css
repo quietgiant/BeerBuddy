@@ -10,3 +10,16 @@
 .form-heading {
 	text-align: center;
 }
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #FFD600;
+    background-color: #4582ec;
+}
+a {
+    color: #4582ec;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #4582ec;
+    background-color: #e0e0d1;
+    text-decoration: underline;
+}

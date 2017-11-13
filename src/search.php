@@ -40,7 +40,7 @@
 
           <!-- tabs -->
           <ul class="nav nav-pills nav-justified">
-            <li class="presentation active"><a href="#beer" data-toggle="tab" style="font-size: 25px;">Beer</a></li>
+            <li class="presentation active"><a href="#beer" data-toggle="tab" style="font-size: 25px; ">Beer</a></li>
             <li class="presentation "><a href="#booze" data-toggle="tab" style="font-size: 25px">Booze</a></li>
           </ul>
 

@@ -35,8 +35,8 @@
     <!-- Facebook API Key: 149958958929937 -->
     <style>
       .mytext{
-        color:#EFC849;
-          background-color: #354C5C;
+        color:#FFD600;
+          background-color: #4582ec;
       }
 
     </style>
