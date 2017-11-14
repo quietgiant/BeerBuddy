@@ -19,6 +19,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	<!-- custom styles -->
 	<link href="/res/styles/index.css" rel="stylesheet">
+	<link href="/res/styles/ColorScheme.css" rel="stylesheet">
 	<link href="/res/styles/navigation_header.css" rel="stylesheet">
 	<!-- google api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
 
@@ -73,7 +74,8 @@
 		            // filter for liquor stores
 					resultsWindow = new google.maps.InfoWindow();
 			        service = new google.maps.places.PlacesService(map);
-			        service.nearbySearch(request, callback);
+			        service.nearbySearch(request, processResults);
+			        
 	        	}, 
 	        	function() {
 	            	handleLocationError(true, locationWindow, map.getCenter());
@@ -84,15 +86,31 @@
 	        }
 
 		}
+function processResults(results, status, pagination) {
 
+  if (status !== google.maps.places.PlacesServiceStatus.OK) {
+    return;
+  } else {
+    	for (var i = 0; i < results.length; i++) {
+    		console.log(results[i].vicinity);
+	        	createMarker(results[i], results[i].name, results[i].vicinity);
+	          }
+
+    if (pagination.hasNextPage) {
+        pagination.nextPage();
+    }
+  }
+}
+/*
 		function callback(results, status) {
 	        if (status === google.maps.places.PlacesServiceStatus.OK) {
+	        	
 	          for (var i = 0; i < results.length; i++) {
 	        	createMarker(results[i], results[i].name, results[i].vicinity);
 	          }
 	        }
 	    }
-	      
+	    */  
 	    function createMarker(place, storeName, storeAddress) {
 			var placeLoc = place.geometry.location;
 		    var marker = new google.maps.Marker({
@@ -148,7 +166,7 @@
 	<!-- page contents -->
 	<div class="container-fluid">
 
-        <h2 class="animated fadeInLeft" id="title-bar">Deals near you</h2>
+        <h2 class="animated fadeInLeft textBlue title-bar">Deals Near You</h2>
         
 	    <div class="row animated fadeInRight" id="canvas">
 
@@ -184,7 +202,7 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header animated fadeInRight" id="feature-title">Featured deals today</h3>
+                <h3 class="page-header animated fadeInRight textBlue" id="feature-title">Featured Deals Today</h3>
             </div>
             
             <div class="container features animated fadeInLeft">

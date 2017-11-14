@@ -11,15 +11,15 @@
 
     <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	  <!-- google lobster font -->
+	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	  <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <!-- custom styles -->
+    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
-    <style>
-      .mytext{
-        color:#FFD600;
-        background-color: #4582ec;
-      }
-    </style>
+
 
   </head>
 
@@ -34,7 +34,7 @@
       <!-- login form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
         <form class=" form-signin" id="loginForm">
-          <h2 class="form-heading">Sign in</h2>
+          <h2 class="form-heading textBlue title-bar">Sign in</h2>
           <div class="form-group">
             <label class="control-label " for="email">Email address</label>
             <div class="input-group">

@@ -8,13 +8,6 @@ body {
 	padding: 0px;
 }
 
-#title-bar {
-	font-family: 'Lobster', cursive;
-	text-align: center;
-	text-decoration: underline;
-	margin-top: 0px;
-	font-size: 48px;
-}
 
 #canvas {
 	width: 100%;

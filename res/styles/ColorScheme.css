@@ -1,0 +1,17 @@
+.textBlue{
+	color: #4582ec;
+}
+.textGold{
+	color: #EFC849;
+}
+.title-bar {
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	text-decoration: underline;
+	margin-top: 0px;
+	font-size: 48px;
+}
+.mytext{
+      color:#FFD600;
+      background-color: #4582ec;
+}

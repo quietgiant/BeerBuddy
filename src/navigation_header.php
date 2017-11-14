@@ -10,8 +10,11 @@ $nav = "
         <span class=\"icon-bar\"></span>
         <span class=\"icon-bar\"></span>
       </button>
-      <a class=\"navbar-brand\" href=\"/src/index.php\">BeerBuddy</a>
-      <img class=\"navbar-brand\" src=\"/res/img/icon.png\" alt=\"BeerBuddyLogo\">
+      <a class=\"navbar-brand\" href=\"/src/index.php\" style=\"font-size: 200%;padding: 0;\">BeerBuddy</a>
+      <a  href=\"/src/index.php\" ><img class=\"navbar-brand\" src=\"/res/img/icon.png\" alt=\"BeerBuddyLogo\" style=\" width: 65px; height: 65px;  margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 0px; 
+    margin-right: 0px; padding: 0px;\"></a>
             
     </div>
     <div id=\"navbar\" class=\"navbar-collapse collapse\">

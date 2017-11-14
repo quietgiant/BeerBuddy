@@ -17,7 +17,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- boostrap combo-box css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/css/bootstrap-combobox.min.css" rel="stylesheet">
+    	<!-- font awesome css-->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- google lobster font -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <!-- custom styles -->
+    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/post.css" rel="stylesheet">
     <!--css for dropdown color-->
@@ -32,7 +37,7 @@
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">
 
-      <h1 class="animated jello" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span  class="glyphicon glyphicon-map-marker location"></span></h1>
+      <h1 class="animated jello textBlue title-bar" style="text-align: center; font-size: 3em">Post A Deal&nbsp;<span  class="glyphicon glyphicon-map-marker textGold"></span></h1>
 
   
   			<!-- enter drink information form -->
@@ -101,7 +106,7 @@
 
 		<div class="col-xs-12 col-md-2">
 			<div class="container-fluid middleBox">
-				<h2>or</h2>
+				<h2 class="textBlue">or</h2>
 			</div>
 		</div>
 

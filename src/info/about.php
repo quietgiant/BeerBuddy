@@ -11,6 +11,10 @@
 
     <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	  <!-- google lobster font -->
+	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	  <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <!-- custom styles -->
     <link href="../../res/styles/about.css" rel="stylesheet">
 
@@ -28,13 +32,13 @@
       <!-- about us -->
       <div class="container-fluid">
         
-        <h1 style="text-align: center;">Meet the developers</h1>
+        <h1 class = "textBlue title-bar" style="text-align: center;">Meet the developers</h1>
         
         <div class="container" id="info">
           <div class="row">
             <div class="col-md-4">
-              <h4>Amrit Banwait</h4>
-              <img src="/res/img/AmritBanwait.jpg" alt="Picture of Amrit Banwait" width="80%" height="420px"/>
+              <h4>Amrit Pal Banwait</h4>
+              <img src="/res/img/AmritBanwait.jpg" alt="Picture of Amrit Pal Banwait" width="80%" height="420px"/>
             </div>
           
             <div class="col-md-4">
@@ -51,7 +55,7 @@
           <div class="row">
                 
             <div class="col-md-4">         
-              <h5>Currently pursuing b.s/m.s degress with a concentration in software development.<br><br>
+              <h5>Currently pursuing B.S/M.S degress with a concentration in software development.<br><br>
               My favorite thing about software programming is the ability to turn nothing in to something.</h5>
             </div>
 

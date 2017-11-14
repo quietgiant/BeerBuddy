@@ -17,7 +17,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- boostrap combo-box css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/css/bootstrap-combobox.min.css" rel="stylesheet">
+    	<!-- font awesome css-->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- google lobster font -->
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <!-- custom styles -->
+    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/search.css" rel="stylesheet">    
 
@@ -34,7 +39,7 @@
       <!-- search functions -->
       <div class="container-fluid">
 
-        <h2 class="animated lightSpeedIn" style="text-align: center">What sounds good to drink tonight?</h2>
+        <h2 class="animated lightSpeedIn textBlue title-bar" style="text-align: center">What Sounds Good To Drink Tonight?</h2>
           
         <div class="container formBox">
 

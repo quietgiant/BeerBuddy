@@ -30,16 +30,15 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
     <!-- datepicker css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	  <!-- google lobster font -->
+	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	  <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <!-- custom styles -->
+    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
-    <style>
-      .mytext{
-        color:#FFD600;
-          background-color: #4582ec;
-      }
 
-    </style>
   </head>
 
   <body>
@@ -53,7 +52,7 @@
       <!-- register form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
         <form data-toggle="validator" action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" role="form" id="registerForm">
-          <h2 class="form-heading">Create new account</h2>
+          <h2 class="form-heading textBlue title-bar">Create new account</h2>
 
           <!-- email address -->
           <div class="form-group">

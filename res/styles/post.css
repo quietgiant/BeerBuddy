@@ -9,19 +9,13 @@
 	border-radius: 20px;
 }
 
+
 .middleBox {
 	display: flex;
   	align-items: center;
   	justify-content: center;
 }
-.location{
-      color:#FFD600;
-    }
-.mytext{
-      color:#FFD600;
-        background-color: #4582ec;
-    }
-    .input-group-addon.dropdown-toggle{
-      color:#FFD600;
-      background-color: #4582ec;
-    }
+.input-group-addon.dropdown-toggle{
+  color:#FFD600;
+  background-color: #4582ec;
+}
