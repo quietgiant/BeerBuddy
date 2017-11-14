@@ -202,16 +202,16 @@
         <h2 class="animated fadeInLeft textBlue title-bar">Deals Near You</h2>
         
 	    <div class="row animated fadeInRight" id="canvas">
-			<div id="card" class="card">
-		    	<div id="card-title" >
-		        	<p>&nbsp;Search elsewhere</p>
-		        </div>
-		    	<div id="card-content">
-		     		<input type="text" id="card-input" placeholder="Enter a location">
-		     	</div>
-			  </div>
+
             <div class="col-md-10 col-xs-12" id="mapContainer">
-    			
+    			<div id="card" class="card">
+			    	<div id="card-title" >
+			        	<p>&nbsp;Search elsewhere</p>
+			        </div>
+			    	<div id="card-content">
+			     		<input type="text" id="card-input" placeholder="Enter a location">
+			     	</div>
+			    </div>
     			<!-- begin map -->
     			<div id="map"></div>
     			<!-- end map -->
