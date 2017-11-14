@@ -9,8 +9,8 @@
 
     <title>About Us</title>
 
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
 
-    <!-- custom styles -->
     <link href="../../res/styles/about.css" rel="stylesheet">
 
 
@@ -27,7 +27,7 @@
       <!-- about us -->
       <div class="container-fluid">
         
-        <h1 class = "textBlue title-bar" style="text-align: center;">Meet the developers</h1>
+        <h1 class = "textBlue title-bar" >Meet the developers</h1>
         
         <div class="container" id="info">
           <div class="row">
@@ -77,7 +77,7 @@
     <!-- jQuery core js -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- bootstrap core js -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
   </body>
 
