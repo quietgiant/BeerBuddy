@@ -9,12 +9,6 @@
 
     <title class= "textBlue title-bar">Sign in</title>
 
-    <!-- bootstrap core css -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	  <!-- google lobster font -->
-	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-	  <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <!-- custom styles -->
     
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
