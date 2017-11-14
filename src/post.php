@@ -127,7 +127,7 @@
 			          </div>
 			          <div class="form-group">
 				          <div class="form-group text-center">
-	        					<p><a href="#">What is a UPC code?</a></p>
+	        					<p><a href="https://www.gtin.info/upc/">What is a UPC code?</a></p>
 	        				</div>
         				</div>
         				
