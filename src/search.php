@@ -35,7 +35,7 @@
       <!-- search functions -->
       <div class="container-fluid">
 
-        <h2 class="animated lightSpeedIn textBlue title-bar" style="text-align: center">What Sounds Good To Drink Tonight?</h2>
+        <h2 class="animated lightSpeedIn textBlue title-bar" ">What Sounds Good To Drink Tonight<span class="textGold ">?</span></h2>
           
         <div class="container formBox">
 

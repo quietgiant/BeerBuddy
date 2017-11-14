@@ -51,7 +51,7 @@
                 
             <div class="col-md-4">         
               <h5>Currently pursuing B.S/M.S degress with a concentration in software development.<br><br>
-              My favorite thing about software programming is the ability to turn nothing in to something.</h5>
+              My favorite thing about software programming is the ability to turn nothing into something.</h5>
             </div>
 
             <div class="col-md-4">

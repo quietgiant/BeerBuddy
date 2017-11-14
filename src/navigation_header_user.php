@@ -39,3 +39,14 @@ $nav = "
 </nav>";
 echo $nav
 ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    	  <!-- google lobster font -->
+	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <!-- custom styles -->
+    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
+  </head>
+</html>

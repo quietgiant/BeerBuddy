@@ -1,14 +1,12 @@
 <?php
   // if form was submitted, check for error    
-  if (isset($_POST["signup"])) {
+  if (isset($_POST["submitButton"])) {
     
-    if (empty($_POST["name"]) ||
-    	empty($_POST["email"]) || 
-      empty($_POST["password1"]) ||
-      empty($_POST["password2"]) ||
-      empty($_POST["gender"]) || 
-      empty($_POST["year"]) ||
-      empty($_POST["agreement"])) {
+    if (empty($_POST["email"]) ||
+    	empty($_POST["inputName"]) || 
+      empty($_POST["dob"]) ||
+      empty($_POST["inputPassword"]) ||
+      empty($_POST["inputPasswordConfirm"])) {
         $error = true;
       }
       
@@ -96,7 +94,7 @@
 
           <!-- password entry 2 -->
           <div class="form-group">
-            <label for="inputPasswordConfirm" class="control-label">Password</label>
+            <label for="inputPasswordConfirm" class="control-label">Retype Password</label>
             <div class="input-group">
               <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
               <input type="password" data-minlength="6" class="form-control" id="inputPasswordConfirm" placeholder="Password (one more time)" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" required>
