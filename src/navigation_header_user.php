@@ -24,7 +24,6 @@ $nav = "
           <ul class=\"dropdown-menu\">
             <li class=\"".($class = ($page == 'quickstart') ? 'active' : '')."\"><a href=\"/src/help/quickstart.php\">Quickstart</a></li>
             <li class=\"".($class = ($page == 'guidelines') ? 'active' : '')."\"><a href=\"/src/help/guidelines.php\">Posting guidelines</a></li>
-            <li class=\"".($class = ($page == 'tips') ? 'active' : '')."\"><a href=\"/src/help/tips.php\">Exploration tips</a></li>
             <li role=\"separator\" class=\"divider\"></li>
             <li class=\"dropdown-header\">Account Settings</li>
             <li><a href=\"#\">View profile</a></li>

@@ -30,6 +30,7 @@
 		var resultsWindow; // window for filtering results
 		var service;
 		function initMap() {
+			
 			// init map in fort wayne
 			var fw = { lat: 41.0793, lng: -85.1394 };
 			var def_zoom = 13;
@@ -43,17 +44,6 @@
           		minZoom: 3
           		//noClear = true // do not clear the map div elements
         	});
-        	
-        	var input = document.getElementById("card-input");
-        	var options = {
-        		types: ['address', 'geocode']
-        	}
-        	
-        	map.controls[google.maps.ControlPosition.TOP_LEFT].push(document.getElementById("card"));
-
-    		var autocomplete = new google.maps.places.Autocomplete(input, options);
-    		autocomplete.setOptions({strictBounds: true})
-    		autocomplete.bindTo('bounds', map);
 
         	// try to determine the current position based on device location
 			var userLocation;
@@ -84,24 +74,67 @@
 	        	userLocation = fw;
 	        	handleLocationError(false, locationWindow, map.getCenter()); // browser does not support geolocation
 	        }
+	        
+	        var marker = new google.maps.Marker({
+        		map: map,
+        		anchorPoint: new google.maps.Point(0, -29)
+    		});
+	    	  // init autocomplete search bar
+		      autocomplete.addListener('place_changed', function() {
+		      	
+		          resultsWindow.close();
+		          marker.setVisible(false);
+		          var place = autocomplete.getPlace();
+		          if (!place.geometry) {
+		            // User entered the name of a Place that was not suggested and
+		            // pressed the Enter key, or the Place Details request failed.
+		            window.alert("No details available for input: '" + place.name + "'");
+		            return;
+		          }
+		
+		          // If the place has a geometry, then present it on a map.
+		          if (place.geometry.viewport) {
+		            map.fitBounds(place.geometry.viewport);
+		          } else {
+		            map.setCenter(place.geometry.location);
+		            map.setZoom(def_zoom);  // Why 17? Because it looks good.
+		          }
+		          marker.setPosition(place.geometry.location);
+		          marker.setVisible(true);
+		
+		          var address = '';
+		          if (place.address_components) {
+		            address = [
+		              (place.address_components[0] && place.address_components[0].short_name || ''),
+		              (place.address_components[1] && place.address_components[1].short_name || ''),
+		              (place.address_components[2] && place.address_components[2].short_name || '')
+		            ].join(' ');
+		          }
+		
+		          infowindowContent.children['place-icon'].src = place.icon;
+		          infowindowContent.children['place-name'].textContent = place.name;
+		          infowindowContent.children['place-address'].textContent = address;
+		          infowindow.open(map, marker);
+	          
+		      });
 
 		}
-function processResults(results, status, pagination) {
-
-  if (status !== google.maps.places.PlacesServiceStatus.OK) {
-    return;
-  } else {
-    	for (var i = 0; i < results.length; i++) {
-    		console.log(results[i].vicinity);
-	        	createMarker(results[i], results[i].name, results[i].vicinity);
-	          }
-
-    if (pagination.hasNextPage) {
-        pagination.nextPage();
-    }
-  }
-}
-/*
+		function processResults(results, status, pagination) {
+		
+		  if (status !== google.maps.places.PlacesServiceStatus.OK) {
+		    return;
+		  } else {
+		    	for (var i = 0; i < results.length; i++) {
+		    		console.log(results[i].vicinity);
+			        	createMarker(results[i], results[i].name, results[i].vicinity);
+			          }
+		
+		    if (pagination.hasNextPage) {
+		        pagination.nextPage();
+		    }
+		  }
+		}
+		/*
 		function callback(results, status) {
 	        if (status === google.maps.places.PlacesServiceStatus.OK) {
 	        	
@@ -150,7 +183,7 @@ function processResults(results, status, pagination) {
 	       	infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
 	        infoWindow.open(map);
 	    }
-		
+
 		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
 	<!-- 21+ modal dialog js -->
@@ -187,10 +220,10 @@ function processResults(results, status, pagination) {
             <div class="sideBar bg-info col-md-2 col-xs-12">
             	<div class="sideBarButtons">
 	                <div class="col-md-12">
-	                    <button type="button" class="myColor btn btn-primary btn-block" onclick="location.href ='search.php'">Search deals</button>
+	                    <button type="button" class="myColor btn btn-primary btn-block" onclick="location.href ='/src/search.php'">Search deals</button>
 	                </div>
 	                <div class="col-md-12">
-	                    <button type="button" class="myColor btn btn-primary btn-block" onclick="location.href ='view_deals.php'">View deals</button>
+	                    <button type="button" class="myColor btn btn-primary btn-block" onclick="location.href ='/src/view_deals.php'">View deals</button>
 	                </div>
                 </div>
             </div>
