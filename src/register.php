@@ -1,3 +1,54 @@
+
+<?php
+
+    function register_user()
+    {
+        require_once('controller/db_connection.php');
+    
+        if (isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['pass2']))
+        {
+            if ($_POST['user'] == '')
+            {
+                echo ('<div style="color: red">Username cannot be empty!</div>');
+            }
+            else if ($_POST['pass'] != $_POST['pass2'])
+            {
+                echo ('<div style="color: red">Passwords are not identical!</div>');
+            }
+            else
+            {
+                $connection = connect_to_db();
+                
+                $sql = sprintf("Select 1 FROM users WHERE user = '%s'",
+                          $connection->real_escape_string($_POST["user"]));
+                
+                // execute query
+                $result = $connection->query($sql) or die(mysqli_error());           
+    
+                // check whether we found a row
+                if ($result->num_rows == 1)
+                {
+                    echo ('<div style="color: red">Username is already used!</div>');
+                }
+                else
+                {
+                    $sql = sprintf("INSERT INTO `user_data`(`user`, `pass`) VALUES ('%s', password('%s'))",
+                               $connection->real_escape_string($_POST["user"]),
+                               $connection->real_escape_string($_POST["pass"]));
+                    
+                    // execute query
+                    $result = $connection->query($sql) or die(mysqli_error($connection));  
+        
+                    if ($result === false)
+                        die("Could not query database");
+                    else
+                        echo "User was inserted into DB!\n";
+                }
+            }
+        }
+    }
+?>
+
 <?php
   // if form was submitted, check for error    
   if (isset($_POST["submitButton"])) {
