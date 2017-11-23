@@ -1,3 +1,9 @@
+<?php 
+
+	session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -191,7 +197,11 @@
 <body onload="checkCookie();">
 
 	<!-- top navigation bar -->
-	<?php $page='index'; include('navigation_header.php'); ?>
+    <?php if (isset($_SESSION["authenticated"])): ?>
+      <?php $page='index'; include('navigation_header_user.php'); ?>
+    <?php else: ?>
+      <?php $page='index'; include('navigation_header.php'); ?>
+    <?php endif ?>
 
 	<!-- page contents -->
 	<div class="container-fluid">

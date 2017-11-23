@@ -1,3 +1,9 @@
+<?php 
+
+  session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,14 +26,17 @@
     <!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/post.css" rel="stylesheet">
-    <!--css for dropdown color-->
 
   </head>
 
   <body>
 
     <!-- top navigation bar -->
-    <?php $page='post'; include('navigation_header.php'); ?>
+    <?php if (isset($_SESSION["authenticated"])): ?>
+      <?php $page='post'; include('navigation_header_user.php'); ?>
+    <?php else: ?>
+      <?php $page='post'; include('navigation_header.php'); ?>
+    <?php endif ?>
 
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">

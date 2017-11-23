@@ -33,6 +33,7 @@ $nav = "
       </ul>
       <ul class=\"nav navbar-nav navbar-right\">
         <li><a>Hello user!&nbsp;<span class=\"glyphicon glyphicon-ok\"></span></a></li>
+        <li><a href=\"/src/logout.php\">Logout&nbsp;<span class=\"glyphicon glyphicon-log-out\"></span></a></li>
       </ul>
     </div>
   </div>
@@ -43,8 +44,8 @@ echo $nav
 <!DOCTYPE html>
 <html>
   <head>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    	  <!-- google lobster font -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- google lobster font -->
 	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <!-- custom styles -->
     <link href="/res/styles/ColorScheme.css" rel="stylesheet">

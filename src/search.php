@@ -1,3 +1,9 @@
+<?php 
+
+  session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +33,11 @@
   <body>
   
     <!-- top navigation bar -->
-    <?php $page='search'; include('navigation_header.php'); ?>
+    <?php if (isset($_SESSION["authenticated"])): ?>
+      <?php $page='search'; include('navigation_header_user.php'); ?>
+    <?php else: ?>
+      <?php $page='search'; include('navigation_header.php'); ?>
+    <?php endif ?>
 
     <!-- page contents -->
     <div class="container-fluid">
