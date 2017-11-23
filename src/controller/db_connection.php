@@ -1,7 +1,7 @@
 <?php
     function connect_to_db()
     {
-        define("HOST", 'beerbuddy.cejtxhzk4z1f.us-east-2.rds.amazonaws.com:3306');
+        define("HOST", 'beerbuddy.cejtxhzk4z1f.us-east-2.rds.amazonaws.com');
         define("USER", "beerbuddy");
         define("PASS", "beerbuddydev");
         define("DB", "beerbuddy");
