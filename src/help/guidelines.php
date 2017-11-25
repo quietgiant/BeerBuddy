@@ -8,10 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Guidelines</title>
-
-    <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-    <!-- custom styles -->
+<!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
 
   </head>
@@ -27,7 +25,7 @@
       <!-- about us -->
       <div class="container-fluid">
         
-        <h1>Posting Guidelines</h1>
+        <h1 class = "textBlue title-bar" style="text-align: center;">Posting Guidelines</h1>
         <p>description of guidlines for posts on liqour</p>
 
       </div>

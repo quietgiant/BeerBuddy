@@ -9,13 +9,8 @@
 
     <title>About Us</title>
 
-    <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	  <!-- google lobster font -->
-	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-	  <link href="/res/styles/ColorScheme.css" rel="stylesheet">
-    <!-- custom styles -->
+
     <link href="../../res/styles/about.css" rel="stylesheet">
 
 
@@ -32,7 +27,7 @@
       <!-- about us -->
       <div class="container-fluid">
         
-        <h1 class = "textBlue title-bar" style="text-align: center;">Meet the developers</h1>
+        <h1 class = "textBlue title-bar" >Meet the developers</h1>
         
         <div class="container" id="info">
           <div class="row">
@@ -56,7 +51,7 @@
                 
             <div class="col-md-4">         
               <h5>Currently pursuing B.S/M.S degress with a concentration in software development.<br><br>
-              My favorite thing about software programming is the ability to turn nothing in to something.</h5>
+              My favorite thing about software programming is the ability to turn nothing into something.</h5>
             </div>
 
             <div class="col-md-4">
@@ -82,7 +77,7 @@
     <!-- jQuery core js -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- bootstrap core js -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
   </body>
 

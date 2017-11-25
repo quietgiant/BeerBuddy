@@ -1,3 +1,9 @@
+<?php 
+
+  session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,31 +14,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Post Deal</title>
-
-    <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
+
 	  <!-- animate css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <!-- boostrap slider css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- boostrap combo-box css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/css/bootstrap-combobox.min.css" rel="stylesheet">
-    	<!-- font awesome css-->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<!-- google lobster font -->
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
     <!-- custom styles -->
-    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/post.css" rel="stylesheet">
-    <!--css for dropdown color-->
 
   </head>
 
   <body>
 
     <!-- top navigation bar -->
-    <?php $page='post'; include('navigation_header.php'); ?>
+    <?php if (isset($_SESSION["authenticated"])): ?>
+      <?php $page='post'; include('navigation_header_user.php'); ?>
+    <?php else: ?>
+      <?php $page='post'; include('navigation_header.php'); ?>
+    <?php endif ?>
 
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">
@@ -127,7 +131,7 @@
 			          </div>
 			          <div class="form-group">
 				          <div class="form-group text-center">
-	        					<p><a href="#">What is a UPC code?</a></p>
+	        					<p><a href="https://www.gtin.info/upc/">What is a UPC code?</a></p>
 	        				</div>
         				</div>
         				

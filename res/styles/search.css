@@ -10,7 +10,14 @@
 .form-heading {
 	text-align: center;
 }
+.input-group-addon.dropdown-toggle{
+  color:#FFD600;
+  background-color: #4582ec;
+}
 
+.slider-handle.min-slider-handle.round,.slider-handle{
+        background-color: #4582ec;
+}
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
     color: #FFD600;
     background-color: #4582ec;

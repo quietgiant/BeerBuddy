@@ -1,3 +1,9 @@
+<?php 
+
+  session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,21 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Search Deals</title>
-
-    <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
+
+
     <!-- animate css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <!-- boostrap slider css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- boostrap combo-box css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/css/bootstrap-combobox.min.css" rel="stylesheet">
-    	<!-- font awesome css-->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<!-- google lobster font -->
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
     <!-- custom styles -->
-    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/search.css" rel="stylesheet">    
 
@@ -31,7 +33,11 @@
   <body>
   
     <!-- top navigation bar -->
-    <?php $page='search'; include('navigation_header.php'); ?>
+    <?php if (isset($_SESSION["authenticated"])): ?>
+      <?php $page='search'; include('navigation_header_user.php'); ?>
+    <?php else: ?>
+      <?php $page='search'; include('navigation_header.php'); ?>
+    <?php endif ?>
 
     <!-- page contents -->
     <div class="container-fluid">
@@ -39,7 +45,7 @@
       <!-- search functions -->
       <div class="container-fluid">
 
-        <h2 class="animated lightSpeedIn textBlue title-bar" style="text-align: center">What Sounds Good To Drink Tonight?</h2>
+        <h2 class="animated lightSpeedIn textBlue title-bar" ">What Sounds Good To Drink Tonight<span class="textGold ">?</span></h2>
           
         <div class="container formBox">
 

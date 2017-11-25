@@ -9,9 +9,8 @@
 
     <title>Quickstart</title>
 
-    <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-    <!-- custom styles -->
+
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
 
   </head>
@@ -27,7 +26,7 @@
       <!-- about us -->
       <div class="container-fluid">
         
-        <h1>Quickstart</h1>
+        <h1 class = "textBlue title-bar">Quickstart</h1>
         <p>First, <a href="/src/register.php">sign up for a new account</a> if you don't already have one.</p>
         <p>description of things to get new users going</p>
 

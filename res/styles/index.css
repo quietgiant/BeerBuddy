@@ -35,7 +35,7 @@ body {
 }
 
 .sideBar {
-	background:#EFC849;
+	background:#FFD600;
 	height: 100%;
 	border: 1px solid black;
 	display: flex;
@@ -69,9 +69,15 @@ body {
 
 .card {
 	margin-top: 10px;
-	margin-left: 10px;
-	border: 2px solid black;
-	width: 350px;
+    margin-left: 10px;
+    border: 2px solid black;
+    width: 350px;
+}
+#card[class$="card"]{
+	z-index: 1; 
+	position: absolute; 
+	left: 0px; 
+	top: 0px;
 }
 
 #card-title {
