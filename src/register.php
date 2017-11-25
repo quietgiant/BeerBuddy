@@ -1,9 +1,26 @@
+<?php
+  // if form was submitted, check for error    
+  if (isset($_POST["signup"])) {
+    
+    if (empty($_POST["name"]) ||
+    	empty($_POST["email"]) || 
+      empty($_POST["password1"]) ||
+      empty($_POST["password2"]) ||
+      empty($_POST["gender"]) || 
+      empty($_POST["year"]) ||
+      empty($_POST["agreement"])) {
+        $error = true;
+      }
+      
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
 
-    <link rel="page icon" href="../res/img/beer.ico" />
+    <link rel="page icon" href="/res/img/beer.ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,8 +30,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
     <!-- datepicker css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	  <!-- google lobster font -->
+	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	  <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <!-- custom styles -->
-    <link href="../res/styles/navigation_header.css" rel="stylesheet">
+    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
+    <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
 
   </head>
@@ -29,15 +51,19 @@
 
       <!-- register form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
-        <form data-toggle="validator" role="form" id="registerForm">
-          <h2 class="form-signin-heading">Create new account</h2>
+        <form data-toggle="validator" action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" role="form" id="registerForm">
+          <h2 class="form-heading textBlue title-bar">Create new account</h2>
 
           <!-- email address -->
           <div class="form-group">
-              <label for="inputEmail" class="control-label">Email address</label>
+              <label for="email" class="control-label">Email address</label>
               <div class="input-group">
-                <span class="input-group-addon"><span class=" glyphicon glyphicon-envelope"></span></span>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Your email address" data-error="Check that address!" required>
+                <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-envelope"></span></span>
+                <?php if (isset($_POST["email"])): ?>
+                  <input type="email" class="form-control" id="email" value="<?= htmlspecialchars($_POST["email"]) ?>" data-error="Check that address!" required>
+                <?php else: ?>
+                  <input type="email" class="form-control" id="email" placeholder="Your email address" data-error="Check that address!" required>
+                <?php endif ?>                
               </div>
               <div class="help-block with-errors"></div>
           </div>
@@ -46,7 +72,7 @@
           <div class="form-group has-feedback">
               <label for="inputName" class="control-label">Display name (used for posts)</label>
               <div class="input-group">
-                <span class="input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
+                <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
                 <input type="text" pattern="^[_A-z0-9 ]{1,}$" maxlength="20" class="form-control" id="inputName" placeholder="Your display name" required>
               </div>
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -57,7 +83,7 @@
             <div class="form-group">
               <label class="control-label" for="dob">Birthday</label>
 			        <div class="input-group date" id="dob" data-provide="datepicker">
-                <span class="input-group-addon"><span class=" glyphicon glyphicon-th"></span></span>
+                <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-th"></span></span>
                 <input type="text" class="form-control" placeholder="Your birthday">
               </div>
             </div>
@@ -66,7 +92,7 @@
           <div class="form-group">
             <label for="inputPassword" class="control-label">Password</label>
             <div class="input-group">
-              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
               <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
             </div>
             <div class="help-block with-errors"></div>
@@ -74,10 +100,10 @@
 
           <!-- password entry 2 -->
           <div class="form-group">
-            <label for="inputPasswordConfirm" class="control-label">Password (one more time)</label>
+            <label for="inputPasswordConfirm" class="control-label">Password</label>
             <div class="input-group">
-              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
-              <input type="password" data-minlength="6" class="form-control" id="inputPasswordConfirm" placeholder="Password" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" required>
+              <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <input type="password" data-minlength="6" class="form-control" id="inputPasswordConfirm" placeholder="Password (one more time)" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" required>
             </div>
             <div class="help-block with-errors"></div>
           </div>
@@ -115,10 +141,10 @@
     	});
     </script>
     <!-- clear form script -->
-      <script>
+    <script>
     	$('#clearButton').click(function(){
-              $('#registerForm')[0].reset();
-    		});
+        $('#registerForm')[0].reset();
+    	});
     </script>
     <!-- validator js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>

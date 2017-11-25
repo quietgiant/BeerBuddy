@@ -5,12 +5,17 @@
 	padding-bottom: 20px;
 	padding-left: 30px;
 	padding-right: 30px;
-    border: 1px solid black;
-    border-radius: 20px;
+	border: 1px solid black;
+	border-radius: 20px;
 }
 
+
 .middleBox {
-    border: 1px solid black;
-    border-radius: 5px;
-    text-align: center;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+.input-group-addon.dropdown-toggle{
+  color:#FFD600;
+  background-color: #4582ec;
 }

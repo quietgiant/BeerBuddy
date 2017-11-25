@@ -10,11 +10,8 @@ $nav = "
         <span class=\"icon-bar\"></span>
         <span class=\"icon-bar\"></span>
       </button>
-      <a class=\"navbar-brand\" href=\"/src/index.php\" style=\"font-size: 200%;padding: 0;\">BeerBuddy</a>
-      <a  href=\"/src/index.php\" ><img class=\"navbar-brand\" src=\"/res/img/icon.png\" alt=\"BeerBuddyLogo\" style=\" width: 65px; height: 65px;  margin-top: 0px; 
-    margin-bottom: 0px; 
-    margin-left: 0px; 
-    margin-right: 0px; padding: 0px;\"></a>
+      <a class=\"navbar-brand\" href=\"/src/index.php\">BeerBuddy</a>
+      <img class=\"navbar-brand\" src=\"/res/img/icon.png\" alt=\"BeerBuddyLogo\">
             
     </div>
     <div id=\"navbar\" class=\"navbar-collapse collapse\">
@@ -35,8 +32,7 @@ $nav = "
         </li>
       </ul>
       <ul class=\"nav navbar-nav navbar-right\">
-        <li class=\"".($class = ($page == 'login') ? 'active' : '')."\"><a href=\"/src/login.php\"><span class=\"glyphicon glyphicon-log-in\"></span>&nbsp;Sign In</a></li>
-        <li class=\"".($class = ($page == 'register') ? 'active' : '')."\"><a href=\"/src/register.php\"><span class=\"glyphicon glyphicon-new-window\"></span>&nbsp;Sign Up</a></li>
+        <li><a>Hello user!&nbsp;<span class=\"glyphicon glyphicon-ok\"></span></a></li>
       </ul>
     </div>
   </div>

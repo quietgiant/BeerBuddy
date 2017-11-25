@@ -27,7 +27,7 @@
       <!-- contact us form -->
       <div class="container-fluid">
         
-        <h1>Contact Us</h1>
+        <h1 class="textBlue title-bar">Contact Us</h1>
         <p>hit us up here</p>
         
       </div>

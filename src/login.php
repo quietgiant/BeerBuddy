@@ -3,7 +3,7 @@
 
   <head>
 
-    <link rel="page icon" href="../res/img/beer.ico" />
+    <link rel="page icon" href="/res/img/beer.ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,16 +11,22 @@
 
     <!-- bootstrap core css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	  <!-- google lobster font -->
+	  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	  <link href="/res/styles/ColorScheme.css" rel="stylesheet">
     <!-- custom styles -->
-    <link href="../res/styles/navigation_header.css" rel="stylesheet">
+    <link href="/res/styles/ColorScheme.css" rel="stylesheet">
+    <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
+
 
   </head>
 
   <body>
 
     <!-- top navigation bar -->
-    <?php $page='login'; include('navigation_header.php'); ?>
+    <?php $page='login'; include('navigation_header_user.php'); ?>
 
     <!-- page contents-->
     <div class="container-fluid">
@@ -28,18 +34,18 @@
       <!-- login form -->
       <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
         <form class=" form-signin" id="loginForm">
-          <h2 class="form-signin-heading ">Sign in</h2>
+          <h2 class="form-heading textBlue title-bar">Sign in</h2>
           <div class="form-group">
             <label class="control-label " for="email">Email address</label>
             <div class="input-group">
-              <span class="input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
+              <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
               <input type="email" id="email" class="form-control " placeholder="Email address" required autofocus>
             </div>
           </div>
           <div class="form-group ">
             <label class="control-label " for="pass">Password</label>
             <div class="input-group">
-              <span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
+              <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
               <input type="password" id= "pass" class="form-control" placeholder="Password" required>
             </div>
           </div>
@@ -67,9 +73,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- clear form script -->
     <script>
-		$('#clearButton').click(function(){
-        	$('#loginForm')[0].reset();
- 		});
+  		$('#clearButton').click(function(){
+          	$('#loginForm')[0].reset();
+   		});
 	</script>
 
   </body>
