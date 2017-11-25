@@ -30,6 +30,8 @@
       if (password_verify($postPass, $row['password'])) {
         // authenicate user and redirect
         $_SESSION["authenticated"] = true;
+        $_SESSION["user_id"] = $row['id'];
+        $_SESSION["username"] = $row['username'];
         $connection->close();
         header("Location: index.php");
         exit;
@@ -54,8 +56,9 @@
 
     <title>Sign in</title>
 
+    <!-- bootstrap css-->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-    
+    <!-- custom styles -->
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <!-- Facebook API Key: 149958958929937 -->
 

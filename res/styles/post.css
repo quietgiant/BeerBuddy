@@ -7,15 +7,30 @@
 	padding-right: 30px;
 	border: 1px solid black;
 	border-radius: 20px;
+	margin-bottom: 15px;
+	width: 67%;
 }
 
+@media only screen and (max-width: 768px) {
+	/* adjust size for mobile */
+    .formBox {
+        width: 95%;
+    }
+}
 
 .middleBox {
 	display: flex;
   	align-items: center;
   	justify-content: center;
 }
+
 .input-group-addon.dropdown-toggle{
   color:#FFD600;
   background-color: #4582ec;
+}
+
+.post-button {
+	width:50%; 
+	margin-left: auto; 
+	margin-right: auto;
 }

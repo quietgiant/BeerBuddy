@@ -1,6 +1,75 @@
-<?php 
+<?php
+
+  /* for dev
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  */
 
   session_start();
+  
+  // check for which form was submitted
+  if (isset($_POST['inputType']) && isset($_POST['inputName']) && isset($_POST['inputPrice']) && isset($_POST['inputLocation'])) {
+      if (validate_user_logged_in()) {
+        post_drink_manual();
+      }
+  } else if (isset($_POST['inputUPC']) && isset($_POST['inputPriceUPC']) && isset($_POST['inputLocationUPC'])){
+      if (validate_user_logged_in()) {
+        post_drink_upc();
+      }
+  }
+
+  function post_drink_manual() {
+
+    require_once('controller/db_connection.php');
+    $connection = connect_to_db();
+    $user_id = (int)$_SESSION["user_id"];
+    $alcoholType = htmlspecialchars($_POST["inputType"]);
+    $alcoholName = htmlspecialchars($_POST["inputName"]);
+    $alcoholPrice = (float)htmlspecialchars($_POST["inputPrice"]);
+    // add format price above to ensure xx.xx pattern ^^
+    $purchaseLocation = htmlspecialchars($_POST["inputLocation"]);
+
+    $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_name, price, address, date) VALUES ('$user_id', '$alcoholType', '$alcoholName', '$alcoholPrice', '$purchaseLocation', NOW());");
+
+    // execute query
+    $result = $connection->query($sql) or die(mysqli_error($connection));  
+
+    if ($result === false) {
+      die("Could not query database");
+    } else {
+      $connection->close();
+      notify_success();
+      header("Location: view_recent.php");
+      exit;
+    }
+
+  }
+
+  function post_drink_upc() {
+
+    require_once('controller/db_connection.php');
+    $connection = connect_to_db();
+    echo ('<div style="color: red; text-align: center; font-size: 32px;">upc does not work yet... sorry!</div>');
+  }
+
+  function validate_user_logged_in() {
+    if (isset($_SESSION['authenticated'])) {
+      return true;
+    } else {
+      echo ('<div style="color: red; text-align: center; font-size: 32px;">You must be signed in to post a deal!</div>');
+      return false;
+    }
+  }
+
+  function notify_success() {
+    return true;
+  }
+
+  function format_price($price) {
+    // input will be guranteed number, may or may not have decimal, will 0, 1, or 2 decimal places
+    $formatted = $price;
+    return $formatted;
+  }
 
 ?>
 
@@ -22,7 +91,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- boostrap combo-box css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/css/bootstrap-combobox.min.css" rel="stylesheet">
-
     <!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/post.css" rel="stylesheet">
@@ -43,12 +111,11 @@
 
       <h1 class="animated jello textBlue title-bar" style="text-align: center; font-size: 3em">Post A Deal&nbsp;<span  class="glyphicon glyphicon-map-marker textGold"></span></h1>
 
-  
   			<!-- enter drink information form -->
-  		  <div class="container-fluid formBox col-xs-12 col-md-5 animated bounceInLeft">
+        <form data-toggle="validator" action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" role="form" id="manualForm" name="manualForm">
+  		  <div class="container-fluid formBox animated bounceInLeft">
       		<fieldset>
         		<legend>Enter drink information</legend>
-  			    <form data-toggle="validator" role="form" id="manualForm">
 			          
                 <!-- liquor type field -->
                 <div class="form-group">
@@ -69,6 +136,7 @@
                 </div>
                 
                 <!-- brand field -->
+                <!--
                 <div class="form-group">
                   <label for="inputBrand" class="control-label">Brand:</label>
                   <div class="input-group">
@@ -76,52 +144,62 @@
                     <input type="text" class="form-control typeahead" id="inputBrand" name="inputBrand" placeholder="Brand of liquor">
                   </div>
                 </div>
+              -->
 
-                <!-- name field -->
-                <div class="form-group">
-                  <label for="inputName" class="control-label">Name of drink:</label>
-                  <div class="input-group">
-			            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-glass"></span></span>
-                    <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name of liquor">
+                  <!-- name field -->
+                  <div class="form-group">
+                    <label for="inputName" class="control-label">Name of drink:</label>
+                    <div class="input-group">
+    		            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-glass"></span></span>
+                      <input type="text" class="form-control" id="inputName" name="inputName" placeholder="What did you get?">
+                    </div>
                   </div>
-                </div>
-                
-                <!-- price field -->
-                <div class="form-group">
-			          	<label for="inputPrice" class="control-label">Price:</label>
-			            <div class="input-group">
-			            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
-                		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="Price of your bottle">
-			          	</div>
-			          </div>
+                    
+                  <!-- price field -->
+                  <div class="form-group">
+    		          	<label for="inputPrice" class="control-label">Price:</label>
+    		            <div class="input-group">
+    		            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                  		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="How much did you pay?">
+    		          	</div>
+    		          </div>
 
-			          <!-- location field -->
-			          <div class="form-group">
-                  <label for="inputLocation" class="control-label">Purchase location:</label>
-                  <div class="input-group">
-                    <span class="mytext input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
-                    <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="Where did you get it?">
+    		          <!-- location field -->
+    		          <div class="form-group">
+                    <label for="inputLocation" class="control-label">Purchase location:</label>
+                    <div class="input-group">
+                      <span class="mytext input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
+                      <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="Where did you get it?">
+                    </div>
                   </div>
-                </div>
-                
-			        </form>
       			</fieldset>
     			</div>
+            <!-- submit form button -->
+            <div class="form-group">
+              <button class="btn btn-md btn-primary btn-block post-button" id="submitButton" name="submitButton" type="submit">Submit post&nbsp;<span class="glyphicon glyphicon-send"></span></button>
+            </div>
 
+            <!-- clear form button -->
+            <div class="form-group">
+                <button class="btn btn-md btn-primary btn-danger btn-block post-button" id="clearButton" name="clearButton" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
+            </div>
+        </form>
+    <!--
 		<div class="col-xs-12 col-md-2">
 			<div class="container-fluid middleBox">
 				<h2 class="textBlue">or</h2>
 			</div>
 		</div>
+  -->
 
-		<!-- enter drink upc form -->
+		<!-- enter drink upc form
 				<div class="container-fluid formBox col-xs-12 col-md-5 animated bounceInRight">
     			<fieldset>
         			<legend>Enter drink UPC and price</legend>
         			
-			        <form data-toggle="validator" role="form" id="upcForm">
+			        <form data-toggle="validator" action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" role="form" id="upcForm" name="upcForm">
 			          
-			          <!-- UPC field -->
+			          <!-- UPC field 
 			          <div class="form-group">
 				        	<label for="inputUPC" class="control-label">UPC:</label>
 				          <div class="input-group">
@@ -135,16 +213,16 @@
 	        				</div>
         				</div>
         				
-        				<!-- price field -->
+        				<!-- price field 
         				<div class="form-group">
 				          <label for="inputPriceUPC" class="control-label">Price:</label>
 				          <div class="input-group">
 				            <span class="mytext input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
-	                	<input type="text" class="form-control" id="inputPriceUPC" name="inputPriceUPC" placeholder="Price of your bottle">
+	                	<input type="text" class="form-control" id="inputPriceUPC" name="inputPriceUPC" placeholder="How much did you pay?">
 				          </div>
 			          </div>
 			          
-			          <!-- location field -->
+			          <!-- location field 
 		          	<div class="form-group">
                   <label for="inputLocationUPC" class="control-label">Purchase location:</label>
                   <div class="input-group">
@@ -155,19 +233,7 @@
 			        </form>
       			</fieldset>
     			</div>
-
-		</div>
-		
-
-		  <!-- submit form button -->
-        <div class="form-group">
-        	<button class="btn btn-md btn-primary btn-block" id="submitButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit">Submit post&nbsp;<span class="glyphicon glyphicon-send"></span></button>
-        </div>
-
-        <!-- clear form button -->
-        <div class="form-group">
-            <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
-        </div>
+        -->
     
     </div>
 
@@ -193,11 +259,10 @@
         $('.combobox').combobox();
       });
     </script>
-    
-        
+     
     <!-- google establishments (liquor stores) autocomplete js -->
     <script type="text/javascript">
-    function initMap() {
+      function initMap() {
         var input = document.getElementById('inputLocation');
         var options = {
           types: ['establishment']
@@ -225,17 +290,18 @@
       }
     </script>
     
+    <!-- typeahead js feature for autocomplete on drink names -->
     <script>
       $(document).ready(function(){
-          $("#search").typeahead({
-              name : 'sear',
-              remote: {
-                  url : 'connection.php?query=%QUERY'
-              }
-              
-          });
+        $("#search").typeahead({
+            name : 'sear',
+            remote: {
+                url : 'connection.php?query=%QUERY'
+            }
+            
+        });
       });
-      </script>
+    </script>
     
 
   </body>

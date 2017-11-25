@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>View Deals</title>
+    <title>View Recent Deals</title>
 
     <!-- boostrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
@@ -34,12 +34,14 @@
     <!-- page contents -->
     <div class="container-fluid">
 
-      <!-- deals content -->
+      <!-- recent deals content -->
       <div class="container-fluid">
         
-        <h1>Deals at LOCATION</h1>
+        <h1>Recent Deals</h1>
         <p>this is where deals at a specific location will appear.</p>
         <p>in a feed like format?</p>
+        <div id="recentDealsFeed">
+        </div>
 
       </div>
 
@@ -52,6 +54,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- bootstrap core js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- feed js -->
+    <script type="text/javascript" src="/src/js/view_recent.js"></script>
 
   </body>
 

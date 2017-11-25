@@ -1,5 +1,6 @@
 <?php
 // beerbuddy header navigation bar
+$username = $_SESSION['username'];
 $nav = "
 <nav class=\"navbar navbar-default navbar-static-top\">
   <div class=\"container\" style=\"padding-left: 0px; padding-right: 0px\">
@@ -32,7 +33,7 @@ $nav = "
         </li>
       </ul>
       <ul class=\"nav navbar-nav navbar-right\">
-        <li><a>Hello user!&nbsp;<span class=\"glyphicon glyphicon-ok\"></span></a></li>
+        <li><a id=\"username_block\">Hello ".($username)."!&nbsp;<span class=\"glyphicon glyphicon-ok\"></span></a></li>
         <li><a href=\"/src/logout.php\">Logout&nbsp;<span class=\"glyphicon glyphicon-log-out\"></span></a></li>
       </ul>
     </div>

@@ -1,6 +1,6 @@
 
 window.onload = function () {
-    document.getElementById('submitButton').addEventListener('click', submitPostForm)
+    document.getElementById('submitButton').addEventListener('click', submitPostForm);
     document.getElementById('clearButton').addEventListener('click', clearPostForm);
   
     function clearPostForm() {
@@ -31,7 +31,7 @@ window.onload = function () {
             var price = $('#inputPrice').val();
             var location = $('#inputLocation').val();
             
-            alert("Type: " + type + "\nBrand: " + brand + "\nName" + name + "\nPrice: " + price +"\nLocation: " + location);   
+            //alert("Type: " + type + "\nBrand: " + brand + "\nName: " + name + "\nPrice: " + price +"\nLocation: " + location);   
         }
         
     }
@@ -49,7 +49,7 @@ window.onload = function () {
     
     function validatePrice() {
         var price = $('#inputPrice').val();
-        var priceUPC = $('#inputPriceUPC').val();
+        var priceUPC = '0';
         
         if (price == '' && priceUPC == '') {
             alert("invalid price entered");
