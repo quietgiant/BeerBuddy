@@ -2,7 +2,7 @@
 // beerbuddy footer
 $footer = "
 <hr>
-<footer class=\"footer\">
+<footer class=\"footer\" style=\"margin-bottom: 15px;\">
   <div class=\"container text-center\">
     <div class=\"col-lg-12\">
       <ul class=\"nav nav-pills nav-justified\">

@@ -14,16 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Search Deals</title>
+    
+    <!-- bootstrap css-->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-
-
     <!-- animate css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <!-- boostrap slider css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css" rel="stylesheet">
     <!-- boostrap combo-box css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/css/bootstrap-combobox.min.css" rel="stylesheet">
-
     <!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/search.css" rel="stylesheet">    
@@ -45,7 +44,7 @@
       <!-- search functions -->
       <div class="container-fluid">
 
-        <h2 class="animated lightSpeedIn textBlue title-bar" ">What Sounds Good To Drink Tonight<span class="textGold ">?</span></h2>
+        <h2 class="animated lightSpeedIn textBlue title-bar">What sounds good to drink tonight<span class="textGold ">?</span></h2>
           
         <div class="container formBox">
 

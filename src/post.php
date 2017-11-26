@@ -16,6 +16,8 @@
       if (validate_user_logged_in()) {
         post_drink_upc();
       }
+  } else {
+    
   }
 
   function post_drink_manual() {
@@ -23,11 +25,11 @@
     require_once('controller/db_connection.php');
     $connection = connect_to_db();
     $user_id = (int)$_SESSION["user_id"];
-    $alcoholType = htmlspecialchars($_POST["inputType"]);
-    $alcoholName = htmlspecialchars($_POST["inputName"]);
-    $alcoholPrice = (float)htmlspecialchars($_POST["inputPrice"]);
+    $alcoholType = mysqli_real_escape_string($connection, $_POST["inputType"]);
+    $alcoholName = mysqli_real_escape_string($connection, $_POST["inputName"]);
+    $alcoholPrice = (float)mysqli_real_escape_string($connection, $_POST["inputPrice"]);
     // add format price above to ensure xx.xx pattern ^^
-    $purchaseLocation = htmlspecialchars($_POST["inputLocation"]);
+    $purchaseLocation = mysqli_real_escape_string($connection, $_POST["inputLocation"]);
 
     $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_name, price, address, date) VALUES ('$user_id', '$alcoholType', '$alcoholName', '$alcoholPrice', '$purchaseLocation', NOW());");
 
@@ -83,8 +85,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Post Deal</title>
+    
+    <!-- bootstrap css-->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-
 	  <!-- animate css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <!-- boostrap slider css -->
@@ -109,7 +112,7 @@
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">
 
-      <h1 class="animated jello textBlue title-bar" style="text-align: center; font-size: 3em">Post A Deal&nbsp;<span  class="glyphicon glyphicon-map-marker textGold"></span></h1>
+      <h1 class="animated jello textBlue title-bar" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span  class="glyphicon glyphicon-map-marker textGold"></span></h1>
 
   			<!-- enter drink information form -->
         <form data-toggle="validator" action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" role="form" id="manualForm" name="manualForm">
@@ -120,7 +123,7 @@
                 <!-- liquor type field -->
                 <div class="form-group">
                   <label for="inputType" class="control-label" >Type of liquor:</label>
-                  <select class="combobox form-control " id="inputType" name="inputType">
+                  <select class="combobox form-control" id="inputType" name="inputType" required>
                     <option></option>
                     <option value="all">ALL</option>
                     <option value="beer">Beer</option>
@@ -151,7 +154,7 @@
                     <label for="inputName" class="control-label">Name of drink:</label>
                     <div class="input-group">
     		            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-glass"></span></span>
-                      <input type="text" class="form-control" id="inputName" name="inputName" placeholder="What did you get?">
+                      <input type="text" class="form-control" id="inputName" name="inputName" placeholder="What did you get?" required>
                     </div>
                   </div>
                     
@@ -160,7 +163,7 @@
     		          	<label for="inputPrice" class="control-label">Price:</label>
     		            <div class="input-group">
     		            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
-                  		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="How much did you pay?">
+                  		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="How much did you pay?" required>
     		          	</div>
     		          </div>
 
@@ -169,7 +172,7 @@
                     <label for="inputLocation" class="control-label">Purchase location:</label>
                     <div class="input-group">
                       <span class="mytext input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
-                      <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="Where did you get it?">
+                      <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="Where did you get it?" required>
                     </div>
                   </div>
       			</fieldset>

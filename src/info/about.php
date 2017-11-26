@@ -9,8 +9,9 @@
 
     <title>About Us</title>
 
+    <!-- bootstrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-
+    <!-- custom styles -->
     <link href="../../res/styles/about.css" rel="stylesheet">
 
 
@@ -18,8 +19,12 @@
 
   <body>
   
-    <!-- top navigation bar -->
-    <?php $page='about'; include('../navigation_header.php'); ?>
+        <!-- top navigation bar -->
+    <?php if (isset($_SESSION["authenticated"])): ?>
+      <?php $page='about'; include('../navigation_header_user.php'); ?>
+    <?php else: ?>
+      <?php $page='about'; include('../navigation_header.php'); ?>
+    <?php endif ?>
 
     <!-- page contents -->
     <div class="container-fluid">

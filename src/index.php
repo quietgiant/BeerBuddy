@@ -204,7 +204,7 @@
 	<!-- page contents -->
 	<div class="container-fluid">
 
-        <h2 class="animated fadeInLeft textBlue title-bar">Deals Near You</h2>
+        <h2 class="animated fadeInLeft textBlue title-bar">Deals near you</h2>
         
 	    <div class="row animated fadeInRight" id="canvas">
 

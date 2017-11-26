@@ -110,7 +110,7 @@
               <button class="btn btn-md btn-primary btn-danger btn-block" id="clearButton" style="width:67%; margin-left:auto; margin-right:auto;" type="reset">Clear&nbsp;<span class="glyphicon glyphicon-trash"></span></button>
           </div>
           <div class="form-group text-center ">
-            <p>Forgot your password? <a href="/src/help/recoverPassword.php ">Click here</a></p>
+            <!--<p>Forgot your password? <a href="/src/help/recoverPassword.php ">Click here</a></p>-->
             <p>New user? <a href="/src/register.php ">Make a new account</a></p>
           </div>
         </form>

@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title class= "textBlue title-bar">Sign in</title>
+    <title>Sign in</title>
 
+    <!-- bootstrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-
-    
+    <!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
 
   </head>
@@ -19,16 +19,20 @@
   <body>
 
     <!-- top navigation bar -->
-    <?php $page='improve'; include('../navigation_header.php'); ?>
+    <?php if (isset($_SESSION["authenticated"])): ?>
+      <?php $page='improve'; include('../navigation_header_user.php'); ?>
+    <?php else: ?>
+      <?php $page='improve'; include('../navigation_header.php'); ?>
+    <?php endif ?>
 
     <!-- page contents-->
     <div class="container-fluid">
 
   		<!-- suggestion post -->
-  		<div class="container-fluid" style="width:700px; margin-left:auto; margin-right:auto;>
+  		<div class="container-fluid" style="width:700px; margin-left:auto; margin-right:auto;">
   			<form class="form-vertical">
   				<div class="form-group">
-  					<label class="control-label">How can we make BeerBuddy better for you?</label>
+  					<h3><label class="control-label">How can we make BeerBuddy better for you?</label></h3>
   					<textarea class="form-control" rows="10" id="comment"></textarea>
   				</div>
   				<button class="btn btn-lg btn-primary btn-block " style="width:250px; margin-left:auto; margin-right:auto;" type="submit ">Submit&nbsp;<span class="glyphicon glyphicon-send"></span></button>

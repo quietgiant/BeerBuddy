@@ -1,3 +1,9 @@
+<?php
+
+  session_start();
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,16 +15,21 @@
 
     <title>Quickstart</title>
 
+    <!-- bootstrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
-
+    <!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
 
   </head>
 
   <body>
   
-    <!-- top navigation bar -->
-    <?php $page='quickstart'; include('../navigation_header.php'); ?>
+        <!-- top navigation bar -->
+    <?php if (isset($_SESSION["authenticated"])): ?>
+      <?php $page='help'; include('../navigation_header_user.php'); ?>
+    <?php else: ?>
+      <?php $page='help'; include('../navigation_header.php'); ?>
+    <?php endif ?>
 
     <!-- page contents -->
     <div class="container-fluid">
@@ -35,7 +46,7 @@
     </div>
 
     <!-- footer -->
-    <?php $page='quickstart'; include('../footer.php'); ?>
+    <?php $page='help'; include('../footer.php'); ?>
 
     <!-- jQuery core js -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

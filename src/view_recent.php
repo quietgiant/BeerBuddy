@@ -26,9 +26,9 @@
   
     <!-- top navigation bar -->
     <?php if (isset($_SESSION["authenticated"])): ?>
-      <?php $page='post'; include('navigation_header_user.php'); ?>
+      <?php $page='search'; include('navigation_header_user.php'); ?>
     <?php else: ?>
-      <?php $page='post'; include('navigation_header.php'); ?>
+      <?php $page='search'; include('navigation_header.php'); ?>
     <?php endif ?>
 
     <!-- page contents -->
@@ -37,7 +37,7 @@
       <!-- recent deals content -->
       <div class="container-fluid">
         
-        <h1>Recent Deals</h1>
+        <h2 class="animated fadeIn textBlue title-bar">Recent deals</h2>
         <p>this is where deals at a specific location will appear.</p>
         <p>in a feed like format?</p>
         <div id="recentDealsFeed">

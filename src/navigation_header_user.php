@@ -19,18 +19,23 @@ $nav = "
       <ul class=\"nav navbar-nav\">
         <li class=\"".($class = ($page == 'index') ? 'active' : '')."\"><a href=\"/src/index.php\">Explore Deals</a></li>
         <li class=\"".($class = ($page == 'post') ? 'active' : '')."\"><a href=\"/src/post.php\">Post Deal</a></li>
-        <li class=\"".($class = ($page == 'search') ? 'active' : '')."\"><a href=\"/src/search.php\">Search Deals</a></li>
+
+        <li class=\"dropdown ".($class = ($page == 'search') ? 'active' : '')."\">
+          <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Search Deals<span class=\"caret\"></span></a>
+          <ul class=\"dropdown-menu\">
+            <li class=\"".($class = ($page == 'search') ? 'active' : '')."\"><a href=\"/src/search.php\">Search</a></li>
+            <li class=\"".($class = ($page == 'recent') ? 'active' : '')."\"><a href=\"/src/view_recent.php\">Recent deals</a></li>
+          </ul>
+        </li>
+        
         <li class=\"dropdown ".($class = ($page == 'help') ? 'active' : '')."\">
           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Help<span class=\"caret\"></span></a>
           <ul class=\"dropdown-menu\">
             <li class=\"".($class = ($page == 'quickstart') ? 'active' : '')."\"><a href=\"/src/help/quickstart.php\">Quickstart</a></li>
             <li class=\"".($class = ($page == 'guidelines') ? 'active' : '')."\"><a href=\"/src/help/guidelines.php\">Posting guidelines</a></li>
-            <li role=\"separator\" class=\"divider\"></li>
-            <li class=\"dropdown-header\">Account Settings</li>
-            <li><a href=\"#\">View profile</a></li>
-            <li class=\"".($class = ($page == 'recoverPassword') ? 'active' : '')."\"><a href=\"/src/help/recoverPassword.php\">Recover password</a></li>
           </ul>
         </li>
+      
       </ul>
       <ul class=\"nav navbar-nav navbar-right\">
         <li><a id=\"username_block\">Hello ".($username)."!&nbsp;<span class=\"glyphicon glyphicon-ok\"></span></a></li>
