@@ -23,8 +23,8 @@ $nav = "
         <li class=\"dropdown ".($class = ($page == 'search') ? 'active' : '')."\">
           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Search Deals<span class=\"caret\"></span></a>
           <ul class=\"dropdown-menu\">
-            <li class=\"".($class = ($page == 'search') ? 'active' : '')."\"><a href=\"/src/search.php\">Search</a></li>
-            <li class=\"".($class = ($page == 'recent') ? 'active' : '')."\"><a href=\"/src/view_recent.php\">Recent deals</a></li>
+            <li class=\"".($class = ($page == 'searchAll') ? 'active' : '')."\"><a href=\"/src/search.php\">Search</a></li>
+            <li class=\"".($class = ($page == 'recent') ? 'active' : '')."\"><a href=\"/src/view_recent.php\">Recent Deals</a></li>
           </ul>
         </li>
         
@@ -32,7 +32,7 @@ $nav = "
           <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Help<span class=\"caret\"></span></a>
           <ul class=\"dropdown-menu\">
             <li class=\"".($class = ($page == 'quickstart') ? 'active' : '')."\"><a href=\"/src/help/quickstart.php\">Quickstart</a></li>
-            <li class=\"".($class = ($page == 'guidelines') ? 'active' : '')."\"><a href=\"/src/help/guidelines.php\">Posting guidelines</a></li>
+            <li class=\"".($class = ($page == 'guidelines') ? 'active' : '')."\"><a href=\"/src/help/guidelines.php\">Posting Guidelines</a></li>
           </ul>
         </li>
       

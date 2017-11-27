@@ -30,6 +30,7 @@
 		var locationWindow // window for current location
 		var resultsWindow; // window for filtering results
 		var service;
+
 		function initMap() {
 			
 			// init map in fort wayne
@@ -37,12 +38,12 @@
 			var def_zoom = 13;
 			map = new google.maps.Map(document.getElementById('map'), {
           		center: fw,
-          		zoom: 5,
+          		zoom: 10,
           		streetViewControl: false,
           		mapTypeControl: false,
           		fullscreenControl: false,
           		zoomControl: true,
-          		minZoom: 3
+          		minZoom: 5
           		//noClear = true // do not clear the map div elements
         	});
 
@@ -126,9 +127,9 @@
 		    return;
 		  } else {
 		    	for (var i = 0; i < results.length; i++) {
-		    		console.log(results[i].vicinity);
-			        	createMarker(results[i], results[i].name, results[i].vicinity);
-			          }
+		    		//console.log(results[i].vicinity);
+			        createMarker(results[i], results[i].name, results[i].vicinity);
+			    }
 		
 		    if (pagination.hasNextPage) {
 		        pagination.nextPage();
@@ -208,7 +209,7 @@
         
 	    <div class="row animated fadeInRight" id="canvas">
 
-            <div class="col-md-10 col-xs-12" id="mapContainer">
+            <div class="col-xs-12" id="mapContainer">
     			<!--<div id="card" class="card">
 			    	<div id="card-title" >
 			        	<p>&nbsp;Search elsewhere</p>
@@ -222,6 +223,7 @@
     			<!-- end map -->
             </div>
             
+            <!--
             <div class="sideBar bg-info col-md-2 col-xs-12">
             	<div class="sideBarButtons">
 	                <div class="col-md-12 col-xs-6">
@@ -232,6 +234,7 @@
 	                </div>
                 </div>
             </div>
+        	-->
 		
 			
 	    </div>
@@ -240,7 +243,7 @@
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header animated fadeInRight textBlue" id="feature-title">Featured Deals Today</h3>
+                <h3 class="page-header animated fadeInRight textBlue" id="feature-title">Featured deals today</h3>
             </div>
             
             <div class="container features animated fadeInLeft">

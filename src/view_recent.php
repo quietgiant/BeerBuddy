@@ -13,12 +13,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>View Recent Deals</title>
+    <title>Recent Deals</title>
 
     <!-- boostrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
     <!-- custom styles -->
-    <link href="../res/styles/navigation_header.css" rel="stylesheet">
+    <link href="/res/styles/navigation_header.css" rel="stylesheet">
+    <link href="/res/styles/view_recent.css" rel="stylesheet">
 
   </head>
 
@@ -38,10 +39,7 @@
       <div class="container-fluid">
         
         <h2 class="animated fadeIn textBlue title-bar">Recent deals</h2>
-        <p>this is where deals at a specific location will appear.</p>
-        <p>in a feed like format?</p>
-        <div id="recentDealsFeed">
-        </div>
+        <div id="recentDealsFeed"><!-- feed of recent deals --></div>
 
       </div>
 

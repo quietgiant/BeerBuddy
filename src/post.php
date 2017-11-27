@@ -29,9 +29,12 @@
     $alcoholName = mysqli_real_escape_string($connection, $_POST["inputName"]);
     $alcoholPrice = (float)mysqli_real_escape_string($connection, $_POST["inputPrice"]);
     // add format price above to ensure xx.xx pattern ^^
-    $purchaseLocation = mysqli_real_escape_string($connection, $_POST["inputLocation"]);
+    $storeName = mysqli_real_escape_string($connection, $_SESSION["storeName"]);
+    $locationAddress = mysqli_real_escape_string($connection, $_SESSION["purchaseAddress"]);
+    $locationCity = mysqli_real_escape_string($connection, $_SESSION["purchaseCity"]);
+    $locationState = mysqli_real_escape_string($connection, $_SESSION["purchaseState"]);
 
-    $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_name, price, address, date) VALUES ('$user_id', '$alcoholType', '$alcoholName', '$alcoholPrice', '$purchaseLocation', NOW());");
+    $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_name, price, store_name, address, city, state, date) VALUES ('$user_id', '$alcoholType', '$alcoholName', '$alcoholPrice', '$storeName', '$locationAddress', '$locationCity', '$locationState', NOW());");
 
     // execute query
     $result = $connection->query($sql) or die(mysqli_error($connection));  
@@ -73,6 +76,10 @@
     return $formatted;
   }
 
+  function format_name ($name) {
+    // input will  be string, needs to capitalize each new word, ie.) Xxxx Xxxx Xxx's Xx X Xxx
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -112,7 +119,7 @@
     <!-- page contents -->
     <div class="container-fluid" style="margin-bottom: 20px;">
 
-      <h1 class="animated jello textBlue title-bar" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span  class="glyphicon glyphicon-map-marker textGold"></span></h1>
+      <h1 class="animated jello textBlue title-bar" style="text-align: center; font-size: 3em">Post a deal&nbsp;<span class="glyphicon glyphicon-map-marker textGold"></span></h1>
 
   			<!-- enter drink information form -->
         <form data-toggle="validator" action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" role="form" id="manualForm" name="manualForm">
@@ -172,7 +179,7 @@
                     <label for="inputLocation" class="control-label">Purchase location:</label>
                     <div class="input-group">
                       <span class="mytext input-group-addon"><span class="glyphicon glyphicon-globe"></span></span>
-                      <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="Where did you get it?" required>
+                      <input type="text" class="form-control" id="inputLocation" name="inputLocation" placeholder="Where did you get it?" onFocus="geolocate()" required>
                     </div>
                   </div>
       			</fieldset>
@@ -268,12 +275,15 @@
       function initMap() {
         var input = document.getElementById('inputLocation');
         var options = {
-          types: ['establishment']
+          types: ['establishment'],
+          strictBounds: true
         };
 
         var autocomplete = new google.maps.places.Autocomplete(input, options);
-        autocomplete.setOptions({strictBounds: true});
-
+        autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+          setAddressVariables(place);
+        });
       }
       
       function geolocate() {
@@ -292,20 +302,6 @@
         }
       }
     </script>
-    
-    <!-- typeahead js feature for autocomplete on drink names -->
-    <script>
-      $(document).ready(function(){
-        $("#search").typeahead({
-            name : 'sear',
-            remote: {
-                url : 'connection.php?query=%QUERY'
-            }
-            
-        });
-      });
-    </script>
-    
 
   </body>
 

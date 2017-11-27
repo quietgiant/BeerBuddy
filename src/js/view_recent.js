@@ -1,19 +1,19 @@
 $(document).ready(function () {
 
-	getFeed();
+	getRecentDealsFeed();
 
-	// refresh the feed every 15 seconds	
+	// refresh the feed every 7.5 seconds	
 	setInterval(function () {
 		switch (window.location.href.split("/").pop()) {
-			case "view_deals.php":
-				getFeed();
+			case "view_recent.php":
+				getRecentDealsFeed();
 				break;
 		}
-	}, 24000);
+	}, 12000);
 
 });
 
-function getFeed() {
+function getRecentDealsFeed() {
 
 	$.ajax({
 		url: '/src/controller/get_feed.php',
@@ -29,15 +29,19 @@ function getFeed() {
 			$.each(data, function (idx, val) {
 
 				var html = '\
-				<table border="0" style="width: 100%">\
+				<table border="0">\
 					<tr>\
-						<td style="padding-left: 10px">\
-							<b>'+val.drink_name+'</b> ('+val.alcohol_type+') -> $'+val.price+' from <b>'+val.address+'</b>\
+						<td>\
+							<h4>' + val.drink_name + ' (' + val.alcohol_type + '): $' + val.price + ' </h4>\
 						</td>\
+						<td></td>\
 					</tr>\
 					<tr>\
-						<td style="padding-left: 10px">\
-							post date: '+val.date+'\
+						<td>\
+							<h6>from</h6> <a href="#"><h4>' + val.store_name + '</h4></a>\
+						</td>\
+						<td align="right">\
+							<h6><i>post date: ' + val.date + '</i></h6>\
 						</td>\
 					</tr>\
 				</table>\
@@ -47,6 +51,6 @@ function getFeed() {
 			});
 		})
 		.fail(function (data) {
-            alert('error', "Unable to generate feed");
+            alert("Error retrieving recent deals feed.");
 		});
 }
