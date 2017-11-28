@@ -1,7 +1,9 @@
 <?php 
 
   session_start();
-
+  
+  $message = $_SESSION['mysql'];
+ echo ("<script type='text/javascript'>alert('$message');</script>");
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +15,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>View Deals</title>
+    <title>Deals Results</title>
 
     <!-- boostrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
     <!-- custom styles -->
-    <link href="../res/styles/navigation_header.css" rel="stylesheet">
+    <link href="/res/styles/navigation_header.css" rel="stylesheet">
+    <link href="/res/styles/view_recent.css" rel="stylesheet">
 
   </head>
 
@@ -26,20 +29,19 @@
   
     <!-- top navigation bar -->
     <?php if (isset($_SESSION["authenticated"])): ?>
-      <?php $page='post'; include('navigation_header_user.php'); ?>
+      <?php $page='search'; include('navigation_header_user.php'); ?>
     <?php else: ?>
-      <?php $page='post'; include('navigation_header.php'); ?>
+      <?php $page='search'; include('navigation_header.php'); ?>
     <?php endif ?>
 
     <!-- page contents -->
     <div class="container-fluid">
 
-      <!-- deals content -->
+      <!-- recent deals content -->
       <div class="container-fluid">
         
-        <h1>Deals at LOCATION</h1>
-        <p>this is where deals at a specific location will appear.</p>
-        <p>in a feed like format?</p>
+        <h2 class="animated fadeIn textBlue title-bar">Recent deals</h2>
+        <div id="recentDealsFeed"><!-- feed of recent deals --></div>
 
       </div>
 
@@ -52,6 +54,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- bootstrap core js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- feed js -->
+    <script type="text/javascript" src="/src/js/view_deals.js"></script>
 
   </body>
 
