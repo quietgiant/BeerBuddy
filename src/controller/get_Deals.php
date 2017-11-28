@@ -52,7 +52,6 @@ INNER JOIN beerbuddy.user_data ON deal_posts.user_id = beerbuddy.user_data.id wh
 	}
 	$buildSql = $buildSql." ORDER BY beerbuddy.deal_posts.id desc LIMIT 15;";
 
-	$_SESSION['mysql'] =$buildSql;
 	$sql = $buildSql;
 
 	$result = $connection->query($sql) or die(mysqli_error());     
