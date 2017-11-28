@@ -1,7 +1,7 @@
 window.onload = function () {
     document.getElementById('submitButton').addEventListener('click', submitPostForm);
     document.getElementById('clearButton').addEventListener('click', clearPostForm);
-} 
+}
 
 function clearPostForm() {
     $('#inputType').data('combobox').clearElement();
@@ -51,7 +51,7 @@ function validatePrice() {
     var priceUPC = '0';
     
     if (price == '' && priceUPC == '') {
-        alert("invalid price entered");
+        alert("Invalid price entered!");
         return false;
     }
     
@@ -59,7 +59,7 @@ function validatePrice() {
     // maximum of 2 digits after decimal
     // but decimal is optional
     if (!price.match(/^\d{0,3}(\.\d{1,2})?$/) || !priceUPC.match(/^\d{0,3}(\.\d{1,2})?$/)) {
-        alert("invalid price entered");
+        alert("Invalid price entered!");
         return false;
     }
     
@@ -73,7 +73,6 @@ function setAddressVariables(place) {
     var streetNumber = place.address_components[0]['long_name'];
     var streetName = place.address_components[1]['long_name'];
     var fullAddress = streetNumber + ' ' + streetName;
-    console.log(name);
 
     $.ajax({
         url: '/src/controller/set_address.php',

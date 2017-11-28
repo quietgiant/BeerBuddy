@@ -70,12 +70,6 @@
     return true;
   }
 
-  function format_price($price) {
-    // input will be guranteed number, may or may not have decimal, will 0, 1, or 2 decimal places
-    $formatted = $price;
-    return $formatted;
-  }
-
   function format_name ($name) {
     // input will  be string, needs to capitalize each new word, ie.) Xxxx Xxxx Xxx's Xx X Xxx
   }
@@ -127,12 +121,11 @@
       		<fieldset>
         		<legend>Enter drink information</legend>
 			          
-                <!-- liquor type field -->
+                <!-- alcohol type field -->
                 <div class="form-group">
-                  <label for="inputType" class="control-label" >Type of liquor:</label>
+                  <label for="inputType" class="control-label" >Type of alcohol:</label>
                   <select class="combobox form-control" id="inputType" name="inputType" required>
                     <option></option>
-                    <option value="all">ALL</option>
                     <option value="beer">Beer</option>
                     <option value="brandy">Brandy</option>
                     <option value="gin">Gin</option>
@@ -161,7 +154,7 @@
                     <label for="inputName" class="control-label">Name of drink:</label>
                     <div class="input-group">
     		            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-glass"></span></span>
-                      <input type="text" class="form-control" id="inputName" name="inputName" placeholder="What did you get?" required>
+                      <input type="text" class="form-control" id="inputName" name="inputName" autocomplete="off" spellcheck="false" placeholder="What did you get?" required>
                     </div>
                   </div>
                     
@@ -258,6 +251,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
     <!-- boostrap combo-box js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/js/bootstrap-combobox.min.js"></script>
+    <!-- typeahead js -->
+    <script src="/res/lib/typeahead.js"></script>
     <!-- google maps js api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
     <!-- post js -->
@@ -302,6 +297,29 @@
         }
       }
     </script>
+    
+    <!-- init typeahead -->
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("#inputName").typeahead({
+            source: function (query, result) {
+                $.ajax({
+                    url: "/src/controller/typeahead_name.php",
+					          data: {
+					            "term": query
+					          },            
+                    dataType: "json",
+                    method: "POST",
+                    success: function (data) {
+						            result($.map(data, function (item) {
+							              return item;
+                        }));
+                    }
+                });
+            }
+        });
+    });
+  </script>
 
   </body>
 

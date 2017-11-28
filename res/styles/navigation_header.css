@@ -5,3 +5,11 @@
 #username_block:hover {
 	border: none;
 }
+
+@media only screen and (max-width: 768px) {
+    /* for mobile */
+    .navbar, .navbar-header {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+    }
+}
