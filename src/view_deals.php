@@ -40,7 +40,7 @@
       <!-- recent deals content -->
       <div class="container-fluid">
         
-        <h2 class="animated fadeIn textBlue title-bar">Recent deals</h2>
+        <h2 class="animated fadeIn textBlue title-bar">Search Deals</h2>
         <div id="recentDealsFeed"><!-- feed of recent deals --></div>
 
       </div>

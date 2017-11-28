@@ -17,7 +17,15 @@ INNER JOIN beerbuddy.user_data ON deal_posts.user_id = beerbuddy.user_data.id wh
 	
 	$stack = array();
 
-	
+	if($_SESSION['isBeer']!=null){ // it is beer so only show beer
+		$message = ("alcohol_type = \"beer\"");
+		array_push($stack,$message);
+		
+	}
+	else{ // liqour so show everything except beer
+		$message = ("alcohol_type != \"beer\"");
+		array_push($stack,$message);
+	}
 	
 	if($_SESSION['boozeType']!=null){
 		$message = ("alcohol_type like \"%".$_SESSION['boozeType']."%\"");

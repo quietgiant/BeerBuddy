@@ -11,6 +11,7 @@
      
   if (isset($_POST['typeBooze'])|| isset($_POST['brandBooze'])||isset($_POST['nameBooze'])|| $_POST['priceRangeBoozeValue1']>0) {
     // start sql build
+    $_SESSION['isBeer'] = null;
     $_SESSION['boozeType'] = null;
     $_SESSION['boozeBrand'] = null;
     $_SESSION['boozeName'] = null;
@@ -32,11 +33,35 @@
 
      header('Location: view_deals.php');
      
-     
-     
-     
+
      // go to deals page with current sql statment
-  } else {
+  } elseif ( isset($_POST['brandBeer'])||isset($_POST['nameBeer'])|| $_POST['priceRangeBeerValue1']>0) {
+    // start sql build
+    $_SESSION['isBeer'] = "true";
+    $_SESSION['boozeType'] = null;
+    $_SESSION['boozeBrand'] = null;
+    $_SESSION['boozeName'] = null;
+    $_SESSION['boozePrice'] = null;
+    
+    if(isset($_POST['typeBooze'])){
+      $_SESSION['boozeType'] = "beer";
+    }
+    if(isset($_POST['brandBeer'])){
+      $_SESSION['boozeBrand'] = $_POST['brandBeer'];
+    }
+    if(isset($_POST['nameBeer'])){
+      $_SESSION['boozeName'] = $_POST['nameBeer'];
+    }
+    if($_POST['priceRangeBeerValue1']){
+      $_SESSION['boozePrice'] = $_POST['priceRangeBeerValue1'];
+    }
+    
+
+     header('Location: view_deals.php');
+     
+
+     // go to deals page with current sql statment
+  }else {
     //add alert no items selected
   }
 
@@ -117,7 +142,7 @@
               <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
 
                 <!-- beer search form -->
-                <form role="form" id="beerSearch">
+                <form role="form" id="beerSearch" method="POST"> 
                   <h3 class="form-heading">Search for beer around you</h3>
                   <h5 class="form-heading">(at least one field is required)</h5>
 
@@ -136,7 +161,7 @@
                   <!-- price range slider -->
                   <div class="form-group">
                     <label id="pv" for="priceRangeBeer" class="control-label">Maximum price: $<span id="priceRangeBeerValue">&nbsp;-</span><br>
-                    <input id="priceRangeBeer" type="text" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="0"/>
+                    <input id="priceRangeBeer" type="text" id="priceRangeBeerValue1" name = "priceRangeBeerValue1" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="0"/>
                   </div>
 
                   <!-- submit form button -->
