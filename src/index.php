@@ -163,6 +163,8 @@
 	    }
 	     
 		function createInfoWindowContent(storeName, storeAddress) {
+			alert(storeName.replace(" ","%20"))
+			var link='/src/view_store_deals.php?store='+storeName.replace(/ /g,"%20")+'&address="'+storeAddress;
 			var content = 
 				'<table border="0" style="width: 100%">' +
 					'<tr>' +
@@ -175,11 +177,13 @@
 					'<td align="center">'+'<a href="https://www.google.com/maps/place/'+ storeAddress + '" target="_blank">&nbsp;(view directions)</a></td>' +
 					'</tr>' +
 				'</table><br>' +
-				'<a href="/src/view_deals.php"><button type="button" class="btn btn-primary center-block" >View deals at ' + storeName + '</button></a>';
+				'<a href='+link+'><button type="button" class="btn btn-primary center-block" >View deals at ' + storeName + '</button></a>';
 				
 			return content;
 		}
-
+		function storeDeals(storeName){
+			alert(storeName)
+		}
 		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 	       	infoWindow.setPosition(pos);
 	       	infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
