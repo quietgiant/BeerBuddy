@@ -14,7 +14,6 @@ $(document).ready(function () {
 });
 
 function getRecentDealsFeed() {
-
 	$.ajax({
 		url: '/src/controller/get_feed.php',
 		type: 'GET',
@@ -27,7 +26,6 @@ function getRecentDealsFeed() {
 			$feed.empty();
 			
 			$.each(data, function (idx, val) {
-
 				var html = '\
 				<table border="0">\
 					<tr>\
@@ -38,7 +36,7 @@ function getRecentDealsFeed() {
 					</tr>\
 					<tr>\
 						<td>\
-							<h6>from</h6> <a href="#"><h4>' + val.store_name + '</h4></a>\
+							<h6>from</h6> <a href="https://www.google.com/maps/place/'+ val.store_name + '" target="_blank"><h4>' + val.store_name + '</h4></a>\
 						</td>\
 						<td align="right">\
 							<h6><i>post date: ' + val.date + '</i></h6>\
