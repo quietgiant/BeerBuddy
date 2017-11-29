@@ -86,7 +86,7 @@ function setAddressVariables(place) {
         }
     })
         .done(function (data) {
-            alert("success!");
+            alert("address vars set!");
             // do nothing, variables are set            
         })
         .fail(function (data) {

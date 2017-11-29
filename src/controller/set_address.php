@@ -7,7 +7,6 @@
 
 	if (empty($_GET['name']) || empty($_GET['address']) || empty($_GET['city']) || empty($_GET['state'])) {
 		echo json_encode(['error' => 'Could not determine full address.']);
-    	exit;
 	}
 
 	$_SESSION['storeName'] = $_GET['name'];

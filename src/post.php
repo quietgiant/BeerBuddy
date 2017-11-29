@@ -27,6 +27,7 @@
     $user_id = (int)$_SESSION["user_id"];
     $alcoholType = mysqli_real_escape_string($connection, $_POST["inputType"]);
     $alcoholName = mysqli_real_escape_string($connection, $_POST["inputName"]);
+    $alcoholName = ucwords($alcoholName);
     $alcoholPrice = (float)mysqli_real_escape_string($connection, $_POST["inputPrice"]);
     // add format price above to ensure xx.xx pattern ^^
     $storeName = mysqli_real_escape_string($connection, $_SESSION["storeName"]);
@@ -70,10 +71,6 @@
     return true;
   }
 
-  function format_name ($name) {
-    // input will  be string, needs to capitalize each new word, ie.) Xxxx Xxxx Xxx's Xx X Xxx
-  }
-
 ?>
 
 <!DOCTYPE html>
@@ -98,6 +95,39 @@
     <!-- custom styles -->
     <link href="../res/styles/navigation_header.css" rel="stylesheet">
     <link href="../res/styles/post.css" rel="stylesheet">
+    
+    <!-- google establishments (liquor stores) autocomplete js -->
+    <script type="text/javascript">
+      function initMap() {
+        var input = document.getElementById('inputLocation');
+        var options = {
+          types: ['establishment'],
+          strictBounds: true
+        };
+
+        var autocomplete = new google.maps.places.Autocomplete(input, options);
+        autocomplete.addListener('place_changed', function() {
+          var place = autocomplete.getPlace();
+          setAddressVariables(place);
+        });
+      }
+      
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
 
   </head>
 
@@ -263,39 +293,6 @@
       $(document).ready(function(){
         $('.combobox').combobox();
       });
-    </script>
-     
-    <!-- google establishments (liquor stores) autocomplete js -->
-    <script type="text/javascript">
-      function initMap() {
-        var input = document.getElementById('inputLocation');
-        var options = {
-          types: ['establishment'],
-          strictBounds: true
-        };
-
-        var autocomplete = new google.maps.places.Autocomplete(input, options);
-        autocomplete.addListener('place_changed', function() {
-          var place = autocomplete.getPlace();
-          setAddressVariables(place);
-        });
-      }
-      
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
-        }
-      }
     </script>
     
     <!-- init typeahead -->
