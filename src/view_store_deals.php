@@ -26,7 +26,7 @@ echo ("<title>".$storeName." Deals</title>");
     <link href="/res/styles/view_recent.css" rel="stylesheet">
 
   </head>
-    <!--This onload calls a fuction on the view_stor_deals.js-->T
+    <!--This onload calls a fuction on the view_stor_deals.js-->
   <body onload="<?php echo $runFunction ?>">
     <!-- top navigation bar -->
     <?php if (isset($_SESSION["authenticated"])): ?>

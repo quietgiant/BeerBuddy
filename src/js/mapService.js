@@ -94,7 +94,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function createInfoWindowContent(storeName, storeAddress) {
-    var link = '/src/view_store_deals.php?store=' + encodeURIComponent(storeName) + '&address="' + encodeURIComponent(storeAddress);
+    var link = '/src/view_store_deals.php?store=' + encodeURIComponent(storeName) + '&address=' + encodeURIComponent(storeAddress);
     var content =
         '<div style="text-align: center;padding: 10px">' +
             '<div>' + storeName + '</div>' +

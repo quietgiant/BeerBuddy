@@ -18,7 +18,7 @@ function getRecentDealsFeed(address) {
 		url: '/src/controller/get_Store_Deals.php',
 		type: 'GET',
 		dataType: 'json',
-		data: ({address: address}),
+		data: ({address: this.address}),
 		cache: false
 	})
 		.done(function (data) {
