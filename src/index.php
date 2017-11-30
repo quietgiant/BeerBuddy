@@ -23,6 +23,7 @@
 	<link href="/res/styles/index.css" rel="stylesheet">
 	<link href="/res/styles/navigation_header.css" rel="stylesheet">
 	<!-- google api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
+<<<<<<< HEAD
 
 	<script type="text/javascript">
 
@@ -38,7 +39,7 @@
 			var def_zoom = 13;
 			map = new google.maps.Map(document.getElementById('map'), {
           		center: fw,
-          		zoom: 10,
+          		zoom: 9,
           		streetViewControl: false,
           		mapTypeControl: false,
           		fullscreenControl: false,
@@ -79,7 +80,7 @@
 	        
 	        var marker = new google.maps.Marker({
         		map: map,
-        		anchorPoint: new google.maps.Point(0, -29)
+        		anchorPoint: new google.maps.Point(-1, -29)
     		});
 	    	  // init autocomplete search bar
 		      autocomplete.addListener('place_changed', function() {
@@ -191,6 +192,8 @@
 
 		google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
+=======
+>>>>>>> b1fb4c657a70f719f3affa6a541822c07ed251f1
 	<!-- 21+ modal dialog js -->
 	<script type="text/javascript" src="js/modalResponse.js"></script>
 
@@ -283,7 +286,4 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- google maps js api -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
-
-</body>
-
-</html>
+	<script type="text/javascript" src="./js/mapService.js"></script></body>
