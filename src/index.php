@@ -163,7 +163,7 @@
 	    }
 	     
 		function createInfoWindowContent(storeName, storeAddress) {
-			var link='/src/view_store_deals.php?store='+storeName.replace(/ /g,"%20")+'&address="'+storeAddress;
+			var link='/src/view_store_deals.php?store='+storeName.replace(/ /g,"%20")+'&address='+storeAddress.replace(/ /g,"%20");
 			var content = 
 				'<table border="0" style="width: 100%">' +
 					'<tr>' +

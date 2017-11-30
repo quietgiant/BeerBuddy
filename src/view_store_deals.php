@@ -1,9 +1,10 @@
 <?php 
 
   session_start();
-
+  $address=htmlspecialchars($_GET['address']);
+    echo ($address);
+  $runFunction="getRecentDealsFeed('".$address."')"
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,9 +26,8 @@ echo ("<title>".$storeName." Deals</title>");
     <link href="/res/styles/view_recent.css" rel="stylesheet">
 
   </head>
-
-  <body>
-  
+    <!--This onload calls a fuction on the view_stor_deals.js-->T
+  <body onload="<?php echo $runFunction ?>">
     <!-- top navigation bar -->
     <?php if (isset($_SESSION["authenticated"])): ?>
       <?php $page='search'; include('navigation_header_user.php'); ?>
@@ -59,8 +59,7 @@ echo ("<title>".$storeName." Deals</title>");
     <!-- bootstrap core js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- feed js -->
-    <script type="text/javascript" src="/src/js/view_recent.js"></script>
-
+    <script type="text/javascript" src="/src/js/view_store_deals.js"></script>
   </body>
 
 </html>
