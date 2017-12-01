@@ -86,9 +86,9 @@
             <div class="input-group">
               <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
               <?php if (isset($_POST["inputEmail"])): ?>
-                <input type="email" id="email" name="inputEmail" class="form-control " value="<?= htmlspecialchars($_POST["inputEmail"]) ?>" required>
+                <input type="email" id="email" name="inputEmail" class="form-control " autocomplete="off" value="<?= htmlspecialchars($_POST["inputEmail"]) ?>" required>
               <?php else: ?>
-                <input type="email" id="email" name="inputEmail" class="form-control " placeholder="Email address" required autofocus>
+                <input type="email" id="email" name="inputEmail" class="form-control " placeholder="Email address" autocomplete="off" required autofocus>
               <?php endif ?>  
             </div>
           </div>
@@ -97,9 +97,9 @@
             <div class="input-group">
               <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
               <?php if (isset($_POST["inputEmail"])): ?>
-                <input type="password" id= "pass" name="inputPassword" class="form-control" placeholder="Password" required autofocus>
+                <input type="password" id= "pass" name="inputPassword" class="form-control" placeholder="Password" autocomplete="off" required autofocus>
               <?php else: ?>
-                <input type="password" id= "pass" name="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id= "pass" name="inputPassword" class="form-control" placeholder="Password" autocomplete="off" required>
               <?php endif ?> 
             </div>
           </div>

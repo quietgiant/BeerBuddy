@@ -100,7 +100,7 @@
                 <?php if (isset($_POST["inputEmail"])): ?>
                   <input type="email" class="form-control" id="inputEmail" name="inputEmail" value="<?= htmlspecialchars($_POST["inputEmail"]) ?>" data-error="Check that address!" required>
                 <?php else: ?>
-                  <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Your email address" data-error="Check that address!" required>
+                  <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Your email address" data-error="Check that address!" autocomplete="off" required>
                 <?php endif ?>                
               </div>
               <div class="help-block with-errors"></div>
@@ -112,9 +112,9 @@
               <div class="input-group">
                 <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
                 <?php if (isset($_POST["inputUsername"])): ?>
-                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="20" class="form-control" id="inputUsername" name="inputUsername" value="<?= htmlspecialchars($_POST["inputUsername"]) ?>" required>
+                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="20" class="form-control" id="inputUsername" name="inputUsername" value="<?= htmlspecialchars($_POST["inputUsername"]) ?>" autocomplete="off" required>
                 <?php else: ?>
-                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="20" class="form-control" id="inputUsername" name="inputUsername" placeholder="Your username" required>
+                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="20" class="form-control" id="inputUsername" name="inputUsername" placeholder="Your username" autocomplete="off" required>
                 <?php endif ?>
               </div>
               <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -135,7 +135,7 @@
             <label for="inputPassword" class="control-label">Password</label>
             <div class="input-group">
               <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
-              <input type="password" data-minlength="2" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required>
+              <input type="password" data-minlength="2" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" autocomplete="off" required>
             </div>
             <div class="help-block with-errors"></div>
           </div>
@@ -145,7 +145,7 @@
             <label for="inputPasswordConfirm" class="control-label">Retype Password</label>
             <div class="input-group">
               <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
-              <input type="password" data-minlength="2" class="form-control" id="inputPasswordConfirm" name="inputPassword" placeholder="Password (one more time)" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" required>
+              <input type="password" data-minlength="2" class="form-control" id="inputPasswordConfirm" name="inputPassword" placeholder="Password (one more time)" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" autocomplete="off" required>
             </div>
             <div class="help-block with-errors"></div>
           </div>

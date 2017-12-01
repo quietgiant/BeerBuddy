@@ -20,7 +20,7 @@
     
   }
 
-  function post_drink_manual() {
+  function post_drink_manual() { 
 
     require_once('controller/db_connection.php');
     $connection = connect_to_db();
@@ -34,9 +34,14 @@
     $locationAddress = mysqli_real_escape_string($connection, $_SESSION["purchaseAddress"]);
     $locationCity = mysqli_real_escape_string($connection, $_SESSION["purchaseCity"]);
     $locationState = mysqli_real_escape_string($connection, $_SESSION["purchaseState"]);
+    /*$brand = mysqli_real_escape_string($connection, $_POST['inputBrand']);
+    $brand = $ucwords($brand);
 
+    if (isset($_POST['inputBrand'])) {
+      $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_brand, drink_name, price, store_name, address, city, state, date) VALUES ('$user_id', '$alcoholType', '$brand', '$alcoholName', '$alcoholPrice', '$storeName', '$locationAddress', '$locationCity', '$locationState', NOW());");
+    }*/
     $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_name, price, store_name, address, city, state, date) VALUES ('$user_id', '$alcoholType', '$alcoholName', '$alcoholPrice', '$storeName', '$locationAddress', '$locationCity', '$locationState', NOW());");
-
+    
     // execute query
     $result = $connection->query($sql) or die(mysqli_error($connection));  
 
@@ -155,8 +160,9 @@
                 <div class="form-group">
                   <label for="inputType" class="control-label" >Type of alcohol:</label>
                   <select class="combobox form-control" id="inputType" name="inputType" required>
-                    <option></option>
+                    <option disabled selected></option>
                     <option value="beer">Beer</option>
+                    <option value="bourbon">Bourbon</option>
                     <option value="brandy">Brandy</option>
                     <option value="gin">Gin</option>
                     <option value="liqueur">Liqueur</option>
@@ -171,10 +177,10 @@
                 <!-- brand field -->
                 <!--
                 <div class="form-group">
-                  <label for="inputBrand" class="control-label">Brand:</label>
+                  <label for="inputBrand" class="control-label">Brand [optional]:</label>
                   <div class="input-group">
 			            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-copyright-mark"></span></span>
-                    <input type="text" class="form-control typeahead" id="inputBrand" name="inputBrand" placeholder="Brand of liquor">
+                    <input type="text" class="form-control typeahead" id="inputBrand" name="inputBrand" placeholder="Brand of alcohol" autocomplete="off">
                   </div>
                 </div>
               -->
@@ -193,7 +199,7 @@
     		          	<label for="inputPrice" class="control-label">Price:</label>
     		            <div class="input-group">
     		            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
-                  		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="How much did you pay?" required>
+                  		<input type="text" class="form-control" id="inputPrice" name="inputPrice" placeholder="How much did you pay?" autocomplete="off" required>
     		          	</div>
     		          </div>
 
