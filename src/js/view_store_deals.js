@@ -22,7 +22,6 @@ function getRecentDealsFeed(address) {
 		cache: false
 	})
 		.done(function (data) {
-			console.log(data);
 			var $feed = $('#recentDealsFeed');
 			$feed.empty();
 			

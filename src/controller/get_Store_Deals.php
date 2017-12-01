@@ -1,6 +1,6 @@
 <?php
 	session_start();
-$address = $_GET['address']; 
+$address = $_SESSION['myAddress']; 
 	require_once('db_connection.php');
 	$connection = connect_to_db();
 
@@ -12,24 +12,10 @@ $address = $_GET['address'];
    //  $_SESSION['boozePrice'] 
 	$buildSql = "SELECT alcohol_type,drink_name,price,store_name,address,date,city,state,username 
 FROM beerbuddy.deal_posts
-INNER JOIN beerbuddy.user_data ON deal_posts.user_id = beerbuddy.user_data.id where deal_posts.address=  \"".$address."\"";
-	
-	$stack = array();
-
-	
-	
-	for($i = 0; $i<sizeof($stack);$i++){
-
-			$buildSql = $buildSql. $stack[$i];
-		if($i < sizeof($stack)-1){
-				$buildSql = $buildSql. " AND ";
-		}
-		
-		
-	}
-	$buildSql = $buildSql." ORDER BY beerbuddy.deal_posts.id desc LIMIT 15;";
+INNER JOIN beerbuddy.user_data ON deal_posts.user_id = beerbuddy.user_data.id where CONCAT(deal_posts.address, ', ', deal_posts.city)=  \"".$address."\" ORDER BY beerbuddy.deal_posts.id desc ";
 
 	$sql = $buildSql;
+$_SESSION['testSql'] = $sql;
 
 	$result = $connection->query($sql) or die(mysqli_error());     
 

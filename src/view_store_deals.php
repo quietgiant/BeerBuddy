@@ -2,8 +2,9 @@
 
   session_start();
   $address=htmlspecialchars($_GET['address']);
-    echo ($address);
-  $runFunction="getRecentDealsFeed('".$address."')"
+$_SESSION['myAddress'] =  $address;
+  $runFunction="getRecentDealsFeed('".$address."')";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

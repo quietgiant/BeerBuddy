@@ -74,6 +74,8 @@ function setAddressVariables(place) {
     var streetName = place.address_components[1]['long_name'];
     var fullAddress = streetNumber + ' ' + streetName;
 
+    console.log(place.address_components);
+
     $.ajax({
         url: '/src/controller/set_address.php',
         type: 'GET',
