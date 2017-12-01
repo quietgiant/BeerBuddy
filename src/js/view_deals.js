@@ -27,7 +27,7 @@ function getRecentDealsFeed() {
 			$feed.empty();
 			
 			$.each(data, function (idx, val) {
-
+				var url =  "/src/view_store_deals.php?store=" + encodeURIComponent(val.store_name) + "&address=" + encodeURIComponent(val.address+", " + val.city);
 				var html = '\
 				<table border="0">\
 					<tr>\
@@ -38,7 +38,7 @@ function getRecentDealsFeed() {
 					</tr>\
 					<tr>\
 						<td>\
-							<h6>from</h6> <a href="#"><h4>' + val.store_name + '</h4></a>\
+							<h6>from</h6> <a href="'+url+'"><h4>' + val.store_name + '</h4></a>\
 							<a href="https://www.google.com/maps/place/'+ val.address + '" target="_blank">&nbsp;(view directions)</a>\
 						</td>\
 						<td align="right">\

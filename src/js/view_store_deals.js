@@ -13,6 +13,7 @@
 // });
 
 function getRecentDealsFeed(address) {
+	
 	alert(address);
 	$.ajax({
 		url: '/src/controller/get_Store_Deals.php',
