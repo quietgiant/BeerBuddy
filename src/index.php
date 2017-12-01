@@ -24,7 +24,7 @@
 	<link href="/res/styles/navigation_header.css" rel="stylesheet">
 	<!-- google api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
 	<!-- 21+ modal dialog js -->
-	<script type="text/javascript" src="js/modalResponse.js"></script>
+	<script type="text/javascript" src="/src/js/modalResponse.js"></script>
 
 </head>
 
@@ -115,7 +115,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- google maps js api -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
-	<script type="text/javascript" src="./js/mapService.js"></script>
+	<script type="text/javascript" src="/src/js/mapService.js"></script>
 </body>
 
 </html>

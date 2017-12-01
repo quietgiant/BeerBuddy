@@ -17,6 +17,10 @@
 
     <!-- boostrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- animate on scroll css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css" type="text/css" />
     <!-- custom styles -->
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
     <link href="/res/styles/view_recent.css" rel="stylesheet">
@@ -52,6 +56,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- bootstrap core js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- animate on scroll js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css" type="text/css" />
     <!-- feed js -->
     <script type="text/javascript" src="/src/js/view_recent.js"></script>
 

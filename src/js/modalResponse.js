@@ -3,7 +3,7 @@ function openAgeModal(){
 	//do check for cookie
 	//if cookie does not exist run the following:
 	$.ajax({
-        url: 'modal.html',
+        url: '/src/modal.html',
         dataType: 'text',
         success: function(result) {
           $('body').append(result);
@@ -30,7 +30,7 @@ function under21(){
   document.cookie = "age=under21;" + ";path=/";
 	// add code to cooking this response.
 	$('#ageModal').modal('hide');
-	window.location = "exit.php";
+	window.location = "/src/exit.php";
 }
 
 function checkCookie() {
@@ -39,7 +39,7 @@ function checkCookie() {
 	    // do nothing
 	    break;
 	  case 'under21':
-	    window.location = "exit.php"
+	    window.location = "/src/exit.php"
 	    break;
 	  default:
 	    openAgeModal()

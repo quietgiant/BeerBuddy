@@ -3,13 +3,13 @@ $(document).ready(function () {
 	getRecentDealsFeed();
 
 	// refresh the feed every 7.5 seconds	
-	setInterval(function () {
+	/*setInterval(function () {
 		switch (window.location.href.split("/").pop()) {
 			case "view_recent.php":
 				getRecentDealsFeed();
 				break;
 		}
-	}, 12000);
+	}, 12000);*/
 
 });
 
@@ -27,18 +27,20 @@ function getRecentDealsFeed() {
 			
 			$.each(data, function (idx, val) {
 				var html = '\
-				<table border="0">\
-					<tr>\
+				<table border="1">\
+					<tr class="animated fadeInLeft">\
 						<td>\
-							<h4>' + val.drink_name + ' (' + val.alcohol_type + '): $' + val.price + ' </h4>\
+							<h2 id="drink-name">' + val.drink_name + '</h2> <h4>(' + val.alcohol_type + ' - ' + val.size  + ')</h4>\
 						</td>\
-						<td></td>\
+						<td align="right">\
+							<h3 class="price">$' + val.price + '</h3>\
+						</td>\
 					</tr>\
-					<tr>\
+					<tr class="animated fadeInRight">\
 						<td>\
 							<h6>from</h6> <a href="https://www.google.com/maps/place/'+ val.store_name + '" target="_blank"><h4>' + val.store_name + '</h4></a>\
 						</td>\
-						<td align="right">\
+						<td class="post-tag">\
 							<h6><i>post date: ' + val.date + '</i></h6>\
 						</td>\
 					</tr>\

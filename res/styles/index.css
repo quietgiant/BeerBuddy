@@ -73,6 +73,7 @@ body {
     border: 2px solid black;
     width: 350px;
 }
+
 #card[class$="card"]{
 	z-index: 1; 
 	position: absolute; 
@@ -81,13 +82,11 @@ body {
 }
 
 #card-title {
-	
 	color:#EFC849;
     background-color: #4582ec;
 }
 
 #card-title p {
-	
 	font-family: 'Lobster', cursive;
 	font-size: 24px;
 	font-weight: normal;

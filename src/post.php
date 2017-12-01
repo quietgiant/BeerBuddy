@@ -29,7 +29,7 @@
     $alcoholName = mysqli_real_escape_string($connection, $_POST["inputName"]);
     $alcoholName = ucwords($alcoholName);
     $alcoholPrice = (float)mysqli_real_escape_string($connection, $_POST["inputPrice"]);
-    // add format price above to ensure xx.xx pattern ^^
+    $size = mysqli_real_escape_string($connection, $_POST['inputSize']);
     $storeName = mysqli_real_escape_string($connection, $_SESSION["storeName"]);
     $locationAddress = mysqli_real_escape_string($connection, $_SESSION["purchaseAddress"]);
     $locationCity = mysqli_real_escape_string($connection, $_SESSION["purchaseCity"]);
@@ -40,7 +40,7 @@
     if (isset($_POST['inputBrand'])) {
       $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_brand, drink_name, price, store_name, address, city, state, date) VALUES ('$user_id', '$alcoholType', '$brand', '$alcoholName', '$alcoholPrice', '$storeName', '$locationAddress', '$locationCity', '$locationState', NOW());");
     }*/
-    $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_name, price, store_name, address, city, state, date) VALUES ('$user_id', '$alcoholType', '$alcoholName', '$alcoholPrice', '$storeName', '$locationAddress', '$locationCity', '$locationState', NOW());");
+    $sql = sprintf("INSERT INTO deal_posts (user_id, alcohol_type, drink_name, price, size, store_name, address, city, state, date) VALUES ('$user_id', '$alcoholType', '$alcoholName', '$alcoholPrice', '$size', '$storeName', '$locationAddress', '$locationCity', '$locationState', NOW());");
     
     // execute query
     $result = $connection->query($sql) or die(mysqli_error($connection));  
@@ -161,16 +161,16 @@
                   <label for="inputType" class="control-label" >Type of alcohol:</label>
                   <select class="combobox form-control" id="inputType" name="inputType" required>
                     <option disabled selected></option>
-                    <option value="beer">Beer</option>
-                    <option value="bourbon">Bourbon</option>
-                    <option value="brandy">Brandy</option>
-                    <option value="gin">Gin</option>
-                    <option value="liqueur">Liqueur</option>
-                    <option value="rum">Rum</option>
-                    <option value="tequila">Tequila</option>
-                    <option value="vodka">Vodka</option>
-                    <option value="whiskey">Whiskey</option>
-                    <option value="wine">Wine</option>
+                    <option value="Beer">Beer</option>
+                    <option value="Bourbon">Bourbon</option>
+                    <option value="Brandy">Brandy</option>
+                    <option value="Gin">Gin</option>
+                    <option value="Liqueur">Liqueur</option>
+                    <option value="Rum">Rum</option>
+                    <option value="Tequila">Tequila</option>
+                    <option value="Vodka">Vodka</option>
+                    <option value="Whiskey">Whiskey</option>
+                    <option value="Wine">Wine</option>
                   </select>
                 </div>
                 
@@ -192,6 +192,26 @@
     		            	<span class="mytext input-group-addon"><span class="glyphicon glyphicon-glass"></span></span>
                       <input type="text" class="form-control" id="inputName" name="inputName" autocomplete="off" spellcheck="false" placeholder="What did you get?" required>
                     </div>
+                  </div>
+                  
+                  <!-- size field -->
+                  <div class="form-group">
+                    <label for="inputSize" class="control-label" >Size:</label>
+                    <select class="combobox form-control" id="inputSize" name="inputSize" required>
+                      <option disabled selected></option>
+                      <option value="50ml">50ml (mini)</option>
+                      <option value="100ml">100ml (eighth)</option>
+                      <option value="375ml">375ml (half-bottle)</option>
+                      <option value="750ml">750ml (standard - fifth)</option>
+                      <option value="1750ml">1,750ml (half-gallon)</option>
+                      <option value="1pk">Single beer (1-pack)</option>
+                      <option value="4pk">4-pack</option>
+                      <option value="6pk">6-pack</option>
+                      <option value="12pk">12-pack</option>
+                      <option value="24pk">24-pack (case)</option>
+                      <option value="30pk">30-pack</option>
+                      <option value="48pk">48-pack (double case)</option>
+                    </select>
                   </div>
                     
                   <!-- price field -->
@@ -293,6 +313,16 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
     <!-- post js -->
     <script type="text/javascript" src="js/post.js"></script>
+    
+    <!-- config enter key upon submit -->
+    <script type="text/javascript">
+      $(document).keypress(
+        function(event){
+          if (event.which == '13') {
+            event.preventDefault(); 
+          }
+      });
+    </script>
     
     <!-- init combo-box script -->
     <script type="text/javascript">
