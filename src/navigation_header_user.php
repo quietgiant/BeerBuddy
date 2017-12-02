@@ -11,8 +11,8 @@ $nav = "
         <span class=\"icon-bar\"></span>
         <span class=\"icon-bar\"></span>
       </button>
-      <a class=\"navbar-brand\" href=\"/src/index.php\">BeerBuddy</a>
-      <img class=\"navbar-brand\" src=\"/res/img/icon.png\" alt=\"BeerBuddyLogo\">
+      <a class=\"navbar-brand\" href=\"/src/index.php\" style=\"font-size: 200%; padding: 0;\">BeerBuddy</a>
+      <a href=\"/src/index.php\" ><img class=\"navbar-brand\" src=\"/res/img/icon.png\" alt=\"BeerBuddyLogo\"></a>
             
     </div>
     <div id=\"navbar\" class=\"navbar-collapse collapse\">

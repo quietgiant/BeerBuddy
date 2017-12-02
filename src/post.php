@@ -57,23 +57,33 @@
   }
 
   function post_drink_upc() {
-
-    require_once('controller/db_connection.php');
-    $connection = connect_to_db();
-    echo ('<div style="color: red; text-align: center; font-size: 32px;">upc does not work yet... sorry!</div>');
+      $error = create_error_markup("upc does not work yet... sorry!");
+      echo ($error);
+      return false;
   }
 
   function validate_user_logged_in() {
     if (isset($_SESSION['authenticated'])) {
       return true;
     } else {
-      echo ('<div style="color: red; text-align: center; font-size: 32px;">You must be signed in to post a deal!</div>');
+      $error = create_error_markup("You must be signed in to post!");
+      echo ($error);
       return false;
     }
   }
 
   function notify_success() {
+    sleep(2);
     return true;
+  }
+  
+  function create_error_markup($error_message) {
+    $markup = '
+      <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <h4 align="center"><strong>Error!</strong>&nbsp;&nbsp;' . $error_message . '</h4>
+      </div>';
+    return $markup;
   }
 
 ?>
@@ -309,6 +319,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/js/bootstrap-combobox.min.js"></script>
     <!-- typeahead js -->
     <script src="/res/lib/typeahead.js"></script>
+    <!-- sweetalert js -->
+    <script src="https://unpkg.com/sweetalert2@7.0.6/dist/sweetalert2.all.js"></script>
     <!-- google maps js api -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
     <!-- post js -->

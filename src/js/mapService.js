@@ -88,6 +88,11 @@ function handleSuccessfulGeolocationRequest(position) {
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    swal(
+        'Unable to determine current position...',
+        'Is your location setting enabled?',
+        'error'
+    );
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);

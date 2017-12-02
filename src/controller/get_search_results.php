@@ -6,12 +6,8 @@
 	$connection = connect_to_db();
 
 	$feed = [];
- 
-   //  $_SESSION['boozeType']
-   //  $_SESSION['boozeBrand'] 
-   //  $_SESSION['boozeName'] 
-   //  $_SESSION['boozePrice'] 
-	$buildSql = "SELECT alcohol_type,drink_name,price,store_name,address,date,city,state,username 
+
+	$buildSql = "SELECT alcohol_type,drink_name,price, size, store_name,address,date,city,state,username 
 FROM beerbuddy.deal_posts
 INNER JOIN beerbuddy.user_data ON deal_posts.user_id = beerbuddy.user_data.id where ";
 	
@@ -48,8 +44,8 @@ INNER JOIN beerbuddy.user_data ON deal_posts.user_id = beerbuddy.user_data.id wh
 				$buildSql = $buildSql. " AND ";
 		}
 		
-		
 	}
+	
 	$buildSql = $buildSql." ORDER BY beerbuddy.deal_posts.id desc LIMIT 15;";
 
 	$sql = $buildSql;
@@ -62,6 +58,7 @@ INNER JOIN beerbuddy.user_data ON deal_posts.user_id = beerbuddy.user_data.id wh
 	    $feedItem->alcohol_type = $deal_record['alcohol_type'];
 	    $feedItem->drink_name = $deal_record['drink_name'];
 	    $feedItem->price = $deal_record['price'];
+	    $feedItem->size = $deal_record['size'];
 	    $feedItem->store_name = $deal_record['store_name'];
 	    $feedItem->address = $deal_record['address'];
 	    $feedItem->city = $deal_record['city'];

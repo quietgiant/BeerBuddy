@@ -1,6 +1,8 @@
 window.onload = function () {
-    document.getElementById('submitButton').addEventListener('click', submitPostForm);
     document.getElementById('clearButton').addEventListener('click', clearPostForm);
+    document.getElementById('manualForm').onsubmit = function() {
+        return submitPostForm();
+    };
 }
 
 function clearPostForm() {
@@ -16,33 +18,34 @@ function clearPostForm() {
 }
 
 function submitPostForm() {
-    if (!validatePrice()) {
+    if (!validatePrice() || !validateName()) {
         return false;
     }
     
-    if (isUPC()) {
-        var upc_code = $('#inputUPC').val();
-        var priceUpc = $('#inputPriceUPC').val();
-        var locationUpc  = $("#inputLocationUPC").val();
-    } else {
-        var type = $('#inputType').val();
-        var brand = $('#inputBrand').val();
-        var name = $('#inputName').val();
-        var price = $('#inputPrice').val();
-        var location = $('#inputLocation').val();
+    swal({
+      position: 'top-right',
+      type: 'success',
+      title: 'Deal posted!',
+      showConfirmButton: false,
+      timer: 1500
+    });
 
-    }
+    return true;
     
 }
 
-function isUPC() {
-    var upc_code = $('#inputUPC').val();
-    var price = $('#inputPriceUPC').val();
-    var location  = $("#inputLocationUPC").val();
+function validateName() {
+    var name = $('#inputName').val();
     
-    if(upc_code == '' || price == '' || location == '') {
-        return false;
+    if (name.length < 4) {
+        swal(
+            'Invalid name...',
+            'Name is too short!',
+            'error'
+        );
+        return false; // name must have at least 4 characters
     }
+    
     return true;
 }
 
@@ -50,8 +53,12 @@ function validatePrice() {
     var price = $('#inputPrice').val();
     var priceUPC = '0';
     
-    if (price == '' && priceUPC == '') {
-        alert("Invalid price entered!");
+    if (price == '' || price == '0') {
+        swal(
+            'Invalid price...',
+            'Check your price!',
+            'error'
+        );
         return false;
     }
     
@@ -59,7 +66,11 @@ function validatePrice() {
     // maximum of 2 digits after decimal
     // but decimal is optional
     if (!price.match(/^\d{0,3}(\.\d{1,2})?$/) || !priceUPC.match(/^\d{0,3}(\.\d{1,2})?$/)) {
-        alert("Invalid price entered!");
+        swal(
+            'Invalid price...',
+            'Check your price!',
+            'error'
+        );
         return false;
     }
     
@@ -74,8 +85,6 @@ function setAddressVariables(place) {
     var streetName = place.address_components[1]['long_name'];
     var fullAddress = streetNumber + ' ' + streetName;
 
-    console.log(place.address_components);
-
     $.ajax({
         url: '/src/controller/set_address.php',
         type: 'GET',
@@ -88,10 +97,13 @@ function setAddressVariables(place) {
         }
     })
         .done(function (data) {
-            alert("address vars set!");
             // do nothing, variables are set            
         })
         .fail(function (data) {
-            alert("Error in obtaining full address from Google Maps.");
+            swal(
+                'Storage warning...',
+                'Error in obtaining full address from Google Maps.',
+                'warning'
+            );
         });
 }

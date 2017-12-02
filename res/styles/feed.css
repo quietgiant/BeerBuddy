@@ -11,8 +11,19 @@ td {
 	padding-bottom: 0px;
 }
 
+h4, h5 {
+	display: inline-block;
+}
+
 .price {
-	font-size: 3.5em;
+	text-align: right;
+	vertical-align: top;
+}
+
+.price h3 {
+	margin-top: 3px;
+	margin-bottom: 2px;
+	font-size: 3.2em;
 	color: #4582ec;
 	text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
@@ -28,6 +39,11 @@ td {
                0 20px 20px rgba(0,0,0,.15);
 }
 
+#drink-name {
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+
 #drink-name:hover {
 	text-decoration: underline;
 }
@@ -35,4 +51,10 @@ td {
 .post-tag {
 	text-align: right;
 	vertical-align: bottom;
+}
+
+.feedDivider {
+	height: 1px;
+    background: black;
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
 }

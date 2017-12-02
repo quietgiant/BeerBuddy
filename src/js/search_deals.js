@@ -1,16 +1,19 @@
+$(document).ready(function () {
 
-function getStoreDeals(address) {
-	
-	//alert(address);
+	getSearchResultsFeed();
+
+});
+
+function getSearchResultsFeed() {
+
 	$.ajax({
-		url: '/src/controller/get_Store_Deals.php',
+		url: '/src/controller/get_search_results.php',
 		type: 'GET',
 		dataType: 'json',
-		data: ({address: this.address}),
 		cache: false
 	})
 		.done(function (data) {
-			var $feed = $('#storeDealsFeed');
+			var $feed = $('#searchResultsFeed');
 			$feed.empty();
 			
 			$.each(data, function (idx, val) {

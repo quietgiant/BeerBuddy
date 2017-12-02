@@ -2,8 +2,8 @@
 
   session_start();
   $address=htmlspecialchars($_GET['address']);
-$_SESSION['myAddress'] =  $address;
-  $runFunction="getRecentDealsFeed('".$address."')";
+  $_SESSION['myAddress'] =  $address;
+  $runFunction="getStoreDeals('".$address."')";
 
 ?>
 <!DOCTYPE html>
@@ -11,23 +11,20 @@ $_SESSION['myAddress'] =  $address;
 
   <head>
 
-    <link rel="page icon" href="../res/img/beer.ico" />
+    <link rel="page icon" href="/res/img/beer.ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<?php
-$storeName=htmlspecialchars($_GET['store']);
-echo ("<title>".$storeName." Deals</title>");
-?>
+    <?php $storeName=htmlspecialchars($_GET['store']); echo ("<title>".$storeName." Deals</title>"); ?>
    
-
     <!-- boostrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
     <!-- custom styles -->
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
-    <link href="/res/styles/view_recent.css" rel="stylesheet">
+    <link href="/res/styles/feed.css" rel="stylesheet">
 
   </head>
-    <!--This onload calls a fuction on the view_stor_deals.js-->
+  
+  <!--This onload calls a fuction on the view_stor_deals.js-->
   <body onload="<?php echo $runFunction ?>">
     <!-- top navigation bar -->
     <?php if (isset($_SESSION["authenticated"])): ?>
@@ -41,12 +38,12 @@ echo ("<title>".$storeName." Deals</title>");
 
       <!-- recent deals content -->
       <div class="container-fluid">
-          <h2 class="animated fadeIn textBlue title-bar">
-        <?php 
-        echo $storeName.' deals'
-        ?>
+        <h2 class="animated fadeIn textBlue title-bar">
+          <?php 
+            echo 'Deals at ' . $storeName;
+          ?>
         </h2>
-        <div id="recentDealsFeed"><!-- feed of recent deals --></div>
+        <div id="storeDealsFeed"><!-- feed of deals at a specific location--></div>
 
       </div>
 

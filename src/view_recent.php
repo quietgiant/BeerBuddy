@@ -9,7 +9,7 @@
 
   <head>
 
-    <link rel="page icon" href="../res/img/beer.ico" />
+    <link rel="page icon" href="/src/res/img/beer.ico" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css" type="text/css" />
     <!-- custom styles -->
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
-    <link href="/res/styles/view_recent.css" rel="stylesheet">
+    <link rel="stylesheet" href="/res/styles/feed.css" type="text/css" />
 
   </head>
 

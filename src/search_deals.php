@@ -13,13 +13,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Deals Results</title>
+    <title>Deal Results</title>
 
     <!-- boostrap css -->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet">
     <!-- custom styles -->
     <link href="/res/styles/navigation_header.css" rel="stylesheet">
-    <link href="/res/styles/view_recent.css" rel="stylesheet">
+    <link href="/res/styles/feed.css" rel="stylesheet">
 
   </head>
 
@@ -38,8 +38,8 @@
       <!-- recent deals content -->
       <div class="container-fluid">
         
-        <h2 class="animated fadeIn textBlue title-bar">Search Deals</h2>
-        <div id="recentDealsFeed"><!-- feed of recent deals --></div>
+        <h2 class="animated fadeIn textBlue title-bar">Deal Results</h2>
+        <div id="searchResultsFeed"><!-- feed of search results of deals --></div>
 
       </div>
 
@@ -53,7 +53,7 @@
     <!-- bootstrap core js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- feed js -->
-    <script type="text/javascript" src="/src/js/view_deals.js"></script>
+    <script type="text/javascript" src="/src/js/search_deals.js"></script>
 
   </body>
 

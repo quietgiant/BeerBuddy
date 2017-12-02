@@ -30,8 +30,7 @@
       $_SESSION['boozePrice'] = $_POST['priceRangeBoozeValue1'];
     }
     
-
-     header('Location: view_deals.php');
+     header('Location: search_deals.php');
      
 
      // go to deals page with current sql statment
@@ -56,30 +55,10 @@
       $_SESSION['boozePrice'] = $_POST['priceRangeBeerValue1'];
     }
     
-
-     header('Location: view_deals.php');
-     
-
-     // go to deals page with current sql statment
+    // go to deals page with current sql statment
+    header('Location: search_deals.php');
   }else {
     //add alert no items selected
-  }
-
-  
-
-
-
- 
-
-
-  function format_price($price) {
-    // input will be guranteed number, may or may not have decimal, will 0, 1, or 2 decimal places
-    $formatted = $price;
-    return $formatted;
-  }
-
-  function format_name ($name) {
-    // input will  be string, needs to capitalize each new word, ie.) Xxxx Xxxx Xxx's Xx X Xxx
   }
 
 ?>
