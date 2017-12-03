@@ -24,6 +24,8 @@
 	<link href="/res/styles/navigation_header.css" rel="stylesheet">
 	<link href="/res/styles/feed.css" rel="stylesheet">
 	<!-- google api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
+	<!-- custom google maps js -->
+	<script type="text/javascript" src="/src/js/mapService.js"></script>
 	<!-- 21+ modal dialog js -->
 	<script type="text/javascript" src="/src/js/modalResponse.js"></script>
 
@@ -92,8 +94,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- google maps js api -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
-	<!-- custom google maps js -->
-	<script type="text/javascript" src="/src/js/mapService.js"></script>
 	<!-- sweetalert js -->
   <script src="https://unpkg.com/sweetalert2@7.0.6/dist/sweetalert2.all.js"></script>
 	<!-- get recent deals js -->
