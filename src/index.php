@@ -79,7 +79,7 @@
 	    
 		<h3 class="page-header animated fadeInRight textBlue" id="feature-title">Latest deals today</h3>
 		<!-- featured deals row -->
-        <div class="row" id="recentDealsFeed">
+        <div class="row" id="recentDealsFeed" style="overflow: auto !important;">
         	<!-- feed of 3 recent deals -->
         </div>
 
