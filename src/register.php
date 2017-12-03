@@ -29,9 +29,11 @@
     $emailCheck = $connection->query($sql) or die(mysqli_error());
 
     if ($userCheck->num_rows == 1) {
-      echo ('<div style="color: red; text-align: center; font-size: 32px;">Username is already in use! Please try a different username.</div>');
+      $error = create_error_markup("Username is already in use. Please try a different username.");
+      echo ($error);
     } else if ($emailCheck->num_rows == 1) {
-      echo ('<div style="color: red; text-align: center; font-size: 32px;">Email is already in use! Please try a different email address.</div>');
+      $error = create_error_markup("Email address is already in use. Please try a different email address.");
+      echo ($error);
     } else {
 
       $hashPass = password_hash(htmlspecialchars($_POST["inputPassword"]), PASSWORD_DEFAULT);
@@ -50,6 +52,15 @@
       }
 
     }
+  }
+  
+  function create_error_markup($error_message) {
+    $markup = '
+      <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <h4 align="center"><strong>Error!</strong>&nbsp;' . $error_message . '</h4>
+      </div>';
+    return $markup;
   }
 
 ?>
@@ -142,7 +153,7 @@
 
           <!-- password entry 2 -->
           <div class="form-group">
-            <label for="inputPasswordConfirm" class="control-label">Retype Password</label>
+            <label for="inputPasswordConfirm" class="control-label">Confirm Password</label>
             <div class="input-group">
               <span class="mytext input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
               <input type="password" data-minlength="2" class="form-control" id="inputPasswordConfirm" name="inputPassword" placeholder="Password (one more time)" data-match="#inputPassword" data-match-error="Whoops, your passwords don't match!" autocomplete="off" required>

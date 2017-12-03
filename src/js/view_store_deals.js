@@ -3,7 +3,7 @@ function getStoreDeals(address) {
 	
 	//alert(address);
 	$.ajax({
-		url: '/src/controller/get_Store_Deals.php',
+		url: '/src/controller/get_store_deals.php',
 		type: 'GET',
 		dataType: 'json',
 		data: ({address: this.address}),
@@ -29,7 +29,6 @@ function getStoreDeals(address) {
 						<tr class="animated fadeInRight">\
 							<td>\
 								<h5>from&nbsp;&nbsp;</h5><h4><a href="https://www.google.com/maps/place/'+ val.store_name + '%20' + val.address + ',%20' + val.city + '" target="_blank">' + val.store_name + '</h4></a>\
-								<h4> - (<a href="' + link + '">view more deals here</a>)</h4>\
 							</td>\
 							<td class="post-tag">\
 								<h6><i>posted by: ' + val.username + '</i></h6>\

@@ -22,6 +22,7 @@
 	<!-- custom styles -->
 	<link href="/res/styles/index.css" rel="stylesheet">
 	<link href="/res/styles/navigation_header.css" rel="stylesheet">
+	<link href="/res/styles/feed.css" rel="stylesheet">
 	<!-- google api key: AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8  -->
 	<!-- 21+ modal dialog js -->
 	<script type="text/javascript" src="/src/js/modalResponse.js"></script>
@@ -73,36 +74,12 @@
 		
 			
 	    </div>
-
-		<!-- featured deals?/new deals? row -->
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h3 class="page-header animated fadeInRight textBlue" id="feature-title">Featured deals today</h3>
-            </div>
-            
-            <div class="container features animated fadeInLeft">
-	            <div class="col-sm-4">
-	                <a href="https://www.belmontbev.com/about-belmont/our-newspaper-ads/" target="_blank">
-	                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAM6AAAAJDhmN2YzOWQ5LWMyODAtNGUzMi04MzEyLTFhNDUwMTBlMTg4MA.png" class="img-responsive feature-deal" alt="Belmont Beverages">
-	                </a>
-	            </div>
-	            
-	            <div class="col-sm-4">
-	                <a href="http://www.capncork.com/specials/" target="_blank">
-	                    <img src="http://www.capncork.com/wp-content/uploads/2014/05/2.jpg" class="img-responsive feature-deal" alt="Cap 'n' Cork">
-	                </a>
-	            </div>
-	
-	            <div class="col-sm-4">
-	                <a href="http://www.svliquors.com/sales-ad.html" target="_blank">
-	                    <img src="https://pbs.twimg.com/profile_images/839125470780149760/765_PWFQ.jpg" class="img-responsive feature-deal" alt="S&V Liquors">
-	                </a>
-	            </div>
-            </div>
-
+	    
+		<h3 class="page-header animated fadeInRight textBlue" id="feature-title">Latest deals today</h3>
+		<!-- featured deals row -->
+        <div class="row" id="recentDealsFeed">
+        	<!-- feed of 3 recent deals -->
         </div>
-        <!-- /.row -->
 
 	</div>
 
@@ -115,7 +92,13 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- google maps js api -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEWvn1C-4qZbAUdR-QwiBqe-BX1WDMA8&libraries=places&callback=initMap" async defer></script>
+	<!-- custom google maps js -->
 	<script type="text/javascript" src="/src/js/mapService.js"></script>
+	<!-- sweetalert js -->
+  <script src="https://unpkg.com/sweetalert2@7.0.6/dist/sweetalert2.all.js"></script>
+	<!-- get recent deals js -->
+	<script type="text/javascript" src="/src/js/view_recent.js"></script>
+	
 </body>
 
 </html>

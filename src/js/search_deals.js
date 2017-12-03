@@ -32,7 +32,7 @@ function getSearchResultsFeed() {
 						<tr class="animated fadeInRight">\
 							<td>\
 								<h5>from&nbsp;&nbsp;</h5><h4><a href="https://www.google.com/maps/place/'+ val.store_name + '%20' + val.address + ',%20' + val.city + '" target="_blank">' + val.store_name + '</h4></a>\
-								<h4> - (<a href="' + link + '">view more deals here</a>)</h4>\
+								<h4> (<a href="' + link + '">view more deals here</a>)</h4>\
 							</td>\
 							<td class="post-tag">\
 								<h6><i>posted by: ' + val.username + '</i></h6>\

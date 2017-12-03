@@ -22,15 +22,37 @@ function submitPostForm() {
         return false;
     }
     
-    swal({
-      position: 'top-right',
-      type: 'success',
-      title: 'Deal posted!',
-      showConfirmButton: false,
-      timer: 1500
-    });
+    if (validateLoggedIn()) {
+        swal({
+          position: 'top-right',
+          type: 'success',
+          title: 'Deal posted!',
+          showConfirmButton: false,
+          timer: 2000
+        });
+    }
 
     return true;
+}
+
+function validateLoggedIn() {
+    return $.ajax({
+        url: '/src/controller/validate_logged_in.php',
+        type: 'POST',
+        dataType: 'json',
+    })
+        .done(function (data) {
+            console.log(data);
+            return data;
+        })
+        .fail(function (data) {
+            swal(
+                'Error!',
+                'Something went wrong in validating your session. Please try again.',
+                'error'
+            );
+            return false;
+        });
     
 }
 

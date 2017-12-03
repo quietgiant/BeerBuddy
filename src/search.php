@@ -1,40 +1,15 @@
 <?php
 
-  /* for dev
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);
-  */
-
   session_start();
  
   // check for which form was submitted
-     
-  if (isset($_POST['typeBooze'])|| isset($_POST['brandBooze'])||isset($_POST['nameBooze'])|| $_POST['priceRangeBoozeValue1']>0) {
-    // start sql build
-    $_SESSION['isBeer'] = null;
-    $_SESSION['boozeType'] = null;
-    $_SESSION['boozeBrand'] = null;
-    $_SESSION['boozeName'] = null;
-    $_SESSION['boozePrice'] = null;
-    
-    if(isset($_POST['typeBooze'])){
-      $_SESSION['boozeType'] = $_POST['typeBooze'];
-    }
-    if(isset($_POST['brandBooze'])){
-      $_SESSION['boozeBrand'] = $_POST['brandBooze'];
-    }
-    if(isset($_POST['nameBooze'])){
-      $_SESSION['boozeName'] = $_POST['nameBooze'];
-    }
-    if($_POST['priceRangeBoozeValue1']){
-      $_SESSION['boozePrice'] = $_POST['priceRangeBoozeValue1'];
-    }
-    
-     header('Location: search_deals.php');
-     
-
-     // go to deals page with current sql statment
-  } elseif ( isset($_POST['brandBeer'])||isset($_POST['nameBeer'])|| $_POST['priceRangeBeerValue1']>0) {
+  if (isset($_POST['typeBooze']) || isset($_POST['brandBooze']) || isset($_POST['nameBooze']) ||  ($_POST['priceRangeBoozeValue1'] > 0)) {
+    searchBooze();
+  } else if (isset($_POST['brandBeer']) || isset($_POST['nameBeer']) || ($_POST['priceRangeBeerValue1'] > 0)) {
+    searchBeer();
+  }
+  
+  function searchBeer() {
     // start sql build
     $_SESSION['isBeer'] = "true";
     $_SESSION['boozeType'] = null;
@@ -57,8 +32,31 @@
     
     // go to deals page with current sql statment
     header('Location: search_deals.php');
-  }else {
-    //add alert no items selected
+  }
+  
+  function searchBooze() {
+    // start sql build
+    $_SESSION['isBeer'] = null;
+    $_SESSION['boozeType'] = null;
+    $_SESSION['boozeBrand'] = null;
+    $_SESSION['boozeName'] = null;
+    $_SESSION['boozePrice'] = null;
+    
+    if(isset($_POST['typeBooze'])){
+      $_SESSION['boozeType'] = $_POST['typeBooze'];
+    }
+    if(isset($_POST['brandBooze'])){
+      $_SESSION['boozeBrand'] = $_POST['brandBooze'];
+    }
+    if(isset($_POST['nameBooze'])){
+      $_SESSION['boozeName'] = $_POST['nameBooze'];
+    }
+    if($_POST['priceRangeBoozeValue1']){
+      $_SESSION['boozePrice'] = $_POST['priceRangeBoozeValue1'];
+    }
+    
+    // go to deals page with current sql statment
+    header('Location: search_deals.php');
   }
 
 ?>
@@ -121,31 +119,31 @@
               <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
 
                 <!-- beer search form -->
-                <form role="form" id="beerSearch" method="POST"> 
+                <form role="form" id="beerSearch" name="beerSearch" method="POST"> 
                   <h3 class="form-heading">Search for beer around you</h3>
                   <h5 class="form-heading">(at least one field is required)</h5>
 
                   <!-- brewery/brand field -->
                   <div class="form-group">
                       <label for="brand" class="control-label">Brand/brewery:</label>
-                      <input type="text" class="form-control" id="brandBeer" name="brandBeer" placeholder="Brand or brewery">
+                      <input type="text" class="form-control" id="brandBeer" name="brandBeer" autocomplete="off" placeholder="Brand or brewery">
                   </div>
 
                   <!-- name field -->
                   <div class="form-group">
                       <label for="name" class="control-label">Name of drink:</label>
-                      <input type="text" class="form-control" id="nameBeer" name="nameBeer" placeholder="Name of drink">
+                      <input type="text" class="form-control" id="nameBeer" name="nameBeer" autocomplete="off" placeholder="Name of drink">
                   </div>
 
                   <!-- price range slider -->
                   <div class="form-group">
                     <label id="pv" for="priceRangeBeer" class="control-label">Maximum price: $<span id="priceRangeBeerValue">&nbsp;-</span><br>
-                    <input id="priceRangeBeer" type="text" id="priceRangeBeerValue1" name = "priceRangeBeerValue1" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="0"/>
+                    <input id="priceRangeBeer" type="text" name="priceRangeBeer" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="0"/>
                   </div>
 
                   <!-- submit form button -->
                   <div class="form-group">
-                    <button class="btn btn-md btn-primary btn-block" id="submitButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit">Search deals&nbsp;<span class="glyphicon glyphicon-search"></span></button>
+                    <button class="btn btn-md btn-primary btn-block" id="submitBeerButton" name="submitBeerButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit">Search deals&nbsp;<span class="glyphicon glyphicon-search"></span></button>
                   </div>
 
                   <!-- clear form button -->
@@ -162,7 +160,7 @@
               <div class="container-fluid" style="margin-left:auto; margin-right:auto;">
 
                 <!-- booze search form -->
-                <form role="form" id="boozeSearch" method="POST">
+                <form role="form" id="boozeSearch" name="boozeSearch" method="POST">
                   <h3 class="form-heading">Search for booze around you</h3>
                   <h5 class="form-heading">(at least one field is required)</h5>
 
@@ -170,7 +168,7 @@
                   <div class="form-group">
                     <label for="type" class="control-label">Type of liquor:</label>
                     <select class="combobox form-control" id="typeBooze" name="typeBooze" >
-                      <option></option>
+                      <option disabled selected></option>
                       <option value="all">ALL</option>
                       <option value="brandy">Brandy</option>
                       <option value="bourbon">Bourbon</option>
@@ -187,24 +185,24 @@
                   <!-- brand field -->
                   <div class="form-group">
                       <label for="brand" class="control-label">Brand:</label>
-                      <input type="text" class="form-control" id="brandBooze" name="brandBooze" placeholder="Brand of liquor">
+                      <input type="text" class="form-control" id="brandBooze" name="brandBooze" autocomplete="off" placeholder="Brand of liquor">
                   </div>
 
                   <!-- name field -->
                   <div class="form-group">
                       <label for="name" class="control-label">Name of drink:</label>
-                      <input type="text" class="form-control" id="nameBooze" name="nameBooze" placeholder="Name of liquor">
+                      <input type="text" class="form-control" id="nameBooze" name="nameBooze" autocomplete="off" placeholder="Name of liquor">
                   </div>
 
                   <!-- price range slider -->
                   <div class="form-group">
                     <label for="priceRangeBooze" class="control-label">Maximum price: $<span name="priceRangeBoozeValue" id="priceRangeBoozeValue">&nbsp;-</span><br>
-                    <input id="priceRangeBooze" type="text"  name="priceRangeBoozeValue1" id="priceRangeBoozeValue1" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="0"/>
+                    <input id="priceRangeBooze" type="text"  name="priceRangeBooze" data-slider-min="0" data-slider-max="50" data-slider-step="1" data-slider-value="0"/>
                   </div>
 
                   <!-- submit form button -->
                   <div class="form-group">
-                    <button class="btn btn-md btn-primary btn-block" id="submitButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit">Search deals&nbsp;<span class="glyphicon glyphicon-search"></span></button>
+                    <button class="btn btn-md btn-primary btn-block" id="submitBoozeButton" name="submitBoozeButton" style="width:67%; margin-left:auto; margin-right:auto;" type="submit">Search deals&nbsp;<span class="glyphicon glyphicon-search"></span></button>
                   </div>
 
                   <!-- clear form button -->
@@ -233,8 +231,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/bootstrap-slider.min.js"></script>
     <!-- boostrap combo-box js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-combobox/1.1.8/js/bootstrap-combobox.min.js"></script>
-    <!-- typeahead plug-in -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+    <!-- sweetalert js -->
+    <script src="https://unpkg.com/sweetalert2@7.0.6/dist/sweetalert2.all.js"></script>
+    <!-- typeahead js -->
+    <script src="/res/lib/typeahead.js"></script>
     <!-- search js -->
     <script type="text/javascript" src="js/search.js"></script>
     
@@ -256,6 +256,83 @@
         $('.combobox').combobox();
       });
     </script>
+    
+    <!-- init typeahead -->
+    <script type="text/javascript">
+    /*$(document).ready(function () {
+        $("#brandBeer").typeahead({
+            source: function (query, result) {
+                $.ajax({
+                    url: "/src/controller/typeahead_name.php",
+					          data: {
+					            "term": query
+					          },            
+                    dataType: "json",
+                    method: "POST",
+                    success: function (data) {
+						            result($.map(data, function (item) {
+							              return item;
+                        }));
+                    }
+                });
+            }
+        });
+        
+        $("#nameBeer").typeahead({
+            source: function (query, result) {
+                $.ajax({
+                    url: "/src/controller/typeahead_name.php",
+					          data: {
+					            "term": query
+					          },            
+                    dataType: "json",
+                    method: "POST",
+                    success: function (data) {
+						            result($.map(data, function (item) {
+							              return item;
+                        }));
+                    }
+                });
+            }
+        });
+        
+        $("#brandBooze").typeahead({
+            source: function (query, result) {
+                $.ajax({
+                    url: "/src/controller/typeahead_name.php",
+					          data: {
+					            "term": query
+					          },            
+                    dataType: "json",
+                    method: "POST",
+                    success: function (data) {
+						            result($.map(data, function (item) {
+							              return item;
+                        }));
+                    }
+                });
+            }
+        });
+        
+        $("#nameBooze").typeahead({
+            source: function (query, result) {
+                $.ajax({
+                    url: "/src/controller/typeahead_name.php",
+					          data: {
+					            "term": query
+					          },            
+                    dataType: "json",
+                    method: "POST",
+                    success: function (data) {
+						            result($.map(data, function (item) {
+							              return item;
+                        }));
+                    }
+                });
+            }
+        });
+    });*/
+  </script>
     
   </body>
 

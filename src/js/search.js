@@ -1,67 +1,58 @@
-// jquery price range slider
-$("#priceRangeBeer").slider();
-$("#priceRangeBeer").on("slide", function(slideEvt) {
-  $("#priceRangeBeerValue").text(slideEvt.value);
-});
-
-$("#priceRangeBooze").slider();
-$("#priceRangeBooze").on("slide", function(slideEvt) {
-  $("#priceRangeBoozeValue").text(slideEvt.value);
-})
-
 $(document).ready(function () {
 
-	getRecentDealsFeed();
-
-	// refresh the feed every 7.5 seconds	
-	setInterval(function () {
-		switch (window.location.href.split("/").pop()) {
-			case "view_recent.php":
-				getRecentDealsFeed();
-				break;
-		}
-	}, 12000);
+	// jquery price range slider
+	$("#priceRangeBeer").slider();
+	$("#priceRangeBeer").on("slide", function(slideEvt) {
+	  $("#priceRangeBeerValue").text(slideEvt.value);
+	});
+	
+	$("#priceRangeBooze").slider();
+	$("#priceRangeBooze").on("slide", function(slideEvt) {
+	  $("#priceRangeBoozeValue").text(slideEvt.value);
+	});
 
 });
 
-function getRecentDealsFeed() {
+window.onload = function () {
+    document.getElementById('beerSearch').onsubmit = function() {
+        return checkBeerSearchForm();
+    };
+    document.getElementById('boozeSearch').onsubmit = function() {
+        return checkBoozeSearchForm();
+    };
+}
 
-	$.ajax({
-		url: '/src/controller/get_feed.php',
-		type: 'GET',
-		dataType: 'json',
-		cache: false
-	})
-		.done(function (data) {
-			console.log(data);
-			var $feed = $('#recentDealsFeed');
-			$feed.empty();
-			
-			$.each(data, function (idx, val) {
+function checkBeerSearchForm() {
+	var brand = $('#brandBeer').val();
+	var name = $('#nameBeer').val();
+	var price = $('#priceRangeBeer').val();
 
-				var html = '\
-				<table border="0">\
-					<tr>\
-						<td>\
-							<h4>' + val.drink_name + ' (' + val.alcohol_type + '): $' + val.price + ' </h4>\
-						</td>\
-						<td></td>\
-					</tr>\
-					<tr>\
-						<td>\
-							<h6>from</h6> <a href="#"><h4>' + val.store_name + '</h4></a>\
-						</td>\
-						<td align="right">\
-							<h6><i>post date: ' + val.date + '</i></h6>\
-						</td>\
-					</tr>\
-				</table>\
-				<hr>';
+	if (brand == '' && name == '' && price == '0') {
+		swal(
+            'Sorry...',
+            'You must enter at least one search filter!',
+            'error'
+        );
+        return false;
+	}
+	
+	return true;
+}
 
-				$feed.append(html);
-			});
-		})
-		.fail(function (data) {
-            alert("Error retrieving recent deals feed.");
-		});
+function checkBoozeSearchForm() {
+	var type = $('#typeBooze').val();
+	var brand = $('#brandBooze').val();
+	var name = $('#nameBooze').val();
+	var price = $('#priceRangeBooze').val();
+
+	if (type == '' && brand == '' && name == '' && price == '0') {
+		swal(
+            'Sorry...',
+            'You must enter at least one search filter!',
+            'error'
+        );
+        return false;
+	}
+	
+	return true;
 }

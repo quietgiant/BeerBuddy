@@ -1,10 +1,5 @@
 <?php
 
-  /* for dev
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);
-  */
-
   session_start();
 
   if (isset($_POST["inputEmail"]) && isset($_POST["inputPassword"])) {
@@ -38,9 +33,19 @@
       }
       
     } else {
-      echo ('<div style="color: red; text-align: center; font-size: 32px;">Invalid login credentials! Please try again.</div>');
+      $error = create_error_markup("Invalid login credentials. Please try again.");
+      echo ($error);
     }
     
+  }
+  
+  function create_error_markup($error_message) {
+    $markup = '
+      <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <h4 align="center"><strong>Error!</strong>&nbsp;' . $error_message . '</h4>
+      </div>';
+    return $markup;
   }
 
 ?>

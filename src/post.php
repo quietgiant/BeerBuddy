@@ -73,7 +73,7 @@
   }
 
   function notify_success() {
-    sleep(2);
+    sleep(1.5);
     return true;
   }
   
@@ -81,7 +81,7 @@
     $markup = '
       <div class="alert alert-danger alert-dismissible">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <h4 align="center"><strong>Error!</strong>&nbsp;&nbsp;' . $error_message . '</h4>
+        <h4 align="center"><strong>Error!</strong>&nbsp;' . $error_message . '</h4>
       </div>';
     return $markup;
   }
