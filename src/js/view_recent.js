@@ -31,7 +31,7 @@ function getRecentDealsFeed() {
 			$.each(data, function (idx, val) {
 				var link = "/src/view_store_deals.php?store=" + encodeURIComponent(val.store_name) + "&address=" + encodeURIComponent(val.address+", " + val.city);
 				var html = '\
-				<div class="table-responsive">\
+				<div class="">\
 					<table class="table-hover">\
 						<tr class="animated fadeInLeft">\
 							<td>\
@@ -77,7 +77,7 @@ function getIndexDealsFeed() {
 			$.each(data, function (idx, val) {
 				var link = "/src/view_store_deals.php?store=" + encodeURIComponent(val.store_name) + "&address=" + encodeURIComponent(val.address+", " + val.city);
 				var html = '\
-				<div class="table-responsive">\
+				<div class="">\
 					<table class="table-hover">\
 						<tr class="animated fadeInLeft">\
 							<td>\
