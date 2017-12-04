@@ -3,9 +3,9 @@
   session_start();
  
   // check for which form was submitted
-  if (isset($_POST['typeBooze']) || isset($_POST['brandBooze']) || isset($_POST['nameBooze']) ||  ($_POST['priceRangeBoozeValue1'] > 0)) {
+  if (isset($_POST['typeBooze']) || isset($_POST['brandBooze']) || isset($_POST['nameBooze']) ||  ($_POST['priceRangeBooze'] > 0)) {
     searchBooze();
-  } else if (isset($_POST['brandBeer']) || isset($_POST['nameBeer']) || ($_POST['priceRangeBeerValue1'] > 0)) {
+  } else if (isset($_POST['brandBeer']) || isset($_POST['nameBeer']) || ($_POST['priceRangeBeer'] > 0)) {
     searchBeer();
   }
   
@@ -26,8 +26,8 @@
     if(isset($_POST['nameBeer'])){
       $_SESSION['boozeName'] = $_POST['nameBeer'];
     }
-    if($_POST['priceRangeBeerValue1']){
-      $_SESSION['boozePrice'] = $_POST['priceRangeBeerValue1'];
+    if($_POST['priceRangeBeer']){
+      $_SESSION['boozePrice'] = $_POST['priceRangeBeer'];
     }
     
     // go to deals page with current sql statment
@@ -51,8 +51,8 @@
     if(isset($_POST['nameBooze'])){
       $_SESSION['boozeName'] = $_POST['nameBooze'];
     }
-    if($_POST['priceRangeBoozeValue1']){
-      $_SESSION['boozePrice'] = $_POST['priceRangeBoozeValue1'];
+    if($_POST['priceRangeBooze']){
+      $_SESSION['boozePrice'] = $_POST['priceRangeBooze'];
     }
     
     // go to deals page with current sql statment

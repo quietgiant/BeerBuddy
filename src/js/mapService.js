@@ -72,6 +72,7 @@ function handleSuccessfulGeolocationRequest(position) {
     };
 
     locationWindow = new google.maps.InfoWindow({ map: map, position: userLocation, content: 'You are here!' })
+    locationWindow.setZIndex(-100);
 
     var request = { 
         location: userLocation, 
@@ -90,7 +91,7 @@ function handleSuccessfulGeolocationRequest(position) {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     swal(
         'Unable to determine current position...',
-        'Is your location setting enabled?',
+        'is your location setting enabled?',
         'error'
     );
     infoWindow.setPosition(pos);

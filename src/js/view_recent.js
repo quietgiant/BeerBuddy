@@ -18,6 +18,14 @@ $(document).ready(function () {
 });
 
 function getRecentDealsFeed() {
+	swal({
+		title: 'Loading deals...',
+		text: 'just one moment!',
+		timer: 900,
+		onOpen: () => {
+			swal.showLoading()
+		}
+	});
 	$.ajax({
 		url: '/src/controller/get_recent_deals_feed.php',
 		type: 'GET',
@@ -59,7 +67,11 @@ function getRecentDealsFeed() {
 			});
 		})
 		.fail(function (data) {
-            alert("Error retrieving recent deals feed.");
+	        swal(
+	            'Invalid name...',
+	            'Name is too short!',
+	            'error'
+        	);
 		});
 }
 
@@ -105,7 +117,11 @@ function getIndexDealsFeed() {
 			});
 		})
 		.fail(function (data) {
-            alert("Error retrieving recent deals feed.");
+            swal(
+	            'Invalid name...',
+	            'Name is too short!',
+	            'error'
+	        );
 		});
 }
 

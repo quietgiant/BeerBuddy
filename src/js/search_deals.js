@@ -5,7 +5,14 @@ $(document).ready(function () {
 });
 
 function getSearchResultsFeed() {
-
+	swal({
+		title: 'Loading deals...',
+		text: 'just one moment!',
+		timer: 900,
+		onOpen: () => {
+			swal.showLoading()
+		}
+	});
 	$.ajax({
 		url: '/src/controller/get_search_results.php',
 		type: 'GET',

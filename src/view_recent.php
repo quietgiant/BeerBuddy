@@ -58,6 +58,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- animate on scroll js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css" type="text/css" />
+    <!-- sweetalert js -->
+    <script src="https://unpkg.com/sweetalert2@7.0.6/dist/sweetalert2.all.js"></script>
     <!-- feed js -->
     <script type="text/javascript" src="/src/js/view_recent.js"></script>
 

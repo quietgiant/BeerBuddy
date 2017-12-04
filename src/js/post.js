@@ -36,14 +36,15 @@ function submitPostForm() {
 }
 
 function validateLoggedIn() {
-    return $.ajax({
+    var ret = false;
+
+    $.ajax({
         url: '/src/controller/validate_logged_in.php',
         type: 'POST',
         dataType: 'json',
     })
         .done(function (data) {
-            console.log(data);
-            return data;
+            ret = data;
         })
         .fail(function (data) {
             swal(
@@ -54,6 +55,7 @@ function validateLoggedIn() {
             return false;
         });
     
+    return ret;
 }
 
 function validateName() {
